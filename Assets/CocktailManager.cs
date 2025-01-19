@@ -8,21 +8,21 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class CocktailManager : MonoBehaviour
 {
-    public SlotManager slotManager; // 슬롯에서 재료를 가져오는 관리 스크립트
-    public GameObject popupPanel; // 결과를 표시할 팝업 패널
-    public Text popupMessage; // 팝업 메시지 텍스트
-    public Image cocktailImage; // 결과 이미지를 표시할 UI 이미지
+    public SlotManager slotManager; 
+    public GameObject popupPanel; 
+    public Text popupMessage; 
+    public Image cocktailImage; 
 
-    // Inspector에서 연결할 Sprite
+    
     public Sprite 트와일라잇;
     public Sprite 엘릭시르;
     public Sprite 아방가르드;
     public Sprite 사해;
     public Sprite 위니스트;
     public Sprite 홀리워터;
-    public Sprite 조합실패; // 실패 시 표시할 기본 이미지 (선택 사항)
+    public Sprite 조합실패;
 
-    private Dictionary<string, (string name, Sprite image)> recipes; // 레시피 데이터
+    private Dictionary<string, (string name, Sprite image)> recipes; 
 
     public void Awake()
     {
@@ -31,7 +31,6 @@ public class CocktailManager : MonoBehaviour
 
     private void InitializeRecipes()
     {
-        // Sprite를 Inspector에서 직접 연결
         recipes = new Dictionary<string, (string name, Sprite image)>
         {
             { "스위트 허니문_0,스칼렛 위고_0", ("트와일라잇", 트와일라잇) },
@@ -49,8 +48,6 @@ public class CocktailManager : MonoBehaviour
         System.Array.Sort(ingredients); 
         string recipeKey = string.Join(",", ingredients); 
         Debug.Log($"슬롯에서 반환된 재료: {string.Join(", ", ingredients)}");
-        //Debug.Log($"생성된 Key: {recipeKey}");
-        // 레시피 확인
         if (recipes.ContainsKey(recipeKey))
         {
             var recipe = recipes[recipeKey];
@@ -58,7 +55,6 @@ public class CocktailManager : MonoBehaviour
         }
         else
         {
-            // 실패 시 기본 실패 이미지와 메시지 표시
             ShowPopup(false, "조합에 실패하였습니다...", 조합실패);
         }
     }
@@ -98,7 +94,7 @@ public class CocktailManager : MonoBehaviour
     public void ClosePopup()
     {
         popupPanel.SetActive(false);
-        popupMessage.text = ""; // 메시지 초기화
-        cocktailImage.sprite = null; // 이미지 초기화
+        popupMessage.text = ""; 
+        cocktailImage.sprite = null; 
     }
 }
