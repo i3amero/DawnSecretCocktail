@@ -1,0 +1,80 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5e51b93e23e5c2428628ea67e8b67dc, type: 3}
+  m_Name: SkillDatabase
+  m_EditorClassIdentifier: 
+  skills:
+  - name: Deadlift
+    description: "\u529B"
+    effectPrefab: {fileID: 0}
+    cooldown: 0
+  - name: Pintura
+    description: "\u7575"
+    effectPrefab: {fileID: 0}
+    cooldown: 0
+  - name: Resona
+    description: "\u97F3"
+    effectPrefab: {fileID: 0}
+    cooldown: 0
+  - name: Catharsis
+    description: "\u5287"
+    effectPrefab: {fileID: 0}
+    cooldown: 0
+  skillCombinations:
+  - combination1: QW
+    combination2: WQ
+    resultingSkill:
+      name: Brilliant Blow
+      description: It attacks by forming a glowing light source on your fist for
+        an instant. It works well for dark night customer, dark electricity.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
+  - combination1: QE
+    combination2: EQ
+    resultingSkill:
+      name: Rhythmical Windmill
+      description: It is a rotating attack with a sense of rhythm. It works well
+        for chestnut customers and blunt chestnut customers.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
+  - combination1: QR
+    combination2: RQ
+    resultingSkill:
+      name: Give a Liveness
+      description: It is an attack that gives the target a sense of life. It works
+        well for space-time rest.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
+  - combination1: WE
+    combination2: EW
+    resultingSkill:
+      name: Audiovisual Ruin
+      description: It is a magic that takes away the sight and hearing of the object.
+        It works well for multi-eyed and multi-eared guests.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
+  - combination1: WR
+    combination2: RW
+    resultingSkill:
+      name: Frame Drop
+      description: It's a magic that controls the movement of the object. It works
+        well for speed phenomenon, quick night guest.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
+  - combination1: ER
+    combination2: RE
+    resultingSkill:
+      name: Fade Out
+      description: It's a powerful magic that sends the subject out of reality. It
+        works well for special chestnut guests.
+      effectPrefab: {fileID: 0}
+      cooldown: 0
