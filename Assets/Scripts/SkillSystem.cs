@@ -4,12 +4,14 @@ public class SkillSystem : MonoBehaviour
 {
     public SkillDatabase skillDatabase; // SkillDatabase 참조
     private string currentCombination = ""; // 현재 입력된 키 조합
-    private float lastInputTime; // 마지막 키 입력 시간
-    public float inputTimeout = 1.0f; // 키 입력 제한 시간
 
     void Update()
     {
-        HandleInput(); // 플레이어 키 입력 처리
+        // 게임이 실행 중일 때만 입력 처리
+        if (GameController.Instance != null && GameController.Instance.CurrentState == GameState.Running)
+        {
+            HandleInput();
+        }
     }
 
     private void HandleInput()
@@ -23,20 +25,20 @@ public class SkillSystem : MonoBehaviour
 
             CheckSkillCombination();
         }
-
-        // 입력 시간이 초과되면 조합 초기화
-        if (Time.time - lastInputTime > inputTimeout)
-        {
-            ResetCombination();
-        }
     }
 
     private void AddKeyToCombination(string key)
     {
+        if (currentCombination.Length > 0 && currentCombination[currentCombination.Length - 1].ToString() == key)
+        {
+            ResetCombination();
+            Debug.Log("조합 초기화: 중복 키 입력");
+            return;
+        }
+        
         if (currentCombination.Length < 2)
         {
             currentCombination += key;
-            lastInputTime = Time.time; // 입력 시간 갱신
         }
     }
 

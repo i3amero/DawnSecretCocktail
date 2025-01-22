@@ -3,27 +3,38 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int score = 0;
     public TMP_Text scoreText;
 
-    private void Update()
+    private void Start()
     {
-        // 스페이스바 입력 감지
-        if (Input.GetKeyDown(KeyCode.Space))
+        // GameController의 점수를 불러와 UI 업데이트
+        if (GameController.Instance != null)
         {
-            AddScore(10); // 점수 10점 추가
+            UpdateScoreText(GameController.Instance.Score);
+        }
+        else
+        {
+            Debug.LogError("GameController 인스턴스를 찾을 수 없습니다.");
         }
     }
 
-    public void AddScore(int points)
+    private void Update()
     {
-        score += points;
-        scoreText.text = "Score: " + score;
+        if (GameController.Instance != null && GameController.Instance.CurrentState == GameState.Running)
+        {
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                GameController.Instance.AddScore(10); // GameController로 점수 추가
+                UpdateScoreText(GameController.Instance.Score);
+            }
+        }
     }
 
-    public void ResetScore()
+    private void UpdateScoreText(int score)
     {
-        score = 0;
-        scoreText.text = "Score: " + score;
+        if (scoreText != null)
+        {
+            scoreText.text = "Score: " + score;
+        }
     }
 }
