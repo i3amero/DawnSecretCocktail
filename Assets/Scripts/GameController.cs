@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private float gameDuration = 5f; // 게임 실행 시간
     [SerializeField] private float startDelay = 3f;    // 게임 준비 시간
 
+    public MapDatabase mapDatabase; // MapDatabase 연결
+
     public GameState CurrentState { get; private set; } = GameState.Preparation;
 
     private void Awake()
@@ -30,6 +32,28 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
+        // 선택된 맵 데이터 불러오기
+        int selectedMapID = PlayerPrefs.GetInt("SelectedMapID", 0); // 선택된 Map ID 가져오기
+        if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length)
+        {
+            MapDatabase.MapData selectedMap = mapDatabase.maps[selectedMapID];
+            Log($"선택된 맵: {selectedMap.mapName}");
+
+            // 맵 프리팹 생성
+            if (selectedMap.mapPrefab != null)
+            {
+                Instantiate(selectedMap.mapPrefab);
+            }
+            else
+            {
+                Debug.LogWarning("선택된 맵에 프리팹이 없습니다!");
+            }
+        }
+        else
+        {
+            Debug.LogError("유효하지 않은 Map ID입니다!");
+        }
+
         ChangeState(GameState.Preparation);
     }
 

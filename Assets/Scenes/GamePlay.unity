@@ -150,6 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameDuration: 5
   startDelay: 3
+  mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
 --- !u!4 &414800944
 Transform:
   m_ObjectHideFlags: 0
