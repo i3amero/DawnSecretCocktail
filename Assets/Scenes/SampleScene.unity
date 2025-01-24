@@ -399,7 +399,7 @@ GameObject:
   - component: {fileID: 47826772}
   - component: {fileID: 47826773}
   m_Layer: 0
-  m_Name: IngredientManager
+  m_Name: IngredientController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17255f16d09c3dc45a32675a1b7ad627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotManager: {fileID: 1757291592}
+  slotController: {fileID: 1757291592}
 --- !u!1 &84546319
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +843,7 @@ GameObject:
   - component: {fileID: 345333019}
   - component: {fileID: 345333018}
   m_Layer: 0
-  m_Name: CocktailManager
+  m_Name: CocktailController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -861,7 +861,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4541faaafbda34146b5784f89a014e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slotManager: {fileID: 1757291592}
+  slotController: {fileID: 1757291592}
   popupPanel: {fileID: 863645877}
   popupMessage: {fileID: 1075173532}
   cocktailImage: {fileID: 1196791275}
@@ -948,7 +948,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 252.22194
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -973,7 +973,7 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 518.3334, y: 254.6667, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2175,7 +2175,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 55d0fb5c55b9cf9498322009316bc40d, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
@@ -2274,8 +2274,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: make cocktail
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2763,7 +2763,7 @@ Canvas:
   m_GameObject: {fileID: 1309199001}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -3501,7 +3501,7 @@ GameObject:
   - component: {fileID: 1757291593}
   - component: {fileID: 1757291592}
   m_Layer: 0
-  m_Name: SlotManager
+  m_Name: SlotController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
