@@ -95,11 +95,7 @@
     },
     "com.unity.burst": {
       "version": "1.8.13",
-<<<<<<< HEAD
       "depth": 3,
-=======
-      "depth": 1,
->>>>>>> old-cbw-branch
       "source": "registry",
       "dependencies": {
         "com.unity.mathematics": "1.2.1",
@@ -115,22 +111,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.collections": {
-<<<<<<< HEAD
       "version": "1.2.4",
       "depth": 2,
       "source": "registry",
       "dependencies": {
         "com.unity.burst": "1.6.6",
         "com.unity.test-framework": "1.1.31"
-=======
-      "version": "1.4.0",
-      "depth": 3,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.burst": "1.6.6",
-        "com.unity.test-framework": "1.1.31",
-        "com.unity.nuget.mono-cecil": "1.11.4"
->>>>>>> old-cbw-branch
       },
       "url": "https://packages.unity.com"
     },
