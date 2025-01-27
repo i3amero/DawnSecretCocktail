@@ -13,15 +13,21 @@ MonoBehaviour:
   m_Name: MapDatabase
   m_EditorClassIdentifier: 
   maps:
-  - mapName: Map1
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 \uC0C1\uC5C5\uC9C0\uAD6C"
     scoreMultiplier: 1
     thumbnail: {fileID: 0}
     mapPrefab: {fileID: 0}
-  - mapName: Map2
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 01000000
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 1\uBC88\uAC00"
     scoreMultiplier: 1
     thumbnail: {fileID: 0}
     mapPrefab: {fileID: 0}
-  - mapName: Map3
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 00000000
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 \uB4B7\uACE8\uBAA9(Hard Mode)"
     scoreMultiplier: 1.5
     thumbnail: {fileID: 0}
     mapPrefab: {fileID: 0}
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 0000000001000000

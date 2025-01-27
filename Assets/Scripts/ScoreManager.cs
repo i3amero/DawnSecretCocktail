@@ -4,6 +4,8 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
+    private int score = 0;     // 현재 점수
+    private int comboCount = 0; // 콤보 카운트
 
     private void Start()
     {
@@ -18,16 +20,42 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    // 스킬 성공 여부에 따라 처리
+    public void OnSkillSuccess(bool isSuccess)
     {
-        if (GameController.Instance != null && GameController.Instance.CurrentState == GameState.Running)
+        if (isSuccess)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                GameController.Instance.AddScore(10); // GameController로 점수 추가
-                UpdateScoreText(GameController.Instance.Score);
-            }
+            Debug.Log("스킬 성공!");
+            AddScore(100); // 임시 점수 추가
+            IncreaseCombo();
         }
+        else
+        {
+            Debug.Log("스킬 실패!");
+            ResetCombo();
+        }
+    }
+
+    // 점수 추가
+    private void AddScore(int points)
+    {
+        score += points;
+        GameController.Instance.AddScore(points);
+        UpdateScoreText(score);
+    }
+
+    // 콤보 증가
+    private void IncreaseCombo()
+    {
+        comboCount++;
+        Debug.Log($"콤보 증가: {comboCount}");
+    }
+
+    // 콤보 초기화
+    private void ResetCombo()
+    {
+        comboCount = 0;
+        Debug.Log("콤보 초기화");
     }
 
     private void UpdateScoreText(int score)

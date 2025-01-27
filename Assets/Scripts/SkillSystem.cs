@@ -4,6 +4,18 @@ public class SkillSystem : MonoBehaviour
 {
     public SkillDatabase skillDatabase; // SkillDatabase 참조
     private string currentCombination = ""; // 현재 입력된 키 조합
+    private MonsterSpawner monsterSpawner; // MonsterSpawner 참조
+
+    void Start()
+    {
+        // MonsterSpawner 참조 가져오기
+        monsterSpawner = Object.FindFirstObjectByType<MonsterSpawner>();
+        if (monsterSpawner == null)
+        {
+            Debug.LogError("MonsterSpawner가 씬에 존재하지 않습니다!");
+        }
+    }
+
 
     void Update()
     {
@@ -58,6 +70,57 @@ public class SkillSystem : MonoBehaviour
     private void ExecuteSkill(Skill skill)
     {
         Debug.Log($"스킬 발동: {skill.name}");
+
+        // 현재 몬스터가 있는지 확인
+        if (monsterSpawner != null && monsterSpawner.GetCurrentMonster() != null)
+        {
+            var currentMonster = monsterSpawner.GetCurrentMonster();
+            var monsterController = currentMonster.GetComponent<MonsterController>();
+
+            // MonsterController와 MonsterData가 유효한지 확인
+            if (monsterController == null)
+            {
+                Debug.LogError("MonsterController가 null입니다.");
+                return;
+            }
+
+            if (monsterController.MonsterData == null)
+            {
+                Debug.LogError("MonsterController의 MonsterData가 null입니다.");
+                return;
+            }
+            // *****************************************
+
+            if (monsterController != null && monsterController.MonsterData.validSkills == skill.name)
+            {
+                // 스킬 성공: 몬스터 제거 및 점수 추가
+                Debug.Log($"스킬 성공! {monsterController.MonsterData.name} 제거");
+
+                var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
+                if (scoreManager != null)
+                {
+                    scoreManager.OnSkillSuccess(true); // 스킬 성공
+                }
+                monsterSpawner.RemoveCurrentMonster();
+            }
+            else
+            {
+                // 스킬 실패
+                Debug.LogWarning($"스킬 실패! {monsterController.MonsterData.name}에 유효한 스킬은 {monsterController.MonsterData.validSkills}입니다.");
+
+                var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
+                if (scoreManager != null)
+                {
+                    scoreManager.OnSkillSuccess(false); // 스킬 실패
+                }
+            }
+        }
+        else
+        {
+            Debug.LogWarning("현재 몬스터가 없습니다!");
+        }
+
+
         if (skill.effectPrefab != null)
         {
             Instantiate(skill.effectPrefab, transform.position, Quaternion.identity);
