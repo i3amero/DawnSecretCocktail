@@ -58,13 +58,13 @@ public class ScoreManager : MonoBehaviour
             if (multiplier == 0.5f) // BAD일때
             {
                 ResetCombo();
-                points = (int)(BASE_SCORE * multiplier);
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier); // 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
             else // GOOD, GREAT, PERFECT일때
             {
                 IncreaseCombo();
-                points = (int)(BASE_SCORE * multiplier * (1.00 + comboCount * 0.01));
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier * (1.00f + comboCount * 0.01f)); // 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
         }
