@@ -6,6 +6,10 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     private int score = 0;     // 현재 점수
     private int comboCount = 0; // 콤보 카운트
+    private int points = 0;   // 추가할 점수
+    private float multiplier; // 배율
+
+    private const float BASE_SCORE = 100;
 
     private void Start()
     {
@@ -20,27 +24,62 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    // 판정에 따른 배율 계산
+    private float GetJudgmentMultiplier(float reactionTime)
+    {
+        if (reactionTime <= 2f) // PERFECT
+        {
+            Debug.Log("PERFECT");
+            return 2.0f;
+        }
+        if (reactionTime <= 5f) // GREAT
+        {
+            Debug.Log("GREAT");
+            return 1.5f;
+        }
+        if (reactionTime <= 8f) // GOOD
+        {
+            Debug.Log("GOOD");
+            return 1.0f;
+        }
+        else // BAD
+        {
+            Debug.Log("BAD");
+            return 0.5f; 
+        }
+    }
+
     // 스킬 성공 여부에 따라 처리
-    public void OnSkillSuccess(bool isSuccess)
+    public void OnSkillSuccess(float reactionTime, bool isSuccess)
     {
         if (isSuccess)
         {
-            Debug.Log("스킬 성공!");
-            AddScore(100); // 임시 점수 추가
-            IncreaseCombo();
+            multiplier = GetJudgmentMultiplier(reactionTime);
+            if (multiplier == 0.5f) // BAD일때
+            {
+                ResetCombo();
+                points = (int)(BASE_SCORE * multiplier);
+                AddScore(points); // 임시 점수 추가
+            }
+            else // GOOD, GREAT, PERFECT일때
+            {
+                IncreaseCombo();
+                points = (int)(BASE_SCORE * multiplier * (1.00 + comboCount * 0.01));
+                AddScore(points); // 임시 점수 추가
+            }
         }
         else
         {
-            Debug.Log("스킬 실패!");
             ResetCombo();
         }
     }
 
-    // 점수 추가
+    // 점수 추가    
     private void AddScore(int points)
     {
         score += points;
         GameController.Instance.AddScore(points);
+        Debug.Log($"증가된 점수: {points}");
         UpdateScoreText(score);
     }
 

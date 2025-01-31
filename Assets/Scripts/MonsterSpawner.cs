@@ -72,6 +72,7 @@ public class MonsterSpawner : MonoBehaviour
                     monsterController.Initialize(randomMonster);
                     // 새로운 타이머 시작
                     removeMonsterCoroutine = StartCoroutine(RemoveMonsterAfterDuration(randomMonster.spawnDuration));
+
                 }
                 else
                 {
@@ -98,6 +99,11 @@ public class MonsterSpawner : MonoBehaviour
         if (currentMonster != null)
         {
             Debug.Log($"시간 초과로 제거된 몬스터: {currentMonster.name}");
+            var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
+            if (scoreManager != null)
+            {
+                scoreManager.OnSkillSuccess(0, false); // 시간 초과시 콤보 초기화
+            }
             RemoveCurrentMonster();
         }
     }

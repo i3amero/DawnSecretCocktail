@@ -16,7 +16,6 @@ public class SkillSystem : MonoBehaviour
         }
     }
 
-
     void Update()
     {
         // 게임이 실행 중일 때만 입력 처리
@@ -91,15 +90,18 @@ public class SkillSystem : MonoBehaviour
             }
             // *****************************************
 
+
             if (monsterController != null && monsterController.MonsterData.validSkills == skill.name)
             {
                 // 스킬 성공: 몬스터 제거 및 점수 추가
                 Debug.Log($"스킬 성공! {monsterController.MonsterData.name} 제거");
+                float reactionTime = Time.time - monsterController.spawnTime; // 반응 시간 계산
+                Debug.Log($"스킬 적중시간 : {reactionTime}");
 
                 var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
                 if (scoreManager != null)
                 {
-                    scoreManager.OnSkillSuccess(true); // 스킬 성공
+                    scoreManager.OnSkillSuccess(reactionTime, true); // 스킬 성공
                 }
                 monsterSpawner.RemoveCurrentMonster();
             }
@@ -111,7 +113,7 @@ public class SkillSystem : MonoBehaviour
                 var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
                 if (scoreManager != null)
                 {
-                    scoreManager.OnSkillSuccess(false); // 스킬 실패
+                    scoreManager.OnSkillSuccess(0, false); // 스킬 실패
                 }
             }
         }
