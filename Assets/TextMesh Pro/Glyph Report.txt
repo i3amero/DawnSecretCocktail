@@ -1,0 +1,13 @@
+Font: Maplestory  Style: Light
+Point Size: 314   Padding: -2147483648   SP/PD Ratio: -683912000.0%
+
+Characters included: 110/111
+Missing characters: 1
+Excluded characters: 0
+
+Characters missing from font file:
+----------------------------------------
+ID: 9	Hex: 9	Char [	]
+
+Characters excluded from packing:
+----------------------------------------

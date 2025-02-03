@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Flags]
 public enum IngredientMask
@@ -150,7 +151,12 @@ public class CocktailControllerer : MonoBehaviour
     public void ClosePopup()
     {
         popupPanel.SetActive(false);
-        popupMessage.text = ""; 
-        cocktailImage.sprite = null; 
+        popupMessage.text = "";
+
+        cocktailImage.gameObject.name = "cocktailImage";
+
+        cocktailImage.gameObject.SetActive(true);
+        DontDestroyOnLoad(cocktailImage.gameObject);
+        SceneManager.LoadScene("CharacterScene");
     }
 }
