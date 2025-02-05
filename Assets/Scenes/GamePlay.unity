@@ -346,6 +346,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skillDatabase: {fileID: 11400000, guid: 5dde04a450b5fa349bc9be8b79f9cb7a, type: 2}
+  monsterSpawner: {fileID: 2098687025}
+  scoreManager: {fileID: 662052714}
 --- !u!4 &1555226159
 Transform:
   m_ObjectHideFlags: 0
@@ -775,6 +777,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243e290ae77539d48acc5ff6346ac1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreManager: {fileID: 662052714}
+  skillSystem: {fileID: 1555226158}
   spawnPoint: {fileID: 0}
 --- !u!4 &2098687026
 Transform:

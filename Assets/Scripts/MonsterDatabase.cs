@@ -1,9 +1,9 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MonsterDatabase", menuName = "Database/MonsterDatabase", order = 1)]
+[CreateAssetMenu(fileName = "MonsterDatabase", menuName = "Database/MonsterDatabase")]
 public class MonsterDatabase : ScriptableObject
 {
-    public enum MonsterType { Bamsoneem, BamNori } // 몬스터 타입
+    public enum MonsterType { Bamsoneem, BamNori } // 몬스터 타입 열거형
     public MonsterData[] monsters; // 몬스터 데이터 배열
 
     [System.Serializable]

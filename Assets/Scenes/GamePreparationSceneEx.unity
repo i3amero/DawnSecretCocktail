@@ -176,9 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Start
-
-'
+  m_text: "\uC2DC\uC791\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c8dab036e1c76df41bbcfb0663fe6e52, type: 2}
   m_sharedMaterial: {fileID: -178455492219630169, guid: c8dab036e1c76df41bbcfb0663fe6e52, type: 2}
@@ -187,8 +185,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4281880655
+  m_fontColor: {r: 0.30922556, g: 0.31446534, b: 0.22052127, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -205,8 +203,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 30
+  m_fontSizeBase: 30
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0

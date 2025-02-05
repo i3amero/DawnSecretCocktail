@@ -1,6 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "MapDatabase", menuName = "Database/MapDatabase", order = 1)]
+[CreateAssetMenu(fileName = "MapDatabase", menuName = "Database/MapDatabase")]
 public class MapDatabase : ScriptableObject
 {
     [System.Serializable]

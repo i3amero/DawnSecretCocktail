@@ -10,8 +10,8 @@ public enum GameState
 
 public class GameController : MonoBehaviour
 {
-    public static GameController Instance { get; private set; }
-    public int Score { get; private set; } = 0; // 점수 관리
+    public static GameController Instance { get; private set; } // 읽기 전용 프로퍼티
+    public int Score { get; private set; } = 0; // 점수 관리(다른 Scene에서 접근 가능)
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
     [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
@@ -19,9 +19,9 @@ public class GameController : MonoBehaviour
     public MapDatabase mapDatabase; // MapDatabase 연결
     public MonsterSpawner monsterSpawner; // MonsterSpawner 연결
 
-    public GameState CurrentState { get; private set; } = GameState.Preparation;
+    public GameState CurrentState { get; private set; } = GameState.Preparation; // 변수 초기화, 다른 스크립트에서 읽기 가능
 
-    private Coroutine spawnCoroutine;
+    private Coroutine spawnCoroutine; // 몬스터 스폰 코루틴을 제어 하기 위한 변수로 사용
 
     private void Awake()
     {
@@ -34,17 +34,17 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start()
+    private void Start() // 맵 데이터 불러오기 및 게임 상태 변경
     {
         // 선택된 맵 데이터 불러오기
-        int selectedMapID = PlayerPrefs.GetInt("SelectedMapID", 0); // 선택된 Map ID 가져오기
-        if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length)
+        int selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
+        if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length) // 유효한 Map ID인지 확인
         {
-            MapDatabase.MapData selectedMap = mapDatabase.maps[selectedMapID];
+            MapDatabase.MapData selectedMap = mapDatabase.maps[selectedMapID]; // 선택된 맵 데이터 가져오기
             Log($"선택된 맵: {selectedMap.mapName}");
 
             // 맵 프리팹 생성
-            if (selectedMap.mapPrefab != null)
+            if (selectedMap.mapPrefab != null) // 선택된 맵에 프리팹이 있는지 확인 후 생성
             {
                 Instantiate(selectedMap.mapPrefab);
             }
@@ -53,7 +53,7 @@ public class GameController : MonoBehaviour
                 Debug.LogWarning("선택된 맵에 프리팹이 없습니다!");
             }
 
-            // MonsterSpawner에 현재 맵 설정
+            // MonsterSpawner에 현재 맵 설정(맵에 맞는 몬스터 생성)
             if (monsterSpawner != null)
             {
                 monsterSpawner.SetCurrentMap(selectedMap);
@@ -64,10 +64,10 @@ public class GameController : MonoBehaviour
             Debug.LogError("유효하지 않은 Map ID입니다!");
         }
 
-        ChangeState(GameState.Preparation);
+        ChangeState(GameState.Preparation); // 게임 준비 상태로 변경
     }
 
-    private void ChangeState(GameState newState)
+    private void ChangeState(GameState newState) // 게임 상태를 변경하고 그에 맞는 로직 실행
     {
         CurrentState = newState;
 
@@ -75,60 +75,60 @@ public class GameController : MonoBehaviour
         {
             case GameState.Preparation:
                 Log("게임 준비 상태");
-                StartCoroutine(StartGameCoroutine(startDelay));
+                StartCoroutine(StartGameCoroutine(startDelay)); // 게임 준비 때는 일정 시간 후 게임 시작
                 break;
             case GameState.Running:
                 Log("게임 실행 상태");
-                StartCoroutine(GameTimer());
-                spawnCoroutine = StartCoroutine(SpawnMonstersCoroutine());
+                StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
+                spawnCoroutine = StartCoroutine(SpawnMonstersCoroutine()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
                 break;
             case GameState.Ended:
-                if (spawnCoroutine != null)
+                if (spawnCoroutine != null) // 게임이 실행 상태라면
                 {
-                    monsterSpawner.RemoveCurrentMonster();
+                    monsterSpawner.RemoveCurrentMonster(); // 현재 생성되어 있는 몬스터 제거
                     StopCoroutine(spawnCoroutine); // 스폰 코루틴 중지
                     spawnCoroutine = null;
                 }
                 Log("게임 종료 상태");
-                GoToScoreScreen();
+                GoToScoreScreen(); // 게임 종료 시 점수 계산 화면으로 이동
                 break;
         }
     }
 
-    private IEnumerator StartGameCoroutine(float delay)
+    private IEnumerator StartGameCoroutine(float delay) // 게임 준비 시간 후 게임 시작
     {
         if (delay > 0)
         {
             Log("게임 준비 중...");
-            yield return new WaitForSeconds(delay);
+            yield return new WaitForSeconds(delay); // 지정된 시간만큼 대기
         }
 
-        GameController.Instance.ResetScore();
-        ChangeState(GameState.Running);
+        GameController.Instance.ResetScore(); // 게임 시작 시 점수 초기화
+        ChangeState(GameState.Running); // 게임 실행 상태로 변경
     }
 
-    private IEnumerator GameTimer()
+    private IEnumerator GameTimer() // 게임을 지정된 시간만큼 실행
     {
-        float elapsedTime = 0f;
+        float elapsedTime = 0f; // 경과 시간
 
-        while (elapsedTime < gameDuration)
+        while (elapsedTime < gameDuration) // 지정된 시간만큼 반복
         {
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        ChangeState(GameState.Ended);
+        ChangeState(GameState.Ended); // 지정된 시간이 다 지나면 게임 종료 상태로 변경
     }
 
-    private IEnumerator SpawnMonstersCoroutine()
+    private IEnumerator SpawnMonstersCoroutine() // 게임이 진행 중일 동안 몬스터 반복 생성
     {
         while (CurrentState == GameState.Running)
         {
             if (monsterSpawner != null)
             {
-                monsterSpawner.SpawnMonster();
+                monsterSpawner.SpawnMonster(); // 몬스터 생성
             }
-            yield return new WaitForSeconds(spawnInterval);
+            yield return new WaitForSeconds(spawnInterval); // 몬스터 생성 간격 시간만큼 대기
         }
     }
 
@@ -138,13 +138,13 @@ public class GameController : MonoBehaviour
         SceneController.Instance.LoadScene("ScoreScene");
     }
 
-    public void AddScore(int points)
+    public void AddScore(int points) // ScoreManager에서 호출, 점수 추가
     {
         Score += points;
-        Debug.Log("Current Score: " + Score);
+        Debug.Log("Current Score: " + Score); // 사용한 스킬로 몇점이 추가 되었는지 출력
     }
 
-    public void ResetScore()
+    public void ResetScore() // 게임 시작 시 호출, 점수 초기화
     {
         Score = 0;
     }

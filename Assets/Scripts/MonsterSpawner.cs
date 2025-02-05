@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
+    public ScoreManager scoreManager; // scoreManager 참조
+    public SkillSystem skillSystem; // skillSystem 참조
     private MapDatabase.MapData currentMap; // 현재 맵 데이터
     public Transform spawnPoint;           // 스폰 위치
 
     private GameObject currentMonster;     // 현재 화면에 등장한 몬스터
     private Coroutine removeMonsterCoroutine; // 현재 실행 중인 Coroutine
 
-    public void SetCurrentMap(MapDatabase.MapData mapData)
+    public void SetCurrentMap(MapDatabase.MapData mapData) // 맵에 맞는 몬스터 생성
     {
         currentMap = mapData;
     }
 
-    public void SpawnMonster()
+    public void SpawnMonster() // GameContoller에서 몬스터 스폰주기 마다 호출 -> 몬스터를 생성하고, 몬스터 등장유지시간 후 제거
     {
         // 게임이 실행 중인지 확인
         if (GameController.Instance != null && GameController.Instance.CurrentState != GameState.Running)
@@ -24,7 +26,7 @@ public class MonsterSpawner : MonoBehaviour
             return;
         }
 
-        if (currentMonster == null)
+        if (currentMonster == null) // 현재 등장한 몬스터가 없으면
         {
             if (currentMap == null || currentMap.monsterDatabase == null)
             {
@@ -33,10 +35,10 @@ public class MonsterSpawner : MonoBehaviour
             }
 
             // 허용된 몬스터 타입 필터링
-            var allowedTypes = currentMap.allowedMonsterTypes;
-            var validMonsters = currentMap.monsterDatabase.monsters
-                .Where(monster => allowedTypes.Contains(monster.type))
-                .ToArray();
+            var allowedTypes = currentMap.allowedMonsterTypes; // 맵에서 출현할 수 있는 몬스터 타입 배열
+            var validMonsters = currentMap.monsterDatabase.monsters // 맵의 몬스터들 중
+                .Where(monster => allowedTypes.Contains(monster.type)) // 허용된 몬스터 타입에 해당하는 몬스터 필터링
+                .ToArray(); // 배열로 변환
 
             if (validMonsters.Length == 0)
             {
@@ -49,26 +51,21 @@ public class MonsterSpawner : MonoBehaviour
 
             if (randomMonster.prefab != null)
             {
-                // 기존 Coroutine 중지
-                if (removeMonsterCoroutine != null)
-                {
-                    StopCoroutine(removeMonsterCoroutine);
-                    removeMonsterCoroutine = null;
-                }
-
                 // 프리팹이 있는 경우 실제로 생성
-                var spawnPosition = spawnPoint != null
-                     ? spawnPoint.position
-                     : Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0));
+                var spawnPosition = spawnPoint != null // 스폰 위치가 지정되어 있으면                                                       // 그 위치에 생성
+                     ? spawnPoint.position // 그 위치에 생성
+                     : Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0)); // 아니면 화면 중앙에 생성
                 spawnPosition.z = 0; // 2D 게임에서 Z축 고정
 
+                // spawnPosition에 랜덤으로 선택된 몬스터 prefab을 이용하여 생성, 회전은 기본값(없음)으로 설정
                 currentMonster = Instantiate(randomMonster.prefab, spawnPosition, Quaternion.identity);
 
-                // MonsterController에 데이터 전달
-                var monsterController = currentMonster.GetComponent<MonsterController>();
+                // 생성된 몬스터가 MonsterController 스크립트를 가지고 있으면, monsterController 변수에 할당
+                MonsterController monsterController = currentMonster.GetComponent<MonsterController>();
 
                 if (monsterController != null)
                 {
+                    // monsterController에 randomMonster 데이터를 가져와서 초기화
                     monsterController.Initialize(randomMonster);
                     // 새로운 타이머 시작
                     removeMonsterCoroutine = StartCoroutine(RemoveMonsterAfterDuration(randomMonster.spawnDuration));
@@ -95,16 +92,17 @@ public class MonsterSpawner : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
 
-        // 몬스터가 아직 존재하면 제거
+        // 몬스터가 아직 존재하면 제거 -> 스킬로 제거 실패 
         if (currentMonster != null)
         {
             Debug.Log($"시간 초과로 제거된 몬스터: {currentMonster.name}");
-            var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
+            // scoreManager에게 스킬로 제거 실패했다고 알려주기
             if (scoreManager != null)
             {
                 scoreManager.OnSkillSuccess(0, false); // 시간 초과시 콤보 초기화
             }
-            RemoveCurrentMonster();
+
+            RemoveCurrentMonster(); // 몬스터 제거
         }
     }
 
@@ -130,13 +128,14 @@ public class MonsterSpawner : MonoBehaviour
 
             Destroy(currentMonster);
             currentMonster = null;
-
+            skillSystem.ResetCombination(); // 조합 초기화
+            Debug.Log("조합 초기화!");
             // 다음 몬스터 생성
             SpawnMonster();
         }
         else
         {
-            Debug.LogWarning("현재 몬스터가 제거 되었습니다.");
+            Debug.LogWarning("현재 몬스터가 생성 되어있지 않습니다.");
         }
     }
 

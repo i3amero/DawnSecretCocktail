@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        // GameController의 점수를 불러와 UI 업데이트
+        // GameController의 점수를 불러와 UI 업데이트 - 0점으로 시작
         if (GameController.Instance != null)
         {
             UpdateScoreText(GameController.Instance.Score);
@@ -52,23 +52,23 @@ public class ScoreManager : MonoBehaviour
     // 스킬 성공 여부에 따라 처리
     public void OnSkillSuccess(float reactionTime, bool isSuccess)
     {
-        if (isSuccess)
+        if (isSuccess) // 스킬 성공
         {
             multiplier = GetJudgmentMultiplier(reactionTime);
             if (multiplier == 0.5f) // BAD일때
             {
                 ResetCombo();
-                points = Mathf.RoundToInt(BASE_SCORE * multiplier); // 반올림 처리
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier); // 추가될 점수 계산, 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
             else // GOOD, GREAT, PERFECT일때
             {
                 IncreaseCombo();
-                points = Mathf.RoundToInt(BASE_SCORE * multiplier * (1.00f + comboCount * 0.01f)); // 반올림 처리
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier * (1.00f + comboCount * 0.01f)); // 추가될 점수 계산, 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
         }
-        else
+        else // 스킬 실패
         {
             ResetCombo();
         }
@@ -97,6 +97,7 @@ public class ScoreManager : MonoBehaviour
         Debug.Log("콤보 초기화");
     }
 
+    // UI 업데이트
     private void UpdateScoreText(int score)
     {
         if (scoreText != null)
