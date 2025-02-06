@@ -13,9 +13,10 @@ public class IngredientController : MonoBehaviour
 
     public void OnIngredientClicked(Sprite ingredientSprite)
     {
-        if(!slotController.AddToSlot(ingredientSprite))
+        string failMessage;
+        if(!slotController.AddToSlot(ingredientSprite, out failMessage))
         {
-            dialogText.text = "슬롯이 가득 찼다네.";
+            dialogText.text = failMessage;
             dialogPanel.SetActive(true);
             CancelInvoke(nameof(HideDialog));
             Invoke(nameof(HideDialog), autoHideTime);

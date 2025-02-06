@@ -9,17 +9,14 @@ public class CocktailMover : MonoBehaviour
 
     void Start()
     {
-        GameObject preservedGameObject = GameObject.Find("cocktailImage");
-        if (preservedGameObject != null)
+        Sprite savedSprite=CocktailSaver.Instance.GetCocktailImage();
+        if(savedSprite!=null)
         {
-            Debug.Log("cocktailImage 찾음");
-
-            Image preservedImage = preservedGameObject.GetComponent<Image>();
-            cocktailSlot.sprite = preservedImage.sprite;
+            cocktailSlot.sprite= savedSprite;
         }
         else
         {
-            Debug.LogWarning("cocktailImage 못찾음.");
+            Debug.Log("실패");
         }
     }
 }

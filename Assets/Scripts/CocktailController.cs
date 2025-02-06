@@ -153,10 +153,23 @@ public class CocktailControllerer : MonoBehaviour
         popupPanel.SetActive(false);
         popupMessage.text = "";
 
-        cocktailImage.gameObject.name = "cocktailImage";
+        if(cocktailImage != null)
+        {
+            if(CocktailSaver.Instance != null)
+            {
+                CocktailSaver.Instance.SetCocktailImage(cocktailImage.sprite);
+            }
+            else
+            {
+                Debug.Log("칵테일세이버.인스턴스가 null");
+            }
+        }
+        else
+        {
+            Debug.Log("이미지가 null");
+        }
+        //CocktailSaver.Instance.SetCocktailImage(cocktailImage.sprite);
 
-        cocktailImage.gameObject.SetActive(true);
-        DontDestroyOnLoad(cocktailImage.gameObject);
         SceneManager.LoadScene("CharacterScene");
     }
 }
