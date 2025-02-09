@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 // ** 게임 실행 도중 스킬을 입력 받고 스폰된 몬스터 적중 시 데이터를 처리하는 클래스 **
 public class SkillSystem : MonoBehaviour
@@ -33,6 +33,12 @@ public class SkillSystem : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
+            if (!monsterSpawner.isMonsterReady) // 몬스터가 준비되지 않았다면 입력 무시
+            {
+                Debug.Log("몬스터가 준비되지 않음. 입력 무시.");
+                return;
+            }
+
             // Q, W, E, R 키 입력 시 조합에 추가
             if (Input.GetKeyDown(KeyCode.Q)) AddKeyToCombination("Q");
             if (Input.GetKeyDown(KeyCode.W)) AddKeyToCombination("W");

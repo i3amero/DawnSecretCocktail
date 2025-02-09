@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public enum GameState
@@ -20,8 +20,6 @@ public class GameController : MonoBehaviour
     public MonsterSpawner monsterSpawner; // MonsterSpawner 연결
 
     public GameState CurrentState { get; private set; } = GameState.Preparation; // 변수 초기화, 다른 스크립트에서 읽기 가능
-
-    private Coroutine spawnCoroutine; // 몬스터 스폰 코루틴을 제어 하기 위한 변수로 사용
 
     private void Awake()
     {
@@ -80,15 +78,10 @@ public class GameController : MonoBehaviour
             case GameState.Running:
                 Log("게임 실행 상태");
                 StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
-                spawnCoroutine = StartCoroutine(SpawnMonstersCoroutine()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
+                StartCoroutine(monsterSpawner.SpawnMonster()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
                 break;
             case GameState.Ended:
-                if (spawnCoroutine != null) // 게임이 실행 상태라면
-                {
-                    monsterSpawner.RemoveCurrentMonster(); // 현재 생성되어 있는 몬스터 제거
-                    StopCoroutine(spawnCoroutine); // 스폰 코루틴 중지
-                    spawnCoroutine = null;
-                }
+                monsterSpawner.RemoveCurrentMonster(); // 게임 종료 시 현재 몬스터 제거
                 Log("게임 종료 상태");
                 GoToScoreScreen(); // 게임 종료 시 점수 계산 화면으로 이동
                 break;
@@ -118,18 +111,6 @@ public class GameController : MonoBehaviour
         }
 
         ChangeState(GameState.Ended); // 지정된 시간이 다 지나면 게임 종료 상태로 변경
-    }
-
-    private IEnumerator SpawnMonstersCoroutine() // 게임이 진행 중일 동안 몬스터 반복 생성
-    {
-        while (CurrentState == GameState.Running)
-        {
-            if (monsterSpawner != null)
-            {
-                monsterSpawner.SpawnMonster(); // 몬스터 생성
-            }
-            yield return new WaitForSeconds(spawnInterval); // 몬스터 생성 간격 시간만큼 대기
-        }
     }
 
     private void GoToScoreScreen()

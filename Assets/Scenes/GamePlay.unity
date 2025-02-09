@@ -422,8 +422,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Score: 0'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c8dab036e1c76df41bbcfb0663fe6e52, type: 2}
-  m_sharedMaterial: {fileID: -178455492219630169, guid: c8dab036e1c76df41bbcfb0663fe6e52, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -780,6 +780,7 @@ MonoBehaviour:
   scoreManager: {fileID: 662052714}
   skillSystem: {fileID: 1555226158}
   spawnPoint: {fileID: 0}
+  isMonsterReady: 0
 --- !u!4 &2098687026
 Transform:
   m_ObjectHideFlags: 0

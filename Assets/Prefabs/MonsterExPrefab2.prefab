@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8971783578672413193}
   - component: {fileID: 9210125194826205094}
   - component: {fileID: -2711229908776777967}
+  - component: {fileID: 5892480979469892142}
   m_Layer: 0
   m_Name: MonsterExPrefab2
   m_TagString: Untagged
@@ -99,3 +100,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9949547b39f979f45837b94ad1fccb67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5892480979469892142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5903899512783244297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd23aba0ad7fb12479dce9ddcf7e23c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeDuration: 1
+  moveDistance: 0.7

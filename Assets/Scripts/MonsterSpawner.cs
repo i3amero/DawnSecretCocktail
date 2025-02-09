@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Linq;
 using UnityEngine;
 
@@ -11,19 +11,20 @@ public class MonsterSpawner : MonoBehaviour
 
     private GameObject currentMonster;     // 현재 화면에 등장한 몬스터
     private Coroutine removeMonsterCoroutine; // 현재 실행 중인 Coroutine
+    public bool isMonsterReady = false; // 몬스터 준비 상태 체크
 
     public void SetCurrentMap(MapDatabase.MapData mapData) // 맵에 맞는 몬스터 생성
     {
         currentMap = mapData;
     }
 
-    public void SpawnMonster() // GameContoller에서 몬스터 스폰주기 마다 호출 -> 몬스터를 생성하고, 몬스터 등장유지시간 후 제거
+    public IEnumerator SpawnMonster() // GameContoller에서 몬스터 스폰주기 마다 호출 -> 몬스터를 생성하고, 몬스터 등장유지시간 후 제거
     {
         // 게임이 실행 중인지 확인
         if (GameController.Instance != null && GameController.Instance.CurrentState != GameState.Running)
         {
             Debug.LogWarning("게임이 실행 중이 아니므로 몬스터를 스폰하지 않습니다.");
-            return;
+            yield break;
         }
 
         if (currentMonster == null) // 현재 등장한 몬스터가 없으면
@@ -31,7 +32,7 @@ public class MonsterSpawner : MonoBehaviour
             if (currentMap == null || currentMap.monsterDatabase == null)
             {
                 Debug.LogWarning("현재 맵 데이터 또는 몬스터 데이터베이스가 없습니다!");
-                return;
+                yield break;
             }
 
             // 허용된 몬스터 타입 필터링
@@ -43,7 +44,7 @@ public class MonsterSpawner : MonoBehaviour
             if (validMonsters.Length == 0)
             {
                 Debug.LogWarning("허용된 몬스터가 없습니다!");
-                return;
+                yield break;
             }
 
             // 랜덤으로 몬스터 선택
@@ -59,6 +60,13 @@ public class MonsterSpawner : MonoBehaviour
 
                 // spawnPosition에 랜덤으로 선택된 몬스터 prefab을 이용하여 생성, 회전은 기본값(없음)으로 설정
                 currentMonster = Instantiate(randomMonster.prefab, spawnPosition, Quaternion.identity);
+
+                // 생성된 몬스터에 페이드인 효과 추가
+                MonsterFadeEffect fadeEffect = currentMonster.GetComponent<MonsterFadeEffect>();
+                if (fadeEffect != null)
+                {
+                    yield return StartCoroutine(fadeEffect.FadeIn()); // 서서히 등장
+                }
 
                 // 생성된 몬스터가 MonsterController 스크립트를 가지고 있으면, monsterController 변수에 할당
                 MonsterController monsterController = currentMonster.GetComponent<MonsterController>();
@@ -76,6 +84,9 @@ public class MonsterSpawner : MonoBehaviour
                     Debug.LogError("MonsterController가 프리팹에 추가되지 않았거나, 초기화되지 않았습니다.");
                 }
 
+                // 페이드인 완료 후 몬스터 준비 상태 설정
+                isMonsterReady = true; // 몬스터가 준비된 상태
+
                 // 로그로 몬스터 정보 출력
                 Debug.Log($"currentMonster: {randomMonster.name} (타입: {randomMonster.type}, 지속 시간: {randomMonster.spawnDuration}초)");
 
@@ -88,7 +99,7 @@ public class MonsterSpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator RemoveMonsterAfterDuration(float duration)
+    private IEnumerator RemoveMonsterAfterDuration(float duration) // 시간 초과로 몬스터가 제거되는 경우
     {
         yield return new WaitForSeconds(duration);
 
@@ -119,24 +130,39 @@ public class MonsterSpawner : MonoBehaviour
         {
             Debug.Log($"제거된 몬스터: {currentMonster.name}");
 
-            // 기존 Coroutine 중지
+            // 기존 Coroutine 중지 -> 스킬로 제거 되었을 경우
             if (removeMonsterCoroutine != null)
             {
                 StopCoroutine(removeMonsterCoroutine);
                 removeMonsterCoroutine = null;
             }
 
-            Destroy(currentMonster);
-            currentMonster = null;
-            skillSystem.ResetCombination(); // 조합 초기화
-            Debug.Log("조합 초기화!");
-            // 다음 몬스터 생성
-            SpawnMonster();
+            // 페이드아웃 실행 후 제거하도록 변경
+            StartCoroutine(FadeOutAndDestroy());
         }
         else
         {
             Debug.LogWarning("현재 몬스터가 생성 되어있지 않습니다.");
         }
+    }
+
+    // 페이드아웃 후 몬스터 제거 (코루틴)
+    private IEnumerator FadeOutAndDestroy()
+    {
+        isMonsterReady = false; // 몬스터 제거 중 상태로 변경
+        skillSystem.ResetCombination(); // 조합 초기화
+
+        MonsterFadeEffect fadeEffect = currentMonster.GetComponent<MonsterFadeEffect>();
+        if (fadeEffect != null)
+        {
+            yield return StartCoroutine(fadeEffect.FadeOut()); // 페이드아웃이 끝날 때까지 대기
+        }
+
+        Destroy(currentMonster);
+        currentMonster = null;
+
+        // 다음 몬스터 생성
+        StartCoroutine(SpawnMonster());
     }
 
     public GameObject GetCurrentMonster()
