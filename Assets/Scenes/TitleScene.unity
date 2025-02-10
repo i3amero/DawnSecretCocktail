@@ -1101,7 +1101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ab9759099c15b74fb5c9922a8bfff81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Lobby
+  sceneName: Prologue
 --- !u!82 &1241269190
 AudioSource:
   m_ObjectHideFlags: 0
