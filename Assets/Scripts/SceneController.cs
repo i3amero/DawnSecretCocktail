@@ -1,8 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class SceneController : MonoBehaviour
 {
+    public float transitionDuration; // 전환 효과 지속 시간
+    private CanvasGroup fadeCanvasGroup; // Canvas Group
+    private RectTransform canvasTransform; // UI 전체 크기 조정
     // 싱글톤 인스턴스
     public static SceneController Instance { get; private set; }
 
@@ -20,6 +24,54 @@ public class SceneController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void FindCanvasComponents()
+    {
+        Canvas canvas = FindFirstObjectByType<Canvas>(); // 현재 씬의 Canvas 찾기
+
+        if (canvas != null)
+        {
+            fadeCanvasGroup = canvas.GetComponent<CanvasGroup>();
+            canvasTransform = canvas.GetComponent<RectTransform>();
+
+            if (fadeCanvasGroup == null)
+            {
+                Debug.LogWarning("CanvasGroup이 없습니다. Canvas에 추가하세요.");
+            }
+        }
+        else
+        {
+            Debug.LogError("Canvas를 찾을 수 없습니다.");
+        }
+    }
+
+    public void LoadSceneWithZoomOut(string sceneName)
+    {
+        StartCoroutine(ZoomOutAndLoadScene(sceneName));
+    }
+
+    private IEnumerator ZoomOutAndLoadScene(string sceneName)
+    {
+        FindCanvasComponents(); // 씬 변경할 때마다 Canvas 다시 찾기
+
+        if (canvasTransform == null || fadeCanvasGroup == null)
+        {
+            Debug.LogError("Canvas 또는 CanvasGroup이 연결되지 않았습니다.");
+            yield break;
+        }
+
+        float timer = 0f;
+        fadeCanvasGroup.alpha = 1;
+
+        while (timer < transitionDuration)
+        {
+            fadeCanvasGroup.alpha = 1 - (timer / transitionDuration); // 점점 투명
+            timer += Time.deltaTime;
+            yield return null;
+        }
+
+        SceneManager.LoadScene(sceneName);
+    }
+
     public void LoadScene(string sceneName)
     {
         if (IsSceneInBuildSettings(sceneName)) // 빌드 설정에 씬이 포함되어 있는지 확인
@@ -31,6 +83,8 @@ public class SceneController : MonoBehaviour
             Debug.LogWarning($"'{sceneName}' 씬이 빌드 설정에 포함되지 않았습니다.");
         }
     }
+
+   
 
     private bool IsSceneInBuildSettings(string sceneName)
     {

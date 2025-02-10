@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public enum GameState
@@ -12,12 +13,14 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; } // 읽기 전용 프로퍼티
     public int Score { get; private set; } = 0; // 점수 관리(다른 Scene에서 접근 가능)
+    public TMP_Text countdownText; // 카운트다운 표시 텍스트
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
     [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
 
     public MapDatabase mapDatabase; // MapDatabase 연결
     public MonsterSpawner monsterSpawner; // MonsterSpawner 연결
+    public ScoreManager scoreManager; // ScoreManager 연결
 
     public GameState CurrentState { get; private set; } = GameState.Preparation; // 변수 초기화, 다른 스크립트에서 읽기 가능
 
@@ -73,7 +76,7 @@ public class GameController : MonoBehaviour
         {
             case GameState.Preparation:
                 Log("게임 준비 상태");
-                StartCoroutine(StartGameCoroutine(startDelay)); // 게임 준비 때는 일정 시간 후 게임 시작
+                StartCoroutine(CountdownCoroutine()); // 게임 준비 때는 일정 시간 후 게임 시작
                 break;
             case GameState.Running:
                 Log("게임 실행 상태");
@@ -88,13 +91,20 @@ public class GameController : MonoBehaviour
         }
     }
 
-    private IEnumerator StartGameCoroutine(float delay) // 게임 준비 시간 후 게임 시작
+    private IEnumerator CountdownCoroutine()
     {
-        if (delay > 0)
+        countdownText.gameObject.SetActive(true); // 텍스트 UI 활성화
+
+        for (int i = (int)startDelay; i > 0; i--)
         {
-            Log("게임 준비 중...");
-            yield return new WaitForSeconds(delay); // 지정된 시간만큼 대기
+            countdownText.text = i.ToString(); // 3, 2, 1 표시
+            yield return new WaitForSeconds(1f); // 1초 대기
         }
+
+        countdownText.text = "시작!"; // 마지막에 "시작!" 표시
+        yield return new WaitForSeconds(1f); // 1초 대기 후
+
+        countdownText.gameObject.SetActive(false); // 카운트다운 UI 숨기기
 
         GameController.Instance.ResetScore(); // 게임 시작 시 점수 초기화
         ChangeState(GameState.Running); // 게임 실행 상태로 변경
@@ -103,6 +113,12 @@ public class GameController : MonoBehaviour
     private IEnumerator GameTimer() // 게임을 지정된 시간만큼 실행
     {
         float elapsedTime = 0f; // 경과 시간
+
+        // 점수 UI 표시
+        if (scoreManager != null)
+        {
+            scoreManager.ShowScoreUI();
+        }
 
         while (elapsedTime < gameDuration) // 지정된 시간만큼 반복
         {

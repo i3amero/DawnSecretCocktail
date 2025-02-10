@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class ScoreManager : MonoBehaviour
@@ -13,6 +13,12 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        // 처음에는 점수 UI를 숨김
+        if (scoreText != null && GameController.Instance.CurrentState == GameState.Preparation)
+        {
+            scoreText.gameObject.SetActive(false); // 초기에는 UI 숨기기
+        }
+
         // GameController의 점수를 불러와 UI 업데이트 - 0점으로 시작
         if (GameController.Instance != null)
         {
@@ -21,6 +27,15 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Debug.LogError("GameController 인스턴스를 찾을 수 없습니다.");
+        }
+    }
+
+    // 게임이 시작될 때 점수 UI 표시 (GameController에서 호출)
+    public void ShowScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.gameObject.SetActive(true);
         }
     }
 

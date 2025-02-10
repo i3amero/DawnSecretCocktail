@@ -462,6 +462,7 @@ GameObject:
   - component: {fileID: 722648319}
   - component: {fileID: 722648318}
   - component: {fileID: 722648317}
+  - component: {fileID: 722648321}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -552,6 +553,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &722648321
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 722648316}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1036274591
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +646,7 @@ GameObject:
   - component: {fileID: 1134460242}
   - component: {fileID: 1134460241}
   - component: {fileID: 1134460244}
+  - component: {fileID: 1134460245}
   m_Layer: 5
   m_Name: MapButton_1
   m_TagString: Untagged
@@ -768,6 +782,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   mapID: 0
+--- !u!114 &1134460245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134460239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cfdd7ead9753240873b67ec2980934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1185313549
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +943,7 @@ GameObject:
   - component: {fileID: 1814369390}
   - component: {fileID: 1814369389}
   - component: {fileID: 1814369392}
+  - component: {fileID: 1814369393}
   m_Layer: 5
   m_Name: MapButton_3
   m_TagString: Untagged
@@ -1052,6 +1079,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   mapID: 2
+--- !u!114 &1814369393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1814369387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cfdd7ead9753240873b67ec2980934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1921279321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1201,6 +1240,7 @@ GameObject:
   - component: {fileID: 1922534602}
   - component: {fileID: 1922534601}
   - component: {fileID: 1922534604}
+  - component: {fileID: 1922534605}
   m_Layer: 5
   m_Name: MapButton_2
   m_TagString: Untagged
@@ -1336,6 +1376,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   mapID: 1
+--- !u!114 &1922534605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922534599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5cfdd7ead9753240873b67ec2980934, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
