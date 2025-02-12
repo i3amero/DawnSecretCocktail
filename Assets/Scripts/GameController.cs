@@ -114,10 +114,15 @@ public class GameController : MonoBehaviour
     {
         float elapsedTime = 0f; // 경과 시간
 
-        // 점수 UI 표시
+        // 점수 & 콤보 UI 표시
         if (scoreManager != null)
         {
             scoreManager.ShowScoreUI();
+        }
+
+        if (scoreManager != null)
+        {
+            scoreManager.ShowComboUI();
         }
 
         while (elapsedTime < gameDuration) // 지정된 시간만큼 반복

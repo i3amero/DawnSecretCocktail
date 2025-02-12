@@ -1,9 +1,12 @@
 ﻿using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
+    public TMP_Text comboText;
+    public TMP_Text judgmentText;
     private int score = 0;     // 현재 점수
     private int comboCount = 0; // 콤보 카운트
     private int points = 0;   // 추가할 점수
@@ -14,9 +17,11 @@ public class ScoreManager : MonoBehaviour
     private void Start()
     {
         // 처음에는 점수 UI를 숨김
-        if (scoreText != null && GameController.Instance.CurrentState == GameState.Preparation)
+        if (scoreText != null && comboText != null && GameController.Instance.CurrentState == GameState.Preparation)
         {
             scoreText.gameObject.SetActive(false); // 초기에는 UI 숨기기
+            comboText.gameObject.SetActive(false);
+            judgmentText.gameObject.SetActive(false);
         }
 
         // GameController의 점수를 불러와 UI 업데이트 - 0점으로 시작
@@ -39,27 +44,39 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void ShowComboUI()
+    {
+        if (comboText != null)
+        {
+            comboText.gameObject.SetActive(true);
+        }
+    }
+
     // 판정에 따른 배율 계산
     private float GetJudgmentMultiplier(float reactionTime)
     {
         if (reactionTime <= 2f) // PERFECT
         {
             Debug.Log("PERFECT");
+            UpdateJudgmentText("PERFECT");
             return 2.0f;
         }
         if (reactionTime <= 5f) // GREAT
         {
             Debug.Log("GREAT");
+            UpdateJudgmentText("GREAT");
             return 1.5f;
         }
         if (reactionTime <= 8f) // GOOD
         {
             Debug.Log("GOOD");
+            UpdateJudgmentText("GOOD");
             return 1.0f;
         }
         else // BAD
         {
             Debug.Log("BAD");
+            UpdateJudgmentText("BAD");
             return 0.5f; 
         }
     }
@@ -85,7 +102,18 @@ public class ScoreManager : MonoBehaviour
         }
         else // 스킬 실패
         {
+            Debug.Log("FAIL");
+            UpdateJudgmentText("FAIL");
             ResetCombo();
+        }
+    }
+
+    private IEnumerator HideJudgmentAfterTime(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (judgmentText != null)
+        {
+            judgmentText.gameObject.SetActive(false);
         }
     }
 
@@ -103,6 +131,7 @@ public class ScoreManager : MonoBehaviour
     {
         comboCount++;
         Debug.Log($"콤보 증가: {comboCount}");
+        UpdateComboText(comboCount);
     }
 
     // 콤보 초기화
@@ -110,6 +139,7 @@ public class ScoreManager : MonoBehaviour
     {
         comboCount = 0;
         Debug.Log("콤보 초기화");
+        UpdateComboText(comboCount);
     }
 
     // UI 업데이트
@@ -118,6 +148,24 @@ public class ScoreManager : MonoBehaviour
         if (scoreText != null)
         {
             scoreText.text = "Score: " + score;
+        }
+    }
+
+    private void UpdateComboText(int comboCount)
+    {
+        if (scoreText != null)
+        {
+            comboText.text = "Combo: " + comboCount;
+        }
+    }
+
+    private void UpdateJudgmentText(string judgment)
+    {
+        if (judgmentText != null)
+        {
+            judgmentText.text = judgment;
+            judgmentText.gameObject.SetActive(true);  // UI를 보이게 함
+            StartCoroutine(HideJudgmentAfterTime(1f));  // 1초 후에 숨기기
         }
     }
 }

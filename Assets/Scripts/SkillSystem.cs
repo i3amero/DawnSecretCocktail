@@ -129,6 +129,7 @@ public class SkillSystem : MonoBehaviour
                 if (scoreManager != null)
                 {
                     scoreManager.OnSkillSuccess(0, false); // 스킬 실패, ScoreManager에서 콤보 초기화
+                    monsterSpawner.RemoveCurrentMonster(); // 다음 현상으로 넘어가기
                 }
             }
         }
