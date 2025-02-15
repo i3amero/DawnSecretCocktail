@@ -18,7 +18,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Prologue.unity
     guid: 96c9a29598275e9499b8702a61a8a605
   - enabled: 1
+    path: Assets/Scenes/TalkScene.unity
+    guid: 6aef2d921256d0741a4f056bbb365980
+  - enabled: 1
     path: Assets/Scenes/TitleScene.unity
     guid: 14d73c6a7608f244497433dff2563ba1
+  - enabled: 1
+    path: Assets/Scenes/CocktailMain.unity
+    guid: 92f8c8c9b09e56d46ba509228fbca757
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

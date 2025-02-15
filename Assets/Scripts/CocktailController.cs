@@ -108,7 +108,7 @@ public class CocktailControllerer : MonoBehaviour
         {
             "스위트 허니문_0" => IngredientMask.SweetHoneyMoon,
             "스칼렛 위고_0" => IngredientMask.ScarletWego,
-            "고블린 갱_0" => IngredientMask.GoblinGang,
+            "고블린 갱_1" => IngredientMask.GoblinGang,
             "보라달빛_0" => IngredientMask.PurpleMoonLight,
             "찌리리리_0" => IngredientMask.ThunderBolt,
             "데스 메디슨_0" => IngredientMask.DeathMedicine,
