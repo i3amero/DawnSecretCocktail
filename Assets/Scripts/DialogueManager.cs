@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -26,6 +27,13 @@ public class DialogueManager : MonoBehaviour
         if (csvReader == null)
         {
             Debug.LogError("csvReader가 초기화되지 않았습니다.");
+            return;
+        }
+
+        if (currentIndex >= csvReader.dialogueList.Count)
+        {
+            Debug.Log("대화가 끝났습니다. 다음 씬으로 이동합니다.");
+            LoadNextScene();  // 마지막 대화 후 씬 전환 실행
             return;
         }
 
@@ -67,6 +75,13 @@ public class DialogueManager : MonoBehaviour
                 Debug.LogWarning($"알 수 없는 표정: {entry.expression}");
                 break;
         }
+
+        void LoadNextScene()
+        {
+            string nextSceneName = "Lobby";
+            SceneManager.LoadScene(nextSceneName);
+        }
+
     }
     public void ContinueDialogue()
     {

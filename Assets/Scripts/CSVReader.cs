@@ -5,7 +5,7 @@ using UnityEngine;
 public class CSVReader : MonoBehaviour
 {
     public TextAsset csvFile; // 유니티에서 CSV 파일을 드래그해서 연결
-    private List<DialogueEntry> dialogueList = new List<DialogueEntry>();
+    public List<DialogueEntry> dialogueList = new List<DialogueEntry>();
 
     [System.Serializable]
     public class DialogueEntry
