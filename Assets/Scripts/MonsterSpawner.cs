@@ -55,7 +55,7 @@ public class MonsterSpawner : MonoBehaviour
                 // 프리팹이 있는 경우 실제로 생성
                 var spawnPosition = spawnPoint != null // 스폰 위치가 지정되어 있으면                                                       // 그 위치에 생성
                      ? spawnPoint.position // 그 위치에 생성
-                     : Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height / 2, 0)); // 아니면 화면 중앙에 생성
+                     : Camera.main.ScreenToWorldPoint(new Vector3(Screen.width / 2, Screen.height * 2 / 3, 0)); // 아니면 화면 중앙에 생성
                 spawnPosition.z = 0; // 2D 게임에서 Z축 고정
 
                 // spawnPosition에 랜덤으로 선택된 몬스터 prefab을 이용하여 생성, 회전은 기본값(없음)으로 설정
@@ -113,6 +113,11 @@ public class MonsterSpawner : MonoBehaviour
                 scoreManager.OnSkillSuccess(0, false); // 시간 초과시 콤보 초기화
             }
 
+            if(!skillSystem.IsSkillCombinationEmpty()) // 현재 캐릭터가 나와있다면
+            {
+                skillSystem.StartRemoveOneCharacter(); // 시간 초과시 현재 캐릭터 제거
+            }
+            
             RemoveCurrentMonster(); // 몬스터 제거
         }
     }
@@ -159,6 +164,11 @@ public class MonsterSpawner : MonoBehaviour
         }
 
         Destroy(currentMonster);
+        if(skillSystem.skillIcon != null)
+        {
+            Destroy(skillSystem.skillIcon); // 스킬 아이콘 제거
+        }
+        
         currentMonster = null;
 
         // 다음 몬스터 생성

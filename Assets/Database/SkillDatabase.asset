@@ -38,7 +38,7 @@ MonoBehaviour:
         \uD615\uC131\uC2DC\uCF1C \uACF5\uACA9\uD569\uB2C8\uB2E4. \uC5B4\uB450\uC6B4
         \uBC24\uC190\uB2D8, \uC554\uC804 \uD604\uC0C1\uC5D0\uAC8C \uD6A8\uACFC\uAC00
         \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0
   - combination1: QE
     combination2: EQ
@@ -47,7 +47,7 @@ MonoBehaviour:
       description: "\uB9AC\uB4EC\uAC10\uC744 \uB2F4\uC740 \uD68C\uC804 \uACF5\uACA9\uC785\uB2C8\uB2E4.
         \uBAB8\uCE58 \uBC24\uC190\uB2D8, \uD504\uB808\uC784 \uB4DC\uB78D \uD604\uC0C1\uC5D0\uAC8C
         \uD6A8\uACFC\uAC00 \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0
   - combination1: QR
     combination2: RQ
@@ -57,7 +57,7 @@ MonoBehaviour:
         \uACF5\uACA9\uC785\uB2C8\uB2E4. \uBB34\uB69D\uB69D\uD55C \uBC24\uC190\uB2D8,
         \uC2DC\uACF5\uAC04 \uC815\uC9C0 \uD604\uC0C1\uC5D0\uAC8C \uD6A8\uACFC\uAC00
         \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0
   - combination1: WE
     combination2: EW
@@ -66,7 +66,7 @@ MonoBehaviour:
       description: "\uB300\uC0C1\uC758 \uC2DC\uAC01\uACFC \uCCAD\uAC01\uC744 \uBE7C\uC557\uB294
         \uB9C8\uBC95\uC785\uB2C8\uB2E4. \uC5EC\uB7EC \uB208\uACFC \uADC0\uC758 \uBC24\uC190\uB2D8,
         \uAD49\uC74C \uD604\uC0C1\uC5D0\uAC8C \uD6A8\uACFC\uAC00 \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0
   - combination1: WR
     combination2: RW
@@ -75,7 +75,7 @@ MonoBehaviour:
       description: "\uB300\uC0C1\uC758 \uC6C0\uC9C1\uC784\uC744 \uC81C\uC5B4\uD558\uB294
         \uB9C8\uBC95\uC785\uB2C8\uB2E4. \uBC30\uC18D \uD604\uC0C1, \uC7AC\uBE60\uB978
         \uBC24\uC190\uB2D8\uC5D0\uAC8C \uD6A8\uACFC\uAC00 \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0
   - combination1: ER
     combination2: RE
@@ -84,5 +84,5 @@ MonoBehaviour:
       description: "\uB300\uC0C1\uC744 \uD604\uC2E4\uC5D0\uC11C \uD1F4\uC7A5\uC2DC\uD0A4\uB294
         \uAC15\uB825\uD55C \uB9C8\uBC95\uC785\uB2C8\uB2E4. \uD2B9\uAE09 \uBC24\uC190\uB2D8,
         \uC544\uC218\uB77C\uC7A5 \uD604\uC0C1\uC5D0\uAC8C \uD6A8\uACFC\uAC00 \uC88B\uC2B5\uB2C8\uB2E4."
-      effectPrefab: {fileID: 0}
+      effectPrefab: {fileID: 1524046610837676954, guid: 1a6aa882a91974346808dfc9f2526a74, type: 3}
       cooldown: 0

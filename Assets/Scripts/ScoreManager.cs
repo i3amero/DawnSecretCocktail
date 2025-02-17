@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgmentText;
+    public ParticleSystem myParticleSystem;
     private int score = 0;     // 현재 점수
     private int comboCount = 0; // 콤보 카운트
     private int points = 0;   // 추가할 점수
@@ -16,6 +17,11 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
+        if(myParticleSystem != null)
+        {
+            myParticleSystem.Stop();
+        }
+
         // 처음에는 점수 UI를 숨김
         if (scoreText != null && comboText != null && GameController.Instance.CurrentState == GameState.Preparation)
         {
@@ -132,6 +138,11 @@ public class ScoreManager : MonoBehaviour
         comboCount++;
         Debug.Log($"콤보 증가: {comboCount}");
         UpdateComboText(comboCount);
+
+        if(comboCount >= 2)
+        {
+            myParticleSystem.Play();
+        }
     }
 
     // 콤보 초기화
@@ -140,6 +151,8 @@ public class ScoreManager : MonoBehaviour
         comboCount = 0;
         Debug.Log("콤보 초기화");
         UpdateComboText(comboCount);
+
+        myParticleSystem.Stop();
     }
 
     // UI 업데이트
@@ -147,7 +160,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = "Score: " + score;
+            scoreText.text = "SCORE: " + score;
         }
     }
 
@@ -155,7 +168,14 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
         {
-            comboText.text = "Combo: " + comboCount;
+            if(comboCount == 0)
+            {
+                comboText.text = "";
+            }
+            else
+            {
+                comboText.text = comboCount + " COMBO";
+            }
         }
     }
 
@@ -163,7 +183,20 @@ public class ScoreManager : MonoBehaviour
     {
         if (judgmentText != null)
         {
-            judgmentText.text = judgment;
+            judgmentText.color = Color.red;
+            if (judgment == "PERFECT")
+            {
+                judgmentText.text = judgment + "!!";
+            }
+            else if (judgment == "GREAT")
+            {
+                judgmentText.text = judgment + "!";
+            }
+            else
+            {
+                judgmentText.text = judgment;
+            }
+            
             judgmentText.gameObject.SetActive(true);  // UI를 보이게 함
             StartCoroutine(HideJudgmentAfterTime(1f));  // 1초 후에 숨기기
         }

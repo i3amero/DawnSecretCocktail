@@ -44,12 +44,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void LoadSceneWithZoomOut(string sceneName)
+    public void LoadSceneWithFadeOut(string sceneName)
     {
-        StartCoroutine(ZoomOutAndLoadScene(sceneName));
+        StartCoroutine(FadeOutAndLoadScene(sceneName));
     }
 
-    private IEnumerator ZoomOutAndLoadScene(string sceneName)
+    private IEnumerator FadeOutAndLoadScene(string sceneName)
     {
         FindCanvasComponents(); // 씬 변경할 때마다 Canvas 다시 찾기
 
@@ -70,6 +70,27 @@ public class SceneController : MonoBehaviour
         }
 
         SceneManager.LoadScene(sceneName);
+
+        fadeCanvasGroup.alpha = 0f;
+
+        // 씬이 로드된 후, 새 씬의 Canvas와 CanvasGroup을 찾기 위해 잠시 대기
+        yield return null;
+        FindCanvasComponents();
+        if (fadeCanvasGroup == null || canvasTransform == null)
+        {
+            Debug.LogError("새 씬의 Canvas 또는 CanvasGroup을 찾을 수 없습니다.");
+            yield break;
+        }
+
+        // 페이드 인: 화면이 어두운(알파 1) 상태에서 서서히 투명(알파 0)으로 전환
+        timer = 0f;
+        while (timer < transitionDuration)
+        {
+            fadeCanvasGroup.alpha = (timer / transitionDuration);
+            timer += Time.deltaTime;
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f; // 완전히 투명
     }
 
     public void LoadScene(string sceneName)
@@ -83,8 +104,6 @@ public class SceneController : MonoBehaviour
             Debug.LogWarning($"'{sceneName}' 씬이 빌드 설정에 포함되지 않았습니다.");
         }
     }
-
-   
 
     private bool IsSceneInBuildSettings(string sceneName)
     {

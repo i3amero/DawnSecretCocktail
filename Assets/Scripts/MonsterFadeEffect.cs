@@ -44,7 +44,7 @@ public class MonsterFadeEffect : MonoBehaviour
     }
 
     // 페이드 아웃 (서서히 사라지기)
-    public void StartFadeOutAndDestroy()
+    public void StartFadeOut()
     {
         StartCoroutine(FadeOut());
     }

@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; } // 읽기 전용 프로퍼티
     public int Score { get; private set; } = 0; // 점수 관리(다른 Scene에서 접근 가능)
     public TMP_Text countdownText; // 카운트다운 표시 텍스트
+    public TMP_Text timeText;// 남은 시간 표시 텍스트
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
     [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
@@ -37,6 +38,10 @@ public class GameController : MonoBehaviour
 
     private void Start() // 맵 데이터 불러오기 및 게임 상태 변경
     {
+        if(timeText != null)
+        {
+            timeText.gameObject.SetActive(false); // 초기에는 UI 숨기기
+        }
         // 선택된 맵 데이터 불러오기
         int selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
         if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length) // 유효한 Map ID인지 확인
@@ -113,21 +118,36 @@ public class GameController : MonoBehaviour
     private IEnumerator GameTimer() // 게임을 지정된 시간만큼 실행
     {
         float elapsedTime = 0f; // 경과 시간
+        int lastDisplayedTime = Mathf.CeilToInt(gameDuration); // 초기 남은 시간
 
-        // 점수 & 콤보 UI 표시
+        // 점수, 콤보, 남은 시간 UI 표시
         if (scoreManager != null)
         {
             scoreManager.ShowScoreUI();
-        }
-
-        if (scoreManager != null)
-        {
             scoreManager.ShowComboUI();
         }
+
+        if (timeText != null)
+        {
+            timeText.gameObject.SetActive(true);
+        }
+
+        UpdateTimeText(lastDisplayedTime);
 
         while (elapsedTime < gameDuration) // 지정된 시간만큼 반복
         {
             elapsedTime += Time.deltaTime;
+
+            // 남은 시간을 정수로 계산 (올림하면 0초가 되기 전에 1초로 표시됨)
+            int currentRemainingTime = Mathf.CeilToInt(gameDuration - elapsedTime);
+
+            // 남은 시간이 변경되었을 때만 UI 업데이트
+            if (currentRemainingTime != lastDisplayedTime)
+            {
+                UpdateTimeText(currentRemainingTime);
+                lastDisplayedTime = currentRemainingTime;
+            }
+
             yield return null;
         }
 
@@ -149,6 +169,14 @@ public class GameController : MonoBehaviour
     public void ResetScore() // 게임 시작 시 호출, 점수 초기화
     {
         Score = 0;
+    }
+
+    private void UpdateTimeText(int time)
+    {
+        if (timeText != null)
+        {
+            timeText.text = "남은 시간: " + time + "초";
+        }
     }
 
     private void Log(string message)

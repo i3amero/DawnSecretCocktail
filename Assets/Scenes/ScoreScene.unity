@@ -355,6 +355,7 @@ MonoBehaviour:
   scoreText: {fileID: 2056623661}
   comboText: {fileID: 0}
   judgmentText: {fileID: 0}
+  myParticleSystem: {fileID: 0}
 --- !u!4 &1331233346
 Transform:
   m_ObjectHideFlags: 0
@@ -592,14 +593,14 @@ RectTransform:
   m_GameObject: {fileID: 2056623659}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.0367134, y: 4.851157, z: 3.0367134}
+  m_LocalScale: {x: 3.8466048, y: 4.7298784, z: 3.0367134}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1739528122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.6881043, y: 0.7983334}
-  m_AnchoredPosition: {x: 181, y: 111}
+  m_AnchoredPosition: {x: 455, y: 111}
   m_SizeDelta: {x: -160, y: -272}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2056623661
@@ -687,7 +688,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -180.65921, y: -5.8846207, z: 99.6002, w: -6.7307653}
+  m_margin: {x: -237.27234, y: -5.8846207, z: 99.6002, w: -6.7307653}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
