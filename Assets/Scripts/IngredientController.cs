@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// OnIngredientClicked에서 out키워드 있는 이유를 잘 모르겠습니다...?
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.VersionControl;

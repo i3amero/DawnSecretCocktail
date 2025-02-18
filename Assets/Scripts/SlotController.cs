@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿//뭐 이미 너무 온 것 같긴한데 저switch로 구현한거, 이렇게 네줄로 줄일 수 있어요.
+//for (int i = 0; i < slots.Length; i++)
+//{
+//    "ingredientSprite.name의 값을 대충 딕션너리<술 이름,설명>들의 key와 비교하여 전체 검색해서 일치하는 key가 있으면 딕셔너리.value를 message에 넣어주는 코드";
+//}
+//대신 딕셔너리에 정보를 저장해야하며, 딕셔너리는 직렬화하려면 특수 에셋이 특요함.
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -67,7 +73,6 @@ public class SlotController : MonoBehaviour
                         message = "이 재료는 특별한 설명이 없군요!";
                         break;
                 }
-
                 dialogText.text = message;
                 dialogPanel.SetActive(true);
                 CancelInvoke(nameof(HideDialog));

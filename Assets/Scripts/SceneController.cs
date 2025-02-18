@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿// FadeOutAndLoadScene가 여기 있는게 조금 찝찝하지만, 전반적으로 그래도 깔끔하고 좋네요.
+using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
 

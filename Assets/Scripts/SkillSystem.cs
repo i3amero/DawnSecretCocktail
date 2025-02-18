@@ -1,4 +1,9 @@
-﻿using System.Collections;
+﻿//캐릭터 프리팹을 그냥 쌩으로 생성하는데, 당장은 규모가 작으니 상관은 없다만,
+//나중에 사이즈 커지면 GC(가비지 컬렉션)이 발생하니, 오브젝트 풀링은 의식하시는게 좋을 듯,
+// 204,208항 코루틴안에서 코루틴 실행하려면 yield return을 사용하는게 충돌날 확률이 낮습니다.
+// ->yield return StartCoroutine(ExecuteSkillEffect(skill));이렇게 사용하시면 됩니다.
+
+using System.Collections;
 using UnityEngine;
 using UnityEngine.TextCore.Text;
 
@@ -236,7 +241,7 @@ public class SkillSystem : MonoBehaviour
     private IEnumerator ExecuteSkillCoroutine(Skill skill)
     {
         Debug.Log($"스킬 발동: {skill.name}");
-
+        
         // 현재 몬스터가 있는지 확인 후 스킬 발동 결과 처리
         if (monsterSpawner != null && monsterSpawner.GetCurrentMonster() != null)
         {

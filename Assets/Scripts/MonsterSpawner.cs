@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// GetComponent는 생각보다 비용이 크니, Start에서 한번만 찾아두고 변수에 저장해두는 것이 좋습니다.
+// 특히 이 스크립트가 캡슐화가 진행이 되다말다해서 유심히 보고 공부하는걸 추천합니다.
+using System.Collections;
 using System.Linq;
 using UnityEngine;
 

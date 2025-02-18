@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿// 스크립트 명이 다루는 범위가 약간 다른 것 같음.
+// 다루는 시간대가 여명인지, 새벽인지를 최소한 주석으로라도 명시하는 것이 좋을 것 같음.
+// PlayerPrefs를 다루는(전체 세이브,로드 기능 등등 구현) 전역 스크립트를 만드는 것도 좋을 듯함 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
