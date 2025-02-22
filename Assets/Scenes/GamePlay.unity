@@ -428,6 +428,7 @@ MonoBehaviour:
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   monsterSpawner: {fileID: 2098687025}
   scoreManager: {fileID: 662052714}
+  sceneName: ScoreScene
 --- !u!4 &414800944
 Transform:
   m_ObjectHideFlags: 0
@@ -5601,6 +5602,7 @@ MonoBehaviour:
   wPrefab: {fileID: 1524046610837676954, guid: 8f2ef029a1f436741929fcf6bbafcf1a, type: 3}
   ePrefab: {fileID: 1524046610837676954, guid: e908ee447122931488b50a787a2b94cf, type: 3}
   rPrefab: {fileID: 1524046610837676954, guid: 23b13c553189a6946be54ac77bac8844, type: 3}
+  skillIcon: {fileID: 0}
 --- !u!4 &1555226159
 Transform:
   m_ObjectHideFlags: 0

@@ -1593,6 +1593,7 @@ GameObject:
   - component: {fileID: 1623575761}
   - component: {fileID: 1623575760}
   - component: {fileID: 1623575759}
+  - component: {fileID: 1623575762}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1691,6 +1692,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &1623575762
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623575757}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1657364789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2029,7 +2042,7 @@ GameObject:
   - component: {fileID: 2025330369}
   - component: {fileID: 2025330368}
   m_Layer: 5
-  m_Name: NewGameStartButton
+  m_Name: SchoolButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2098,7 +2111,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2025330369}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2057857248}
+        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: School
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2025330369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,6 +2327,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5324433d8782bf44b882b03b9b3d74a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  transitionDuration: 0
 --- !u!4 &2057857249
 Transform:
   m_ObjectHideFlags: 0

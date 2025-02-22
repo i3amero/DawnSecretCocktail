@@ -7,8 +7,7 @@ public class SkillDatabase : ScriptableObject
     public List<Skill> skills; // 스킬 데이터 목록
     public List<SkillCombination> skillCombinations; // 키 조합 목록
 }
-//GameObject만 없었어도 구조체로 하는게 맞았습니다. 이유는 string,float,struct는 값타입이기 때문. GPT에 물어도 잘 알려주니
-//궁금하시면 검색하세요
+
 [System.Serializable]
 public class Skill
 {

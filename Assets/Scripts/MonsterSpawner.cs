@@ -1,5 +1,4 @@
-﻿// GetComponent는 생각보다 비용이 크니, Start에서 한번만 찾아두고 변수에 저장해두는 것이 좋습니다.
-// 특히 이 스크립트가 캡슐화가 진행이 되다말다해서 유심히 보고 공부하는걸 추천합니다.
+﻿// 특히 이 스크립트가 캡슐화가 진행이 되다말다해서 유심히 보고 공부하는걸 추천합니다.
 using System.Collections;
 using System.Linq;
 using UnityEngine;
@@ -119,8 +118,16 @@ public class MonsterSpawner : MonoBehaviour
             {
                 skillSystem.StartRemoveOneCharacter(); // 시간 초과시 현재 캐릭터 제거
             }
-            
-            RemoveCurrentMonster(); // 몬스터 제거
+
+            if (GameController.Instance.gameMode == GameMode.Normal) // 일반 모드일 때
+            {
+                RemoveCurrentMonster(); // 다음 현상으로 넘어가기
+            }
+            else if (GameController.Instance.gameMode == GameMode.Infinite) // 무한 모드일 때
+            {
+                yield return new WaitForSeconds(0.8f); // 게임 종료전 잠시 대기
+                GameController.Instance.ChangeState(GameState.Ended); // 게임 종료 상태로 변경
+            }
         }
     }
 

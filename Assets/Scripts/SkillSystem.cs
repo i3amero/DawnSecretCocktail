@@ -1,7 +1,5 @@
 ﻿//캐릭터 프리팹을 그냥 쌩으로 생성하는데, 당장은 규모가 작으니 상관은 없다만,
-//나중에 사이즈 커지면 GC(가비지 컬렉션)이 발생하니, 오브젝트 풀링은 의식하시는게 좋을 듯,
-// 204,208항 코루틴안에서 코루틴 실행하려면 yield return을 사용하는게 충돌날 확률이 낮습니다.
-// ->yield return StartCoroutine(ExecuteSkillEffect(skill));이렇게 사용하시면 됩니다.
+//나중에 사이즈 커지면 GC(가비지 컬렉션)이 발생하니, 오브젝트 풀링은 의식하시는게 좋을 듯
 
 using System.Collections;
 using UnityEngine;
@@ -304,7 +302,15 @@ public class SkillSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
 
-                monsterSpawner.RemoveCurrentMonster(); // 다음 현상으로 넘어가기
+                if(GameController.Instance.gameMode == GameMode.Normal) // 일반 모드일 때
+                {
+                    monsterSpawner.RemoveCurrentMonster(); // 다음 현상으로 넘어가기
+                }
+                else if(GameController.Instance.gameMode == GameMode.Infinite) // 무한 모드일 때
+                {
+                    yield return new WaitForSeconds(0.8f); // 게임 종료전 잠시 대기
+                    GameController.Instance.ChangeState(GameState.Ended); // 게임 종료 상태로 변경
+                }
             }
         }
         else

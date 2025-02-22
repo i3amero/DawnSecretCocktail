@@ -1,9 +1,14 @@
-﻿// 스크립트 명이 다루는 범위가 약간 다른 것 같음.
-// 다루는 시간대가 여명인지, 새벽인지를 최소한 주석으로라도 명시하는 것이 좋을 것 같음.
-// PlayerPrefs를 다루는(전체 세이브,로드 기능 등등 구현) 전역 스크립트를 만드는 것도 좋을 듯함 
+﻿// PlayerPrefs를 다루는(전체 세이브,로드 기능 등등 구현) 전역 스크립트를 만드는 것도 좋을 듯함 
 using System.Collections;
 using TMPro;
 using UnityEngine;
+
+public enum GameMode
+{
+    Normal,
+    Tutorial,
+    Infinite
+}
 
 public enum GameState
 {
@@ -12,6 +17,7 @@ public enum GameState
     Ended
 }
 
+// 새벽 컨텐츠 게임 진행 컨트롤러 입니다.
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; } // 읽기 전용 프로퍼티
@@ -21,10 +27,13 @@ public class GameController : MonoBehaviour
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
     [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
+    private int selectedMapID; // 선택된 맵 ID
 
     public MapDatabase mapDatabase; // MapDatabase 연결
     public MonsterSpawner monsterSpawner; // MonsterSpawner 연결
     public ScoreManager scoreManager; // ScoreManager 연결
+    public string sceneName; // 게임이 종료된 후 이동할 씬 이름
+    public GameMode gameMode; // 게임 모드 설정
 
     public GameState CurrentState { get; private set; } = GameState.Preparation; // 변수 초기화, 다른 스크립트에서 읽기 가능
 
@@ -46,7 +55,15 @@ public class GameController : MonoBehaviour
             timeText.gameObject.SetActive(false); // 초기에는 UI 숨기기
         }
         // 선택된 맵 데이터 불러오기
-        int selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
+        if(gameMode == GameMode.Normal) // 일반 모드일 때
+        {
+            selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
+        }
+        else if(gameMode == GameMode.Infinite)// 무한 모드일 때
+        {
+            selectedMapID = 2; // 무한 모드는 3번 맵으로 고정
+        }
+        
         if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length) // 유효한 Map ID인지 확인
         {
             MapDatabase.MapData selectedMap = mapDatabase.maps[selectedMapID]; // 선택된 맵 데이터 가져오기
@@ -76,7 +93,7 @@ public class GameController : MonoBehaviour
         ChangeState(GameState.Preparation); // 게임 준비 상태로 변경
     }
 
-    private void ChangeState(GameState newState) // 게임 상태를 변경하고 그에 맞는 로직 실행
+    public void ChangeState(GameState newState) // 게임 상태를 변경하고 그에 맞는 로직 실행
     {
         CurrentState = newState;
 
@@ -88,13 +105,26 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.Running:
                 Log("게임 실행 상태");
-                StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
-                StartCoroutine(monsterSpawner.SpawnMonster()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
+                if (gameMode == GameMode.Normal) // 일반 모드일 때
+                {
+                    StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
+                    StartCoroutine(monsterSpawner.SpawnMonster()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
+                }
+                else if(gameMode == GameMode.Infinite) // 무한 모드일 때
+                {
+                    // 점수, 콤보 UI 표시
+                    if (scoreManager != null)
+                    {
+                        scoreManager.ShowUI(scoreManager.scoreText);
+                        scoreManager.ShowUI(scoreManager.comboText);
+                    }
+                    StartCoroutine(monsterSpawner.SpawnMonster()); // 무한 모드는 타이머가 없음(fail 되면 바로 종료)
+                }
                 break;
             case GameState.Ended:
                 monsterSpawner.RemoveCurrentMonster(); // 게임 종료 시 현재 몬스터 제거
                 Log("게임 종료 상태");
-                GoToScoreScreen(); // 게임 종료 시 점수 계산 화면으로 이동
+                GoToScoreScreen(sceneName); // 게임 종료 시 점수 계산 화면으로 이동
                 break;
         }
     }
@@ -126,8 +156,8 @@ public class GameController : MonoBehaviour
         // 점수, 콤보, 남은 시간 UI 표시
         if (scoreManager != null)
         {
-            scoreManager.ShowScoreUI();
-            scoreManager.ShowComboUI();
+            scoreManager.ShowUI(scoreManager.scoreText);
+            scoreManager.ShowUI(scoreManager.comboText);
         }
 
         if (timeText != null)
@@ -157,10 +187,10 @@ public class GameController : MonoBehaviour
         ChangeState(GameState.Ended); // 지정된 시간이 다 지나면 게임 종료 상태로 변경
     }
 
-    private void GoToScoreScreen()
+    private void GoToScoreScreen(string sceneName)
     {
         Log("점수 계산 화면으로 이동");
-        SceneController.Instance.LoadScene("ScoreScene");
+        SceneController.Instance.LoadScene(sceneName);
     }
 
     public void AddScore(int points) // ScoreManager에서 호출, 점수 추가

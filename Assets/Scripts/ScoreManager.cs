@@ -12,6 +12,8 @@ public class ScoreManager : MonoBehaviour
     private int comboCount = 0; // 콤보 카운트
     private int points = 0;   // 추가할 점수
     private float multiplier; // 배율
+    private int selectedMapID; // 선택된 맵 ID
+    private float mapMultiplier; // 맵 배율
 
     private const float BASE_SCORE = 100;
 
@@ -20,6 +22,28 @@ public class ScoreManager : MonoBehaviour
         if(myParticleSystem != null)
         {
             myParticleSystem.Stop();
+        }
+
+        // 선택된 맵 데이터 불러오기
+        if (GameController.Instance.gameMode == GameMode.Normal) // 일반 모드일 때
+        {
+            selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
+            if(selectedMapID == 2)
+            {
+                mapMultiplier = 1.5f;
+            }
+            else if(selectedMapID == 0 || selectedMapID == 1)
+            {
+                mapMultiplier = 1.0f;
+            }
+            else
+            {
+                Debug.LogError("선택된 맵 ID를 찾을 수 없습니다.");
+            }
+        }
+        else if (GameController.Instance.gameMode == GameMode.Infinite)// 무한 모드일 때
+        {
+            mapMultiplier = 1.0f; // 무한 모드는 1배율로 고정
         }
 
         // 처음에는 점수 UI를 숨김
@@ -41,20 +65,12 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    // 게임이 시작될 때 점수 UI 표시 (GameController에서 호출)
-    public void ShowScoreUI()
+    // 게임이 시작될 때 숨겨놨던 UI 표시 (GameController에서 호출)
+    public void ShowUI<T>(T uiElement) where T : Component
     {
-        if (scoreText != null)
+        if (uiElement != null)
         {
-            scoreText.gameObject.SetActive(true);
-        }
-    }
-
-    public void ShowComboUI()
-    {
-        if (comboText != null)
-        {
-            comboText.gameObject.SetActive(true);
+            uiElement.gameObject.SetActive(true);
         }
     }
 
@@ -93,16 +109,16 @@ public class ScoreManager : MonoBehaviour
         if (isSuccess) // 스킬 성공
         {
             multiplier = GetJudgmentMultiplier(reactionTime);
-            if (multiplier == 0.5f) // BAD일때
+            if (Mathf.Approximately(multiplier, 0.5f)) // BAD일때
             {
                 ResetCombo();
-                points = Mathf.RoundToInt(BASE_SCORE * multiplier); // 추가될 점수 계산, 반올림 처리
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier * mapMultiplier); // 추가될 점수 계산, 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
             else // GOOD, GREAT, PERFECT일때
             {
                 IncreaseCombo();
-                points = Mathf.RoundToInt(BASE_SCORE * multiplier * (1.00f + comboCount * 0.01f)); // 추가될 점수 계산, 반올림 처리
+                points = Mathf.RoundToInt(BASE_SCORE * multiplier * (1.00f + comboCount * 0.01f) * mapMultiplier); // 추가될 점수 계산, 반올림 처리
                 AddScore(points); // 임시 점수 추가
             }
         }
