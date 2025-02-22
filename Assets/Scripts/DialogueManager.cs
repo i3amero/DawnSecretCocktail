@@ -7,12 +7,9 @@ public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;
     public TMP_Text dialogueText;
-    public Image characterImage;
-    public Sprite smileSprite;
-    public Sprite neutralSprite;
-    public Sprite happySprite;
     public CSVReader csvReader;
     public NameInputManager nameInputManager;
+    public Image illustImage;
 
     private int currentIndex = 1;
 
@@ -22,6 +19,7 @@ public class DialogueManager : MonoBehaviour
         csvReader.LoadCSV();
         ShowDialogue();
     }
+
     public void ShowDialogue()
     {
         if (csvReader == null)
@@ -53,40 +51,39 @@ public class DialogueManager : MonoBehaviour
 
         // 플레이어 이름 치환
         string playerName = string.IsNullOrEmpty(PlayerData.Instance.playerName) ? "주인공" : PlayerData.Instance.playerName;
-        nameText.text = entry.character;
-        string replacedDialogue = entry.dialogue.Replace("{Player}", playerName);
-        string replaceName = entry.character.Replace("{Player}", playerName);
-        dialogueText.text = replacedDialogue;
-        nameText.text = replaceName;
+        nameText.text = entry.character.Replace("{Player}", playerName);
+        dialogueText.text = entry.dialogue.Replace("{Player}", playerName);
 
-        // 표정 변경
-        switch (entry.expression)
+        // 스프라이트 불러오기 및 적용
+        if (!string.IsNullOrEmpty(entry.illust))
         {
-            case "Smile":
-                characterImage.sprite = smileSprite;
-                break;
-            case "Neutral":
-                characterImage.sprite = neutralSprite;
-                break;
-            case "Happy":
-                characterImage.sprite = happySprite;
-                break;
-            default:
-                Debug.LogWarning($"알 수 없는 표정: {entry.expression}");
-                break;
+            Sprite newSprite = Resources.Load<Sprite>("Illust/" + entry.illust);
+            if (newSprite != null)
+            {
+                illustImage.sprite = newSprite;
+                illustImage.gameObject.SetActive(true); // 이미지 활성화
+            }
+            else
+            {
+                Debug.LogWarning($"스프라이트 '{entry.illust}'을(를) 찾을 수 없습니다.");
+                illustImage.gameObject.SetActive(false); // 스프라이트가 없으면 이미지 숨김
+            }
         }
-
-        void LoadNextScene()
+        else
         {
-            string nextSceneName = "Lobby";
-            SceneManager.LoadScene(nextSceneName);
+            illustImage.gameObject.SetActive(false); // illust 값이 없으면 이미지 숨김
         }
-
     }
+
     public void ContinueDialogue()
     {
         currentIndex++;
         ShowDialogue();
     }
 
+    void LoadNextScene()
+    {
+        string nextSceneName = "Lobby";
+        SceneManager.LoadScene(nextSceneName);
+    }
 }

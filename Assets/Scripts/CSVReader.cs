@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+
 public class CSVReader : MonoBehaviour
 {
     public TextAsset csvFile; // 유니티에서 CSV 파일을 드래그해서 연결
@@ -12,7 +14,7 @@ public class CSVReader : MonoBehaviour
     {
         public string character;
         public string dialogue;
-        public string expression;
+        public string illust;
     }
 
     void Start()
@@ -46,7 +48,7 @@ public class CSVReader : MonoBehaviour
             {
                 character = parts[0].Trim().Trim('"'),
                 dialogue = parts[1].Trim().Trim('"'),
-                expression = parts[2].Trim().Trim('"')
+                illust = parts[2].Trim().Trim('"')
             };
 
             dialogueList.Add(entry);
