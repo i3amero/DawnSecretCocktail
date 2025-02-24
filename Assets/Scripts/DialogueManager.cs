@@ -2,7 +2,11 @@
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+/// <summary>
+/// LoadNextScene()같이 같은 이름의 메소드들이 너무 많아요... 나중에 꼬일 수 있으니까, 이름을 바꿔주는 게 좋을 것 같아요.
+/// ShowDialogue()에 너무 많은 기능들이 있어요. 이 기능들을 다른 메소드로 분리해주는 게 좋을 것 같아요.
+/// 현준이도 저정도 분량이면 슬슬 뭐가 뭔지 헷갈릴 것 같은 뎀?
+/// </summary>
 public class DialogueManager : MonoBehaviour
 {
     public TMP_Text nameText;

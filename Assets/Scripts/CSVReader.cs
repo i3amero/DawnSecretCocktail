@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// 30,31항 참조
+/// 솔직히 좀 위험한 방식으로 split중이긴 한데, 마땅한 대책이 없어서 패스
+/// </summary>
 [System.Serializable]
 
 public class CSVReader : MonoBehaviour
@@ -27,6 +30,8 @@ public class CSVReader : MonoBehaviour
         if (csvFile == null)
         {
             Debug.LogError("CSV 파일이 연결되지 않았습니다.");
+            //이런 식으로 Resources 폴더에 있는 파일을 불러올 수도 있습니다.
+            //csvFile = Resources.Load<TextAsset>("csv파일 이름");
             return;
         }
 
