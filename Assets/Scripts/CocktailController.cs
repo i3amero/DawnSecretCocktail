@@ -170,6 +170,6 @@ public class CocktailControllerer : MonoBehaviour
         }
         //CocktailSaver.Instance.SetCocktailImage(cocktailImage.sprite);
 
-        SceneManager.LoadScene("CharacterScene");
+        SceneManager.LoadScene("CocktailGive");
     }
 }

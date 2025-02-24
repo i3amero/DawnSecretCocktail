@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/CharacterScene.unity
     guid: e733f3fb7446d964da9b25ab38da6934
   - enabled: 1
@@ -24,6 +24,15 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 14d73c6a7608f244497433dff2563ba1
   - enabled: 1
+<<<<<<< Updated upstream
+=======
+    path: Assets/Scenes/ScenarioScene.unity
+    guid: 3f01ee280f0d5334a840877d9978c4f0
+  - enabled: 1
+    path: Assets/Scenes/CocktailGive.unity
+    guid: 440dc9f778f174247ac40ec9d824ece3
+  - enabled: 1
+>>>>>>> Stashed changes
     path: Assets/Scenes/CocktailMain.unity
     guid: 92f8c8c9b09e56d46ba509228fbca757
   m_configObjects: {}
