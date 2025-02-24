@@ -1,5 +1,7 @@
-using UnityEngine;
-
+﻿using UnityEngine;
+/// <summary>
+/// 깔끔하네용
+/// </summary>
 // ** 게임 실행 도중 스킬을 입력 받고 스폰된 몬스터 적중 시 데이터를 처리하는 클래스 **
 public class SkillSystem : MonoBehaviour
 {

@@ -4,13 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
-
+/// <summary>
+/// 정보와 관련된 변수들은 클래스에 할당해서 캡슐화 하는게 좋을 거 같습니다.
+/// OnCharacterButtonClicked()/ConfirmGiveCocktail()=>이름에 비해 역할이 너무 많아요. 이름을 적절히 바꾸거나, 역할을 나눠주는게 좋을 거 같아요.
+/// LoadNextScene()=>역할이 상당히 구체적이라, LoadCocktailMainScene()으로 바꾸는게 좋을 거 같아요. 이름은 항상 직관적으로!
+/// </summary>
+//아래 클래스(경우에 따라선 struct)에 정보 저장해서 캡슐화해 관리하기! 전역이면 그냥 static쓰면 됩니다.
+public class CharacterInfo
+{
+    //기타 정보들...
+}
 public class GiveCharacter : MonoBehaviour
 {
     public Sprite characterSprite;
     public GameObject popupPanel;
     public TMP_Text popupText;
-    public TMP_Text resultText; 
+    public TMP_Text resultText;
     public Button confirmButton;
     public Button cancelButton;
     public Button closeButton;

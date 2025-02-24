@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// GetScenarioName랑 GetCleanCharacterName왜 여기도 있나요...? 불러오는게 종속성이 높아져서 찝집하면 
+/// GetScenarioName랑 GetCleanCharacterName를 포괄하는 클래스를 만들어서 부모 클래스로 만드는 방법도 있을 것 같아요.
+/// </summary>
 public class ScenarioController : MonoBehaviour
 {
     public static ScenarioController Instance { get; private set; }

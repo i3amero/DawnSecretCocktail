@@ -1,5 +1,8 @@
-using UnityEngine;
-
+﻿using UnityEngine;
+/// <summary>
+/// 마찬가지로 PlayerPrefs를 써서 정보를 저장하는 방식이라 씬이 넘어가도 정보가 유지가 되는거지, PlayerPrefs안썼으면
+/// 정보날라갔어요~
+/// </summary>
 // ** 맵의 정보를 저장하고 게임 씬(GamePlay)으로 전환 **
 public class MapSelector : MonoBehaviour
 {
