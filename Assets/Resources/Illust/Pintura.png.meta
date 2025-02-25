@@ -116,19 +116,19 @@ TextureImporter:
       name: Pintura_0
       rect:
         serializedVersion: 2
-        x: 40
+        x: 39
         y: 0
-        width: 1818
-        height: 1892
+        width: 1821
+        height: 1893
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2c28c5e019ef9144d9e02a0be1f385b0
-      internalID: -821583692
+      spriteID: 18ff70bf35b9f8970800000000000000
+      internalID: 8759390585255100289
       vertices: []
       indices: 
       edges: []
@@ -136,15 +136,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a57bc0429d9623a44aa8018d4bd3ad6f
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Pintura_0: -821583692
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

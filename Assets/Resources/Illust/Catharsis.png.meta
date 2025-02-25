@@ -116,12 +116,12 @@ TextureImporter:
       name: Catharsis_0
       rect:
         serializedVersion: 2
-        x: 158
+        x: 157
         y: 0
-        width: 1708
-        height: 1910
+        width: 1710
+        height: 1911
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,15 +136,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 3bd1a6d7a15b627499748c6343ffb152
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Catharsis_0: -9218878795619520887
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

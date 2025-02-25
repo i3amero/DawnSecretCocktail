@@ -116,12 +116,12 @@ TextureImporter:
       name: Resona_0
       rect:
         serializedVersion: 2
-        x: 134
+        x: 132
         y: 0
-        width: 1768
-        height: 1886
+        width: 1771
+        height: 1888
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,15 +136,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 20b7894de73df664696a4ae03026d288
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Resona_0: -8180422212020808094
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
