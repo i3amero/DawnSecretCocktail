@@ -65,6 +65,24 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
+    public void ResetUIForNewGame()
+    {
+        // 현재 게임 상태가 Preparation이라면 UI를 숨긴다.
+        if (GameController.Instance != null &&
+            GameController.Instance.CurrentState == GameState.Preparation)
+        {
+            if (scoreText != null) scoreText.gameObject.SetActive(false);
+            if (comboText != null) comboText.gameObject.SetActive(false);
+            if (judgmentText != null) judgmentText.gameObject.SetActive(false);
+        }
+
+        // 점수/콤보 등 내부 상태도 재설정
+        score = 0;
+        comboCount = 0;
+        UpdateScoreText(score);
+        UpdateComboText(comboCount);
+    }
+
     // 게임이 시작될 때 숨겨놨던 UI 표시 (GameController에서 호출)
     public void ShowUI<T>(T uiElement) where T : Component
     {

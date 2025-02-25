@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 746872762}
   - component: {fileID: 746872761}
   - component: {fileID: 746872760}
+  - component: {fileID: 746872763}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -542,10 +543,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1933526700}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadSceneWithFadeOut
-        m_Mode: 5
+      - m_Target: {fileID: 746872763}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -592,6 +593,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746872758}
   m_CullTransparentMesh: 1
+--- !u!114 &746872763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746872758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: Lobby
 --- !u!1 &913325488
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +618,7 @@ GameObject:
   - component: {fileID: 913325492}
   - component: {fileID: 913325491}
   - component: {fileID: 913325490}
+  - component: {fileID: 913325493}
   m_Layer: 5
   m_Name: InfiniteModeButton
   m_TagString: Untagged
@@ -675,10 +690,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1933526700}
-        m_TargetAssemblyTypeName: SceneController, Assembly-CSharp
-        m_MethodName: LoadSceneWithFadeOut
-        m_Mode: 5
+      - m_Target: {fileID: 913325493}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnGameStartButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -725,6 +740,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 913325488}
   m_CullTransparentMesh: 1
+--- !u!114 &913325493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 913325488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: InfiniteGamePlay
 --- !u!1 &1261659854
 GameObject:
   m_ObjectHideFlags: 0

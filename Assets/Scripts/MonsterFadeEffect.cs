@@ -22,6 +22,7 @@ public class MonsterFadeEffect : MonoBehaviour
     public IEnumerator FadeIn()
     {
         float timer = 0;
+        if (spriteRenderer == null) yield break;  // 혹시 모를 null 체크
         Color color = spriteRenderer.color;
         color.a = 0;
         spriteRenderer.color = color;
@@ -31,6 +32,10 @@ public class MonsterFadeEffect : MonoBehaviour
 
         while (timer < fadeDuration)
         {
+            // ** 매 프레임마다 null 체크 **
+            if (this == null || spriteRenderer == null)
+                yield break;
+
             color.a = Mathf.Lerp(0, 1, timer / fadeDuration);
             spriteRenderer.color = color;
             transform.position = Vector3.Lerp(startPosition, targetPosition, timer / fadeDuration); // 위로 이동
@@ -38,9 +43,13 @@ public class MonsterFadeEffect : MonoBehaviour
             yield return null;
         }
 
-        color.a = 1;
-        spriteRenderer.color = color;
-        transform.position = targetPosition; // 정확한 위치로 설정
+        if (spriteRenderer != null)
+        {
+            color.a = 1;
+            spriteRenderer.color = color;
+            transform.position = targetPosition; // 정확한 위치로 설정
+        }
+            
     }
 
     // 페이드 아웃 (서서히 사라지기)
@@ -52,6 +61,7 @@ public class MonsterFadeEffect : MonoBehaviour
     public IEnumerator FadeOut()
     {
         float timer = 0;
+        if (spriteRenderer == null) yield break;  // 혹시 모를 null 체크
         Color color = spriteRenderer.color;
         color.a = 1;
         spriteRenderer.color = color;
@@ -62,6 +72,10 @@ public class MonsterFadeEffect : MonoBehaviour
 
         while (timer < fadeDuration)
         {
+            // ** 매 프레임마다 null 체크 **
+            if (this == null || spriteRenderer == null)
+                yield break;
+
             color.a = Mathf.Lerp(1, 0, timer / fadeDuration);
             spriteRenderer.color = color;
             transform.position = Vector3.Lerp(startPosition, targetPosition, timer / fadeDuration); // 아래로 이동
@@ -69,8 +83,12 @@ public class MonsterFadeEffect : MonoBehaviour
             yield return null;
         }
 
-        color.a = 0;
-        spriteRenderer.color = color;
-        transform.position = targetPosition; // 정확한 위치 설정
+        if (spriteRenderer != null)
+        {
+            color.a = 0;
+            spriteRenderer.color = color;
+            transform.position = targetPosition; // 정확한 위치 설정
+        }
+         
     }
 }

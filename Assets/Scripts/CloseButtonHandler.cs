@@ -6,15 +6,37 @@ using UnityEngine;
 // ** 종료 버튼을 클릭했을 때 데이터 저장같은 추가적인 기능 확장을 위해 따로 만든 스크립트 **
 public class CloseButtonHandler: MonoBehaviour
 {
+    public string targetScene; // 넘어갈 씬 이름
     public void OnCloseButtonClick()
     {
-        string targetScene = "CocktailScene"; // 넘어갈 씬 이름
-
-        Debug.Log("Close 버튼이 클릭되었습니다.");
+        Debug.Log("버튼이 클릭되었습니다.");
 
         if (SceneController.Instance != null)
         {
-            SceneController.Instance.LoadScene(targetScene);
+            SceneController.Instance.LoadSceneWithFadeOut(targetScene);
+        }
+        else
+        {
+            Debug.LogError("SceneController Instance is null. Check if SceneController exists in the scene.");
+        }
+    }
+
+    public void OnGameStartButtonClick() // 게임을 재시작하는 버튼을 누를 때 실행되는 함수
+    {
+        Debug.Log("버튼이 클릭되었습니다.");
+
+        if (SceneController.Instance != null)
+        {
+            SceneController.Instance.LoadSceneWithFadeOut(targetScene, () =>
+            {
+                // 페이드 인까지 끝난 뒤 실행할 로직
+
+                // 새 씬의 UI를 찾기
+                GameController.Instance.FindNewSceneUI();
+
+                
+                GameController.Instance.InitializeGame();
+            });
         }
         else
         {

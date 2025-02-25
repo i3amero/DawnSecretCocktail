@@ -44,12 +44,12 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void LoadSceneWithFadeOut(string sceneName)
+    public void LoadSceneWithFadeOut(string sceneName, System.Action onSceneLoaded = null)
     {
-        StartCoroutine(FadeOutAndLoadScene(sceneName));
+        StartCoroutine(FadeOutAndLoadScene(sceneName, onSceneLoaded));
     }
 
-    private IEnumerator FadeOutAndLoadScene(string sceneName)
+    private IEnumerator FadeOutAndLoadScene(string sceneName, System.Action onSceneLoaded)
     {
         FindCanvasComponents(); // 씬 변경할 때마다 Canvas 다시 찾기
 
@@ -75,10 +75,12 @@ public class SceneController : MonoBehaviour
 
         // 씬이 로드된 후, 새 씬의 Canvas와 CanvasGroup을 찾기 위해 잠시 대기
         yield return null;
+
         FindCanvasComponents();
         if (fadeCanvasGroup == null || canvasTransform == null)
         {
-            Debug.LogError("새 씬의 Canvas 또는 CanvasGroup을 찾을 수 없습니다.");
+            Debug.Log("새 씬에서 Canvas 또는 CanvasGroup을 찾지 못했습니다. 페이드 인 효과 없이 씬 전환 완료합니다.");
+            onSceneLoaded?.Invoke();
             yield break;
         }
 
@@ -91,6 +93,10 @@ public class SceneController : MonoBehaviour
             yield return null;
         }
         fadeCanvasGroup.alpha = 1f; // 완전히 투명
+
+        // **씬 전환 + 페이드 인이 모두 끝난 시점**  
+        // 여기서 콜백을 호출
+        onSceneLoaded?.Invoke();
     }
 
     public void LoadScene(string sceneName)

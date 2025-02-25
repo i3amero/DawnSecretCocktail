@@ -22,6 +22,7 @@ public class SkillSystem : MonoBehaviour
     private GameObject Character1; // 생성된 캐릭터
     private GameObject Character2; // 생성된 캐릭터
     public GameObject skillIcon;
+    private bool isAnimating = false;
 
     void Start() // 연결을 제대로 했는지 확인
     {
@@ -46,6 +47,11 @@ public class SkillSystem : MonoBehaviour
 
     private void HandleInput()
     {
+        if (isAnimating) // 캐릭터가 페이드 인/아웃 시 입력 무시
+        {
+            return;
+        }
+
         if (Input.anyKeyDown)
         {
             if (!monsterSpawner.isMonsterReady) // 몬스터가 준비되지 않았다면 입력 무시
@@ -110,15 +116,17 @@ public class SkillSystem : MonoBehaviour
     // Q, W, E, R 키를 누를 때마다 해당 프리팹을 생성
     private IEnumerator ShowCharacterPrefab(GameObject prefab)
     {
+        isAnimating = true; // 애니메이션 시작
+
         if (prefab == null)
         {
             Debug.LogError("프리팹이 없습니다.");
             yield break;
         }
 
-        float scaleFactor = 0.9f;     // 전체 크기 조절
+        float scaleFactor = 0.8f;     // 전체 크기 조절
         float xscaleFactor = 0.3f;    // 가로 비율
-        float yscaleFactor = 0.35f;   // 세로 비율
+        float yscaleFactor = 0.3f;   // 세로 비율
 
         if (Character1 == null)
         {
@@ -165,6 +173,8 @@ public class SkillSystem : MonoBehaviour
             StartCoroutine(RemoveCharacters());
             CheckSkillCombination();
         }
+
+        isAnimating = false; // 애니메이션 끝
     }
 
     public void StartRemoveOneCharacter()
@@ -174,8 +184,18 @@ public class SkillSystem : MonoBehaviour
 
     private IEnumerator RemoveOneCharacter()
     {
+        isAnimating = true; // 애니메이션 시작
+
+        // 먼저 Character1이 아직 존재하는지 확인
+        if (Character1 == null)
+        {
+            Debug.LogWarning("Character1이 이미 파괴되었습니다.");
+            isAnimating = false;
+            yield break;
+        }
+
         MonsterFadeEffect fadeEffect1 = Character1.GetComponent<MonsterFadeEffect>();
-        // 페이드 효과 코루틴을 동시에 시작
+        // 페이드 효과 코루틴을 시작
         Coroutine fade1 = null;
 
         if (fadeEffect1 != null)
@@ -187,14 +207,39 @@ public class SkillSystem : MonoBehaviour
         {
             yield return fade1;
         }
-        
-        Destroy(Character1);
+
+        // 페이드 아웃 후 다시 한 번 null 체크
+        if (Character1 != null)
+        {
+            Destroy(Character1);
+        }
+
+        isAnimating = false; // 애니메이션 끝
     }
 
     private IEnumerator RemoveCharacters()
     {
-        MonsterFadeEffect fadeEffect1 = Character1.GetComponent<MonsterFadeEffect>();
-        MonsterFadeEffect fadeEffect2 = Character2.GetComponent<MonsterFadeEffect>();
+        isAnimating = true; // 애니메이션 시작
+
+        // 둘 다 null이면 바로 종료
+        if (Character1 == null && Character2 == null)
+        {
+            isAnimating = false;
+            yield break;
+        }
+
+        MonsterFadeEffect fadeEffect1 = null;
+        MonsterFadeEffect fadeEffect2 = null;
+
+        if (Character1 != null)
+        {
+            fadeEffect1 = Character1.GetComponent<MonsterFadeEffect>();
+        }
+        if (Character2 != null)
+        {
+            fadeEffect2 = Character2.GetComponent<MonsterFadeEffect>();
+        }
+
 
         // 페이드 효과 코루틴을 동시에 시작
         Coroutine fade1 = null;
@@ -219,8 +264,10 @@ public class SkillSystem : MonoBehaviour
             yield return fade2;
         }
 
-        Destroy(Character1);
-        Destroy(Character2);
+        if (Character1 != null) Destroy(Character1);
+        if (Character2 != null) Destroy(Character2);
+
+        isAnimating = false; // 애니메이션 끝
     }
 
     private void CheckSkillCombination()
@@ -321,6 +368,7 @@ public class SkillSystem : MonoBehaviour
 
     private IEnumerator SpawnSkillIconCoroutine(GameObject effectPrefab)
     {
+
         // ScreenToWorldPoint를 사용할 때, z값은 카메라와의 거리입니다.
         // 카메라가 z=-10에 있다면, 10을 넣어 월드 좌표로 변환한 뒤 z값을 0으로 고정합니다.
         Vector3 screenPos = new Vector3(Screen.width / 2, Screen.height * 2 / 5, 0);

@@ -50,20 +50,72 @@ public class GameController : MonoBehaviour
 
     private void Start() // 맵 데이터 불러오기 및 게임 상태 변경
     {
-        if(timeText != null)
+        InitializeGame();
+    }
+
+    public void FindNewSceneUI() // 게임이 재시작 될 때 UI 찾기
+    {
+        // 1. 몬스터 스포너 찾기
+        MonsterSpawner foundSpawner = Object.FindFirstObjectByType<MonsterSpawner>();
+        if (foundSpawner != null)
+        {
+            monsterSpawner = foundSpawner;
+        }
+        else
+        {
+            Debug.LogWarning("[GameController] MonsterSpawner를 찾지 못했습니다.");
+        }
+
+        // 2. 스코어 매니저 찾기
+        ScoreManager foundScoreManager = Object.FindFirstObjectByType<ScoreManager>();
+        if (foundScoreManager != null)
+        {
+            scoreManager = foundScoreManager;
+        }
+        else
+        {
+            Debug.LogWarning("[GameController] ScoreManager를 찾지 못했습니다.");
+        }
+
+        // 3. 카운트다운 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
+        GameObject countdownObj = GameObject.Find("CountdownText");
+        if (countdownObj != null)
+        {
+            countdownText = countdownObj.GetComponent<TMP_Text>();
+        }
+        else
+        {
+            Debug.LogWarning("[GameController] CountdownText 오브젝트를 찾지 못했습니다.");
+        }
+
+        // 4. 남은 시간 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
+        GameObject timeObj = GameObject.Find("TimeText");
+        if (timeObj != null)
+        {
+            timeText = timeObj.GetComponent<TMP_Text>();
+        }
+        else
+        {
+            Debug.LogWarning("[GameController] TimeText 오브젝트를 찾지 못했습니다.");
+        }
+    }
+
+    public void InitializeGame() // 게임을 다시 시작 하기 위한 함수
+    {
+        if (timeText != null)
         {
             timeText.gameObject.SetActive(false); // 초기에는 UI 숨기기
         }
         // 선택된 맵 데이터 불러오기
-        if(gameMode == GameMode.Normal) // 일반 모드일 때
+        if (gameMode == GameMode.Normal) // 일반 모드일 때
         {
             selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
         }
-        else if(gameMode == GameMode.Infinite)// 무한 모드일 때
+        else if (gameMode == GameMode.Infinite)// 무한 모드일 때
         {
             selectedMapID = 2; // 무한 모드는 3번 맵으로 고정
         }
-        
+
         if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length) // 유효한 Map ID인지 확인
         {
             MapDatabase.MapData selectedMap = mapDatabase.maps[selectedMapID]; // 선택된 맵 데이터 가져오기
@@ -90,7 +142,16 @@ public class GameController : MonoBehaviour
             Debug.LogError("유효하지 않은 Map ID입니다!");
         }
 
+       
         ChangeState(GameState.Preparation); // 게임 준비 상태로 변경
+
+        // ScoreManager도 새 게임에 맞춰 UI를 리셋
+        if (scoreManager != null)
+        {
+            scoreManager.ResetUIForNewGame();
+        }
+
+
     }
 
     public void ChangeState(GameState newState) // 게임 상태를 변경하고 그에 맞는 로직 실행
