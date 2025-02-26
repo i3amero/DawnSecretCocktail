@@ -41,5 +41,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InfiniteResultScene.unity
     guid: 01cf3c12b4786644cb278f9987b1febd
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 652eef561c294464c8defe44336234db
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

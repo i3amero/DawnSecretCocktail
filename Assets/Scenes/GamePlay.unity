@@ -422,7 +422,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownText: {fileID: 149762909}
   timeText: {fileID: 646354318}
-  gameDuration: 30
+  gameDuration: 60
   startDelay: 3
   spawnInterval: 10
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
