@@ -2,6 +2,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -24,6 +25,7 @@ public class GameController : MonoBehaviour
     public int Score { get; private set; } = 0; // 점수 관리(다른 Scene에서 접근 가능)
     public TMP_Text countdownText; // 카운트다운 표시 텍스트
     public TMP_Text timeText;// 남은 시간 표시 텍스트
+
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
     [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
@@ -32,6 +34,7 @@ public class GameController : MonoBehaviour
     public MapDatabase mapDatabase; // MapDatabase 연결
     public MonsterSpawner monsterSpawner; // MonsterSpawner 연결
     public ScoreManager scoreManager; // ScoreManager 연결
+    public TutorialDialogueManager tutorialDialogueManager; // TutorialDialogueManager 연결
     public string sceneName; // 게임이 종료된 후 이동할 씬 이름
     public GameMode gameMode; // 게임 모드 설정
 
@@ -77,7 +80,21 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] ScoreManager를 찾지 못했습니다.");
         }
 
-        // 3. 카운트다운 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
+        // 3. 다이얼로그 매니저 찾기
+        if (gameMode == GameMode.Tutorial)
+        {
+            TutorialDialogueManager foundTutorialDialogueManager = Object.FindFirstObjectByType<TutorialDialogueManager>();
+            if (foundTutorialDialogueManager != null)
+            {
+                tutorialDialogueManager = foundTutorialDialogueManager;
+            }
+            else
+            {
+                Debug.LogWarning("[GameController] tutorialDialogueManager를 찾지 못했습니다.");
+            }
+        }
+        
+        // 4. 카운트다운 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
         GameObject countdownObj = GameObject.Find("CountdownText");
         if (countdownObj != null)
         {
@@ -88,7 +105,7 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] CountdownText 오브젝트를 찾지 못했습니다.");
         }
 
-        // 4. 남은 시간 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
+        // 5. 남은 시간 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
         GameObject timeObj = GameObject.Find("TimeText");
         if (timeObj != null)
         {
@@ -106,14 +123,16 @@ public class GameController : MonoBehaviour
         {
             timeText.gameObject.SetActive(false); // 초기에는 UI 숨기기
         }
+
+
         // 선택된 맵 데이터 불러오기
         if (gameMode == GameMode.Normal) // 일반 모드일 때
         {
             selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1); // 선택된 Map ID 가져오기
         }
-        else if (gameMode == GameMode.Infinite)// 무한 모드일 때
+        else// 무한 모드나 튜토리얼일 때
         {
-            selectedMapID = 2; // 무한 모드는 3번 맵으로 고정
+            selectedMapID = 2; // 3번 맵으로 고정
         }
 
         if (selectedMapID >= 0 && selectedMapID < mapDatabase.maps.Length) // 유효한 Map ID인지 확인
@@ -142,13 +161,13 @@ public class GameController : MonoBehaviour
             Debug.LogError("유효하지 않은 Map ID입니다!");
         }
 
-       
         ChangeState(GameState.Preparation); // 게임 준비 상태로 변경
 
         // ScoreManager도 새 게임에 맞춰 UI를 리셋
         if (scoreManager != null)
         {
             scoreManager.ResetUIForNewGame();
+            scoreManager.ReinitializeScoreSettings();
         }
 
 
@@ -162,7 +181,24 @@ public class GameController : MonoBehaviour
         {
             case GameState.Preparation:
                 Log("게임 준비 상태");
-                StartCoroutine(CountdownCoroutine()); // 게임 준비 때는 일정 시간 후 게임 시작
+                if(gameMode == GameMode.Tutorial)
+                {
+                    if (tutorialDialogueManager != null)
+                    {
+                        tutorialDialogueManager.ShowFullDialogue("튜토리얼 설명용 텍스트", () => {
+                            // 대화창이 닫히면 게임 상태를 Running으로 변경
+                            ChangeState(GameState.Running);
+                        });
+                    }
+                    else
+                    {
+                        Log("튜토리얼 대화창 매니저를 찾지 못했습니다.");
+                    }
+                }
+                else
+                {
+                    StartCoroutine(CountdownCoroutine()); // 게임 준비 때는 일정 시간 후 게임 시작
+                }
                 break;
             case GameState.Running:
                 Log("게임 실행 상태");
@@ -171,7 +207,7 @@ public class GameController : MonoBehaviour
                     StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
                     StartCoroutine(monsterSpawner.SpawnMonster()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
                 }
-                else if(gameMode == GameMode.Infinite) // 무한 모드일 때
+                else if(gameMode == GameMode.Infinite)// 무한 모드일 때
                 {
                     // 점수, 콤보 UI 표시
                     if (scoreManager != null)
@@ -179,7 +215,15 @@ public class GameController : MonoBehaviour
                         scoreManager.ShowUI(scoreManager.scoreText);
                         scoreManager.ShowUI(scoreManager.comboText);
                     }
-                    StartCoroutine(monsterSpawner.SpawnMonster()); // 무한 모드는 타이머가 없음(fail 되면 바로 종료)
+                    StartCoroutine(monsterSpawner.SpawnMonster()); // 무한 모드는 타이머가 없음(스킬 입력 실패 시 종료)
+                }
+                else if (gameMode == GameMode.Tutorial)
+                {
+                    if (scoreManager != null)
+                    {
+                        scoreManager.ShowUI(scoreManager.killCountText);
+                    }
+                    StartCoroutine(monsterSpawner.SpawnMonster()); // 튜토리얼은 타이머가 없음(몬스터 3마리 처치 시 종료)
                 }
                 break;
             case GameState.Ended:

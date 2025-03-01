@@ -1,14 +1,17 @@
 ﻿// 특히 이 스크립트가 캡슐화가 진행이 되다말다해서 유심히 보고 공부하는걸 추천합니다.
 using System.Collections;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class MonsterSpawner : MonoBehaviour
 {
     public ScoreManager scoreManager; // scoreManager 참조
     public SkillSystem skillSystem; // skillSystem 참조
+    public TutorialDialogueManager tutorialDialogueManager; // TutorialDialogueManager 참조
     private MapDatabase.MapData currentMap; // 현재 맵 데이터
     public Transform spawnPoint;           // 스폰 위치
+    public TMP_Text clearText;             // 클리어 텍스트
 
     private GameObject currentMonster;     // 현재 화면에 등장한 몬스터
     private Coroutine removeMonsterCoroutine; // 현재 실행 중인 Coroutine
@@ -77,8 +80,16 @@ public class MonsterSpawner : MonoBehaviour
                     // monsterController에 randomMonster 데이터를 가져와서 초기화
                     monsterController.Initialize(randomMonster);
                     // 새로운 타이머 시작
-                    removeMonsterCoroutine = StartCoroutine(RemoveMonsterAfterDuration(randomMonster.spawnDuration));
-
+                    if (GameController.Instance.gameMode == GameMode.Infinite 
+                        || GameController.Instance.gameMode == GameMode.Normal)
+                    {
+                        removeMonsterCoroutine = StartCoroutine(RemoveMonsterAfterDuration(randomMonster.spawnDuration));
+                    }
+                    // 튜토리얼은 입력제한 시간 없음 / 대신 대화창 생성
+                    else if (GameController.Instance.gameMode == GameMode.Tutorial)
+                    {
+                        tutorialDialogueManager.ShowFullDialogue("이녀석은 이렇게 이렇게 하면 돼!");
+                    }
                 }
                 else
                 {
@@ -182,6 +193,68 @@ public class MonsterSpawner : MonoBehaviour
 
         // 다음 몬스터 생성
         StartCoroutine(SpawnMonster());
+    }
+
+    public void DestroyCurrentMonsterCompletely()
+    {
+        // 게임이 실행 중인지 확인
+        if (GameController.Instance != null && GameController.Instance.CurrentState != GameState.Running)
+        {
+            Debug.LogWarning("게임이 종료됩니다. 현재 몬스터를 제거합니다.");
+            return;
+        }
+
+        if (currentMonster != null)
+        {
+            Debug.Log($"제거된 몬스터: {currentMonster.name}");
+
+            // 기존 Coroutine 중지 -> 스킬로 제거 되었을 경우
+            if (removeMonsterCoroutine != null)
+            {
+                StopCoroutine(removeMonsterCoroutine);
+                removeMonsterCoroutine = null;
+            }
+
+            // 페이드아웃 실행 후 제거하도록 변경
+            StartCoroutine(FadeOutAndDestroyCompletely());
+        }
+        else
+        {
+            Debug.LogWarning("현재 몬스터가 생성 되어있지 않습니다.");
+        }
+    }
+
+    private IEnumerator FadeOutAndDestroyCompletely()
+    {
+        isMonsterReady = false; // 몬스터 제거 중 상태로 변경
+        skillSystem.ResetCombination(); // 조합 초기화
+
+        MonsterFadeEffect fadeEffect = currentMonster.GetComponent<MonsterFadeEffect>();
+        if (fadeEffect != null)
+        {
+            yield return StartCoroutine(fadeEffect.FadeOut()); // 페이드아웃이 끝날 때까지 대기
+        }
+
+        Destroy(currentMonster);
+        if (skillSystem.skillIcon != null)
+        {
+            Destroy(skillSystem.skillIcon); // 스킬 아이콘 제거
+        }
+
+        currentMonster = null;
+
+        // 클리어 텍스트 표시
+        if (clearText != null)
+        {
+            clearText.gameObject.SetActive(true);
+        }
+        if (tutorialDialogueManager != null)
+        {
+            tutorialDialogueManager.ShowFullDialogue("이정도면 바로 업무에 들어가도 되겠습니다.",
+                () => { // 3마리를 모두 처치 시 축하 대화창을 띄우고,
+                GameController.Instance.ChangeState(GameState.Ended); // 대화창을 클릭하면 게임 종료 상태로 변경
+            });
+        }
     }
 
     public GameObject GetCurrentMonster()

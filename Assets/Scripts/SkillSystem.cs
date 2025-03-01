@@ -2,8 +2,8 @@
 //나중에 사이즈 커지면 GC(가비지 컬렉션)이 발생하니, 오브젝트 풀링은 의식하시는게 좋을 듯
 
 using System.Collections;
+using TMPro;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 // ** 게임 실행 도중 스킬을 입력 받고 스폰된 몬스터 적중 시 데이터를 처리하는 클래스 **
 public class SkillSystem : MonoBehaviour
@@ -11,6 +11,7 @@ public class SkillSystem : MonoBehaviour
     public SkillDatabase skillDatabase; // SkillDatabase 참조
     public MonsterSpawner monsterSpawner; // MonsterSpawner 참조
     public ScoreManager scoreManager; // ScoreManager 참조
+    public TutorialDialogueManager tutorialDialogueManager; // TutorialDialogueManager 참조
 
     // Q, W, E, R 입력 시 생성할 캐릭터 프리팹
     public GameObject qPrefab;
@@ -47,6 +48,12 @@ public class SkillSystem : MonoBehaviour
 
     private void HandleInput()
     {
+        // 대화창이 열려있으면 스킬 입력 무시
+        if (tutorialDialogueManager != null && tutorialDialogueManager.IsDialogueActive)
+        {
+            return;
+        }
+
         if (isAnimating) // 캐릭터가 페이드 인/아웃 시 입력 무시
         {
             return;
@@ -318,6 +325,11 @@ public class SkillSystem : MonoBehaviour
                 if (scoreManager != null)
                 {
                     scoreManager.OnSkillSuccess(reactionTime, true); // 스킬 성공, reactionTime에 따라 ScoreManager에서 점수 추가
+                    if(scoreManager.tutorialKillCount < 3 && GameController.Instance.gameMode == GameMode.Tutorial)
+                    {
+                        scoreManager.tutorialKillCount++; // 튜토리얼에서 처치한 몬스터 수 증가
+                        scoreManager.UpdateKillCountText(scoreManager.tutorialKillCount.ToString()); // 처치한 몬스터 수 UI 업데이트
+                    }
                 }
 
                 // 스킬 효과 프리팹(스킬 아이콘)이 있다면, 코루틴을 통해 생성 후 대기
@@ -328,7 +340,32 @@ public class SkillSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
 
-                monsterSpawner.RemoveCurrentMonster();
+               
+                if (GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount == 3) // 튜토리얼에서 몬스터를 3마리 잡았을 경우
+                {
+                    // 현재 화면의 요소들을 제거 
+                    if (monsterSpawner != null && tutorialDialogueManager != null)
+                    {
+                        tutorialDialogueManager.ShowFullDialogue("잘하셨습니다!",
+                                () => {
+                                    monsterSpawner.DestroyCurrentMonsterCompletely(); // 대화창이 닫히면 튜토리얼 종료
+                                });
+                    }
+                }
+                else if(GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount < 3)
+                {
+                    if (monsterSpawner != null && tutorialDialogueManager != null)
+                    {
+                        tutorialDialogueManager.ShowFullDialogue("잘하셨습니다!",
+                                () => {
+                                    monsterSpawner.RemoveCurrentMonster(); // 대화창이 닫히면 다음 현상으로 넘어가기
+                                });
+                    }
+                }
+                else // 무한,일반 모드일 때
+                {
+                    monsterSpawner.RemoveCurrentMonster();
+                }
             }
             else
             {
@@ -349,14 +386,25 @@ public class SkillSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
 
-                if(GameController.Instance.gameMode == GameMode.Normal) // 일반 모드일 때
-                {
-                    monsterSpawner.RemoveCurrentMonster(); // 다음 현상으로 넘어가기
-                }
-                else if(GameController.Instance.gameMode == GameMode.Infinite) // 무한 모드일 때
+                if (GameController.Instance.gameMode == GameMode.Infinite) // 무한 모드일 때
                 {
                     yield return new WaitForSeconds(0.8f); // 게임 종료전 잠시 대기
                     GameController.Instance.ChangeState(GameState.Ended); // 게임 종료 상태로 변경
+                }
+                else if(GameController.Instance.gameMode == GameMode.Normal)// 일반 모드일 때
+                {
+                    monsterSpawner.RemoveCurrentMonster(); // 다음 현상으로 넘어가기
+                }
+                else if(GameController.Instance.gameMode == GameMode.Tutorial)
+                {
+                    if (tutorialDialogueManager != null)
+                    {
+                        tutorialDialogueManager.ShowFullDialogue("다시 해보세요",
+                            () =>
+                        {
+                            monsterSpawner.RemoveCurrentMonster(); // 대화창이 닫히면 다음 현상으로 넘어가기
+                        });
+                    }
                 }
             }
         }

@@ -44,5 +44,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: 652eef561c294464c8defe44336234db
+  - enabled: 1
+    path: Assets/Scenes/TutorialGamePlay.unity
+    guid: 3753422cf5981264b8c80617667a4ec5
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -7,7 +7,9 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text scoreText;
     public TMP_Text comboText;
     public TMP_Text judgmentText;
+    public TMP_Text killCountText;
     public ParticleSystem myParticleSystem;
+    public int tutorialKillCount = 0; // 튜토리얼 킬 카운트
     private int score = 0;     // 현재 점수
     private int comboCount = 0; // 콤보 카운트
     private int points = 0;   // 추가할 점수
@@ -41,18 +43,21 @@ public class ScoreManager : MonoBehaviour
                 Debug.LogError("선택된 맵 ID를 찾을 수 없습니다.");
             }
         }
-        else if (GameController.Instance.gameMode == GameMode.Infinite)// 무한 모드일 때
+        else
         {
-            mapMultiplier = 1.0f; // 무한 모드는 1배율로 고정
+            mapMultiplier = 1.0f; // 무한 모드와 튜토리얼은 1배율로 고정
         }
 
         // 처음에는 점수 UI를 숨김
-        if (scoreText != null && comboText != null && GameController.Instance.CurrentState == GameState.Preparation)
+        if (scoreText != null && comboText != null && killCountText != null && GameController.Instance.CurrentState == GameState.Preparation)
         {
             scoreText.gameObject.SetActive(false); // 초기에는 UI 숨기기
             comboText.gameObject.SetActive(false);
+            killCountText.gameObject.SetActive(false);
             judgmentText.gameObject.SetActive(false);
         }
+
+        UpdateKillCountText("0");
 
         // GameController의 점수를 불러와 UI 업데이트 - 0점으로 시작
         if (GameController.Instance != null)
@@ -74,13 +79,60 @@ public class ScoreManager : MonoBehaviour
             if (scoreText != null) scoreText.gameObject.SetActive(false);
             if (comboText != null) comboText.gameObject.SetActive(false);
             if (judgmentText != null) judgmentText.gameObject.SetActive(false);
+            if (killCountText != null) killCountText.gameObject.SetActive(false);
+        }
+    }
+
+    public void ReinitializeScoreSettings()
+    {
+        // 게임 모드에 따라 mapMultiplier를 재설정
+        if (GameController.Instance.gameMode == GameMode.Normal)
+        {
+            // 일반 모드에서는 PlayerPrefs에 저장된 선택된 Map ID에 따라 배율을 설정
+            selectedMapID = PlayerPrefs.GetInt("SelectedMapID", -1);
+            if (selectedMapID == 2)
+            {
+                mapMultiplier = 1.5f;
+            }
+            else if (selectedMapID == 0 || selectedMapID == 1)
+            {
+                mapMultiplier = 1.0f;
+            }
+            else
+            {
+                Debug.LogError("선택된 맵 ID를 찾을 수 없습니다.");
+            }
+        }
+        else if (GameController.Instance.gameMode == GameMode.Infinite)
+        {
+            // 무한 모드에서는 1배율로 고정
+            mapMultiplier = 1.0f;
+        }
+        else if (GameController.Instance.gameMode == GameMode.Tutorial)
+        {
+            // 튜토리얼 모드에서는 점수 계산을 하지 않으므로 배율 0
+            mapMultiplier = 0f;
         }
 
-        // 점수/콤보 등 내부 상태도 재설정
+        // 내부 점수와 콤보 등의 변수 재설정
         score = 0;
         comboCount = 0;
-        UpdateScoreText(score);
-        UpdateComboText(comboCount);
+        points = 0;
+
+        // UI 업데이트
+        // UI 업데이트 (각 텍스트가 null이 아닌지 확인)
+        if (scoreText != null)
+        {
+            UpdateScoreText(score);
+        }
+        if (comboText != null)
+        {
+            UpdateComboText(comboCount);
+        }
+        if (killCountText != null)
+        {
+            UpdateKillCountText("0");
+        }
     }
 
     // 게임이 시작될 때 숨겨놨던 UI 표시 (GameController에서 호출)
@@ -98,25 +150,41 @@ public class ScoreManager : MonoBehaviour
         if (reactionTime <= 2f) // PERFECT
         {
             Debug.Log("PERFECT");
-            UpdateJudgmentText("PERFECT");
+            if(GameController.Instance.gameMode == GameMode.Infinite
+                || GameController.Instance.gameMode == GameMode.Normal)
+            {
+                UpdateJudgmentText("PERFECT");
+            }
             return 2.0f;
         }
         if (reactionTime <= 5f) // GREAT
         {
             Debug.Log("GREAT");
-            UpdateJudgmentText("GREAT");
+            if (GameController.Instance.gameMode == GameMode.Infinite
+                || GameController.Instance.gameMode == GameMode.Normal)
+            {
+                UpdateJudgmentText("GREAT");
+            }
             return 1.5f;
         }
         if (reactionTime <= 8f) // GOOD
         {
             Debug.Log("GOOD");
-            UpdateJudgmentText("GOOD");
+            if (GameController.Instance.gameMode == GameMode.Infinite
+                || GameController.Instance.gameMode == GameMode.Normal)
+            {
+                UpdateJudgmentText("GOOD");
+            }            
             return 1.0f;
         }
         else // BAD
         {
             Debug.Log("BAD");
-            UpdateJudgmentText("BAD");
+            if (GameController.Instance.gameMode == GameMode.Infinite
+                || GameController.Instance.gameMode == GameMode.Normal)
+            {
+                UpdateJudgmentText("BAD");
+            }              
             return 0.5f; 
         }
     }
@@ -143,7 +211,12 @@ public class ScoreManager : MonoBehaviour
         else // 스킬 실패
         {
             Debug.Log("FAIL");
-            UpdateJudgmentText("FAIL");
+            if (GameController.Instance.gameMode == GameMode.Infinite
+                || GameController.Instance.gameMode == GameMode.Normal)
+            {
+                UpdateJudgmentText("FAIL");
+            }
+                
             ResetCombo();
         }
     }
@@ -233,6 +306,14 @@ public class ScoreManager : MonoBehaviour
             
             judgmentText.gameObject.SetActive(true);  // UI를 보이게 함
             StartCoroutine(HideJudgmentAfterTime(1f));  // 1초 후에 숨기기
+        }
+    }
+
+    public void UpdateKillCountText(string killCount)
+    {
+        if (killCountText != null)
+        {
+            killCountText.text = killCount + " / 3";
         }
     }
 }

@@ -21,7 +21,7 @@ public class CloseButtonHandler: MonoBehaviour
         }
     }
 
-    public void OnGameStartButtonClick() // 게임을 재시작하는 버튼을 누를 때 실행되는 함수
+    public void OnGameStartButtonClick() // 무한 모드 게임을 재시작하는 버튼을 누를 때 실행되는 함수
     {
         Debug.Log("버튼이 클릭되었습니다.");
 
@@ -30,11 +30,38 @@ public class CloseButtonHandler: MonoBehaviour
             SceneController.Instance.LoadSceneWithFadeOut(targetScene, () =>
             {
                 // 페이드 인까지 끝난 뒤 실행할 로직
+                GameController.Instance.gameMode = GameMode.Infinite;
+                GameController.Instance.sceneName = "InfiniteResultScene";
 
                 // 새 씬의 UI를 찾기
                 GameController.Instance.FindNewSceneUI();
+               
 
+                GameController.Instance.InitializeGame();
+            });
+        }
+        else
+        {
+            Debug.LogError("SceneController Instance is null. Check if SceneController exists in the scene.");
+        }
+    }
+
+    public void OnTutorialStartButtonClick() // 튜토리얼 게임을 재시작하는 버튼을 누를 때 실행되는 함수
+    {
+        Debug.Log("버튼이 클릭되었습니다.");
+
+        if (SceneController.Instance != null)
+        {
+            SceneController.Instance.LoadSceneWithFadeOut(targetScene, () =>
+            {
+                // 페이드 인까지 끝난 뒤 실행할 로직
+                GameController.Instance.gameMode = GameMode.Tutorial;
+                GameController.Instance.sceneName = "Tutorial";
+
+                // 새 씬의 UI를 찾기
+                GameController.Instance.FindNewSceneUI();
                 
+
                 GameController.Instance.InitializeGame();
             });
         }
