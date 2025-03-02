@@ -5,6 +5,7 @@ using System.Collections;
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
+    public TMP_Text bestScoreText;
     public TMP_Text comboText;
     public TMP_Text judgmentText;
     public TMP_Text killCountText;
@@ -13,6 +14,7 @@ public class ScoreManager : MonoBehaviour
     private int score = 0;     // 현재 점수
     private int comboCount = 0; // 콤보 카운트
     private int points = 0;   // 추가할 점수
+    private int bestScore = 0;  // 최고 기록 변수 추가
     private float multiplier; // 배율
     private int selectedMapID; // 선택된 맵 ID
     private float mapMultiplier; // 맵 배율
@@ -21,7 +23,10 @@ public class ScoreManager : MonoBehaviour
 
     private void Start()
     {
-        if(myParticleSystem != null)
+        // 최고 기록 불러오기 (기본값 0)
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+
+        if (myParticleSystem != null)
         {
             myParticleSystem.Stop();
         }
@@ -70,19 +75,6 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void ResetUIForNewGame()
-    {
-        // 현재 게임 상태가 Preparation이라면 UI를 숨긴다.
-        if (GameController.Instance != null &&
-            GameController.Instance.CurrentState == GameState.Preparation)
-        {
-            if (scoreText != null) scoreText.gameObject.SetActive(false);
-            if (comboText != null) comboText.gameObject.SetActive(false);
-            if (judgmentText != null) judgmentText.gameObject.SetActive(false);
-            if (killCountText != null) killCountText.gameObject.SetActive(false);
-        }
-    }
-
     public void ReinitializeScoreSettings()
     {
         // 게임 모드에 따라 mapMultiplier를 재설정
@@ -118,6 +110,7 @@ public class ScoreManager : MonoBehaviour
         score = 0;
         comboCount = 0;
         points = 0;
+        bestScore = PlayerPrefs.GetInt("BestScore", 0); // 최고 기록 불러오기
 
         // UI 업데이트
         // UI 업데이트 (각 텍스트가 null이 아닌지 확인)
@@ -132,6 +125,10 @@ public class ScoreManager : MonoBehaviour
         if (killCountText != null)
         {
             UpdateKillCountText("0");
+        }
+        if (bestScoreText != null)
+        {
+            UpdateBestScoreText(bestScore.ToString());
         }
     }
 
@@ -237,6 +234,21 @@ public class ScoreManager : MonoBehaviour
         GameController.Instance.AddScore(points);
         Debug.Log($"증가된 점수: {points}");
         UpdateScoreText(score);
+
+        // 최고 기록 업데이트: 현재 점수가 기존 최고 기록보다 높으면 저장
+        if(GameController.Instance.gameMode == GameMode.Infinite) // 일반 모드일 때만 최고 기록 갱신
+        {
+            if (score > bestScore)
+            {
+                bestScore = score;
+                PlayerPrefs.SetInt("BestScore", bestScore);
+                PlayerPrefs.Save();
+                Debug.Log($"최고 기록 갱신: {bestScore}");
+            }
+
+            UpdateBestScoreText(bestScore.ToString());
+        }
+        
     }
 
     // 콤보 증가
@@ -314,6 +326,14 @@ public class ScoreManager : MonoBehaviour
         if (killCountText != null)
         {
             killCountText.text = killCount + " / 3";
+        }
+    }
+
+    private void UpdateBestScoreText(string bestScore)
+    {
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = "BEST: " + bestScore;
         }
     }
 }

@@ -14,6 +14,7 @@ public class MonsterSpawner : MonoBehaviour
     public TMP_Text clearText;             // 클리어 텍스트
 
     private GameObject currentMonster;     // 현재 화면에 등장한 몬스터
+    private MonsterDatabase.MonsterData previousMonster = null; // 직전에 등장한 몬스터
     private Coroutine removeMonsterCoroutine; // 현재 실행 중인 Coroutine
     public bool isMonsterReady = false; // 몬스터 준비 상태 체크
 
@@ -51,8 +52,18 @@ public class MonsterSpawner : MonoBehaviour
                 yield break;
             }
 
-            // 랜덤으로 몬스터 선택
+            // 직전 몬스터와 중복되지 않게 랜덤으로 몬스터 선택
             var randomMonster = validMonsters[Random.Range(0, validMonsters.Length)];
+
+            // 직전과 동일한 몬스터가 연속으로 나오지 않게 반복 처리
+            while (randomMonster == previousMonster && validMonsters.Length > 1)
+            {
+                randomMonster = validMonsters[Random.Range(0, validMonsters.Length)];
+            }
+
+            // 이번에 뽑은 몬스터를 'previousMonster'에 저장
+            previousMonster = randomMonster;
+
 
             if (randomMonster.prefab != null)
             {

@@ -2,7 +2,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public enum GameMode
 {
@@ -80,7 +79,7 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] ScoreManager를 찾지 못했습니다.");
         }
 
-        // 3. 다이얼로그 매니저 찾기
+        // 3. 튜토리얼 다이얼로그 매니저 찾기
         if (gameMode == GameMode.Tutorial)
         {
             TutorialDialogueManager foundTutorialDialogueManager = Object.FindFirstObjectByType<TutorialDialogueManager>();
@@ -105,16 +104,20 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] CountdownText 오브젝트를 찾지 못했습니다.");
         }
 
-        // 5. 남은 시간 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
-        GameObject timeObj = GameObject.Find("TimeText");
-        if (timeObj != null)
+        // 5. 노말 게임에서 남은 시간 텍스트 찾기 
+        if (gameMode == GameMode.Normal)
         {
-            timeText = timeObj.GetComponent<TMP_Text>();
+            GameObject timeObj = GameObject.Find("TimeText");
+            if (timeObj != null)
+            {
+                timeText = timeObj.GetComponent<TMP_Text>();
+            }
+            else
+            {
+                Debug.LogWarning("[GameController] TimeText 오브젝트를 찾지 못했습니다.");
+            }
         }
-        else
-        {
-            Debug.LogWarning("[GameController] TimeText 오브젝트를 찾지 못했습니다.");
-        }
+        
     }
 
     public void InitializeGame() // 게임을 다시 시작 하기 위한 함수
@@ -166,7 +169,6 @@ public class GameController : MonoBehaviour
         // ScoreManager도 새 게임에 맞춰 UI를 리셋
         if (scoreManager != null)
         {
-            scoreManager.ResetUIForNewGame();
             scoreManager.ReinitializeScoreSettings();
         }
 
@@ -214,6 +216,7 @@ public class GameController : MonoBehaviour
                     {
                         scoreManager.ShowUI(scoreManager.scoreText);
                         scoreManager.ShowUI(scoreManager.comboText);
+                        scoreManager.ShowUI(scoreManager.bestScoreText);
                     }
                     StartCoroutine(monsterSpawner.SpawnMonster()); // 무한 모드는 타이머가 없음(스킬 입력 실패 시 종료)
                 }
@@ -268,6 +271,10 @@ public class GameController : MonoBehaviour
         if (timeText != null)
         {
             timeText.gameObject.SetActive(true);
+        }
+        else
+        {
+            Log("TimeText를 찾지 못했습니다.");
         }
 
         UpdateTimeText(lastDisplayedTime);

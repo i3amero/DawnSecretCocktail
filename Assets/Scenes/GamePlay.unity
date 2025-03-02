@@ -428,6 +428,7 @@ MonoBehaviour:
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   monsterSpawner: {fileID: 2098687025}
   scoreManager: {fileID: 662052714}
+  tutorialDialogueManager: {fileID: 0}
   sceneName: ScoreScene
   gameMode: 0
 --- !u!4 &414800944
@@ -626,9 +627,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1579721581}
+  bestScoreText: {fileID: 0}
   comboText: {fileID: 1721755039}
   judgmentText: {fileID: 79412513}
+  killCountText: {fileID: 0}
   myParticleSystem: {fileID: 1295871977}
+  tutorialKillCount: 0
 --- !u!1 &1148208275
 GameObject:
   m_ObjectHideFlags: 0
@@ -5580,6 +5584,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 360, y: 0, z: 0}
+--- !u!1 &1382853589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1382853590}
+  - component: {fileID: 1382853592}
+  m_Layer: 0
+  m_Name: BackgroundMusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1382853590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382853589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1094.6857, y: 508.40512, z: 1.1291134}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1382853592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382853589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e3a82cad0269544c9d8bf7269abcb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backgroundMusic: {fileID: 8300000, guid: ef23354c465de624cb4bf6171b1ba8a8, type: 3}
 --- !u!1 &1555226157
 GameObject:
   m_ObjectHideFlags: 0
@@ -5612,6 +5661,7 @@ MonoBehaviour:
   skillDatabase: {fileID: 11400000, guid: 5dde04a450b5fa349bc9be8b79f9cb7a, type: 2}
   monsterSpawner: {fileID: 2098687025}
   scoreManager: {fileID: 662052714}
+  tutorialDialogueManager: {fileID: 0}
   qPrefab: {fileID: 1524046610837676954, guid: e7246873447bcdc41ad81ffbcb8a3364, type: 3}
   wPrefab: {fileID: 1524046610837676954, guid: 8f2ef029a1f436741929fcf6bbafcf1a, type: 3}
   ePrefab: {fileID: 1524046610837676954, guid: e908ee447122931488b50a787a2b94cf, type: 3}
@@ -6185,7 +6235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreManager: {fileID: 662052714}
   skillSystem: {fileID: 1555226158}
+  tutorialDialogueManager: {fileID: 0}
   spawnPoint: {fileID: 0}
+  clearText: {fileID: 0}
   isMonsterReady: 0
 --- !u!4 &2098687026
 Transform:
@@ -6363,3 +6415,4 @@ SceneRoots:
   - {fileID: 6422307270154712549}
   - {fileID: 1148208279}
   - {fileID: 1295871978}
+  - {fileID: 1382853590}
