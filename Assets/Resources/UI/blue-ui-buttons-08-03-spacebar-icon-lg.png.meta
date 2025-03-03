@@ -143,7 +143,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      blue-ui-buttons-08-03-spacebar-icon-lg_0: -5547464921167189135
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

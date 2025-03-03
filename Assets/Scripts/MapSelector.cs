@@ -21,12 +21,14 @@ public class MapSelector : MonoBehaviour
         // 게임 진행 씬으로 전환
         if (SceneController.Instance != null)
         {
+            GameController.Instance.gameMode = GameMode.Normal;
+            GameController.Instance.sceneName = "ScoreScene";
+
             // 재시작 시 GameController 초기화
             SceneController.Instance.LoadSceneWithFadeOut(targetScene, () =>
             {
                 // 페이드 인까지 끝난 뒤 실행할 로직
-                GameController.Instance.gameMode = GameMode.Normal;
-                GameController.Instance.sceneName = "ScoreScene";
+                
 
                 // 새 씬의 UI를 찾기
                 GameController.Instance.FindNewSceneUI();

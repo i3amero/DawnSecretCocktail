@@ -50,11 +50,6 @@ public class GameController : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Start() // 맵 데이터 불러오기 및 게임 상태 변경
-    {
-        InitializeGame();
-    }
-
     public void FindNewSceneUI() // 게임이 재시작 될 때 UI 찾기
     {
         // 1. 몬스터 스포너 찾기

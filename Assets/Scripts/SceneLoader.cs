@@ -13,6 +13,9 @@ public class SceneLoader : MonoBehaviour
         }
 
         // 씬 전환
-        SceneManager.LoadScene(sceneName);
+        if (SceneController.Instance != null)
+        {
+            SceneController.Instance.LoadSceneWithFadeOut(sceneName);
+        }
     }
 }

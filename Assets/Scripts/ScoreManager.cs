@@ -77,6 +77,7 @@ public class ScoreManager : MonoBehaviour
 
     public void ReinitializeScoreSettings()
     {
+        /*
         // 게임 모드에 따라 mapMultiplier를 재설정
         if (GameController.Instance.gameMode == GameMode.Normal)
         {
@@ -112,7 +113,7 @@ public class ScoreManager : MonoBehaviour
         points = 0;
         bestScore = PlayerPrefs.GetInt("BestScore", 0); // 최고 기록 불러오기
 
-        // UI 업데이트
+        */
         // UI 업데이트 (각 텍스트가 null이 아닌지 확인)
         if (scoreText != null)
         {
