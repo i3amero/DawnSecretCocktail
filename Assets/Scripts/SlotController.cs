@@ -8,8 +8,9 @@ public class SlotController : MonoBehaviour
 {
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
-    public float autoHideTime = 3f;
+    public float autoHideTime = 5f;
     string message = "";
+    public Image popupImage;
 
     public Image[] slots;
     [SerializeField]private Sprite defaultSprite;
@@ -39,6 +40,7 @@ public class SlotController : MonoBehaviour
             if (slot.sprite == defaultSprite)
             {
                 slot.sprite = ingredientSprite;
+                popupImage.sprite = ingredientSprite;
 
                 switch (ingredientSprite.name)
                 {
@@ -92,6 +94,10 @@ public class SlotController : MonoBehaviour
     
     public void OnSlotClicked(Image slot)
     {
+        if (dialogPanel.activeSelf)
+        {
+            return;
+        }
         if(slot.sprite != defaultSprite)
         {
             ClearSlot(slot);

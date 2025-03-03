@@ -12,6 +12,9 @@ public class CharacterSelect : MonoBehaviour
     public void SelectCharacter(int characterIndex)
     {
         PlayerPrefs.SetInt("SelectedCharacter", characterIndex);
+        PlayerPrefs.SetInt("ButtonDisabled", 1);
         SceneManager.LoadScene("TalkScene");
     }
+
+    
 }

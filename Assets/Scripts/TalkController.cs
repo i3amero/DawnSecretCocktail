@@ -46,6 +46,50 @@ public class TalkController : MonoBehaviour
 
         if (currentDialogIndex < currentCharacter.dialogLines.Length)
         {
+            if(currentCharacter.characterName=="데드리프트")
+            {
+                if (currentDialogIndex == 2 || currentDialogIndex==7)
+                {
+                    characterNameText.text = "주인공";
+                }
+                else
+                {
+                    characterNameText.text = "데드리프트";
+                }
+            }
+            else if (currentCharacter.characterName == "카타르시스")
+            {
+                if (currentDialogIndex == 2 || currentDialogIndex == 6)
+                {
+                    characterNameText.text = "주인공";
+                }
+                else
+                {
+                    characterNameText.text = "카타르시스";
+                }
+            }
+            else if (currentCharacter.characterName == "레조나")
+            {
+                if (currentDialogIndex == 2 || currentDialogIndex == 7)
+                {
+                    characterNameText.text = "주인공";
+                }
+                else
+                {
+                    characterNameText.text = "레조나";
+                }
+            }
+            else if (currentCharacter.characterName == "핀투라")
+            {
+                if (currentDialogIndex == 2 || currentDialogIndex == 7)
+                {
+                    characterNameText.text = "주인공";
+                }
+                else
+                {
+                    characterNameText.text = "핀투라";
+                }
+            }
             dialogText.text = currentCharacter.dialogLines[currentDialogIndex];
         }
         else
