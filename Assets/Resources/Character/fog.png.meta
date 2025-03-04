@@ -1,0 +1,5167 @@
+fileFormatVersion: 2
+guid: a4a5db907c122c14493280e5e6e2630b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1766006069671443837
+    second: fog_0
+  - first:
+      213: -6739217578412376739
+    second: fog_1
+  - first:
+      213: -1308745262722121309
+    second: fog_2
+  - first:
+      213: -1205885954233219390
+    second: fog_3
+  - first:
+      213: -4050460356131362779
+    second: fog_4
+  - first:
+      213: -4598877626036476868
+    second: fog_5
+  - first:
+      213: 8615410909687325384
+    second: fog_6
+  - first:
+      213: 6510302942449818945
+    second: fog_7
+  - first:
+      213: -3764435856166567938
+    second: fog_8
+  - first:
+      213: 7095804797324370069
+    second: fog_9
+  - first:
+      213: 5361814125164245945
+    second: fog_10
+  - first:
+      213: -3980924952929321735
+    second: fog_11
+  - first:
+      213: -3870375725659075236
+    second: fog_12
+  - first:
+      213: 8427486846405376808
+    second: fog_13
+  - first:
+      213: 1647170326297822602
+    second: fog_14
+  - first:
+      213: 9107731756105873289
+    second: fog_15
+  - first:
+      213: 8191671149202347651
+    second: fog_16
+  - first:
+      213: -2952521101151514940
+    second: fog_17
+  - first:
+      213: -8684410317596740845
+    second: fog_18
+  - first:
+      213: -4929156537275080356
+    second: fog_19
+  - first:
+      213: -2578193287768346292
+    second: fog_20
+  - first:
+      213: 2353579997687646596
+    second: fog_21
+  - first:
+      213: 8823433909676521996
+    second: fog_22
+  - first:
+      213: -4483617126166862141
+    second: fog_23
+  - first:
+      213: 276912020466896788
+    second: fog_24
+  - first:
+      213: -2388429923831462400
+    second: fog_25
+  - first:
+      213: -8791168576592571801
+    second: fog_26
+  - first:
+      213: -2250606913518216699
+    second: fog_27
+  - first:
+      213: 8263342247740122279
+    second: fog_28
+  - first:
+      213: -5464083816924537092
+    second: fog_29
+  - first:
+      213: -6603166144217153757
+    second: fog_30
+  - first:
+      213: -4951955894371555683
+    second: fog_31
+  - first:
+      213: -6312873328988329203
+    second: fog_32
+  - first:
+      213: 3879420114568224696
+    second: fog_33
+  - first:
+      213: -5014614203736682231
+    second: fog_34
+  - first:
+      213: 6076952978517833572
+    second: fog_35
+  - first:
+      213: -7393969637824517558
+    second: fog_36
+  - first:
+      213: 739614625733758500
+    second: fog_37
+  - first:
+      213: -1054330152707243951
+    second: fog_38
+  - first:
+      213: -5438480832825574383
+    second: fog_39
+  - first:
+      213: -3375388226652968438
+    second: fog_40
+  - first:
+      213: -1638526561017808158
+    second: fog_41
+  - first:
+      213: 6225947469933099711
+    second: fog_42
+  - first:
+      213: -3983020822311730751
+    second: fog_43
+  - first:
+      213: -1372351062196650409
+    second: fog_44
+  - first:
+      213: 1911181375070029986
+    second: fog_45
+  - first:
+      213: 4760338154473721527
+    second: fog_46
+  - first:
+      213: 4154648226439932211
+    second: fog_47
+  - first:
+      213: 2320177272068581757
+    second: fog_48
+  - first:
+      213: 5642261219878218039
+    second: fog_49
+  - first:
+      213: -1499636552232552388
+    second: fog_50
+  - first:
+      213: -9096086724202397337
+    second: fog_51
+  - first:
+      213: 7353603523983679720
+    second: fog_52
+  - first:
+      213: -1530037668920231296
+    second: fog_53
+  - first:
+      213: 5481514670093873012
+    second: fog_54
+  - first:
+      213: 6767106545056445770
+    second: fog_55
+  - first:
+      213: -8561359694709306741
+    second: fog_56
+  - first:
+      213: -7936788124405628770
+    second: fog_57
+  - first:
+      213: -705123352826971755
+    second: fog_58
+  - first:
+      213: 2119718740518619025
+    second: fog_59
+  - first:
+      213: 1149895085380366185
+    second: fog_60
+  - first:
+      213: 8993085664442086929
+    second: fog_61
+  - first:
+      213: -712972994386409268
+    second: fog_62
+  - first:
+      213: -4090880352809456790
+    second: fog_63
+  - first:
+      213: -3427086251721885641
+    second: fog_64
+  - first:
+      213: 566569523483279003
+    second: fog_65
+  - first:
+      213: -5140400252641245385
+    second: fog_66
+  - first:
+      213: -5703390347346181550
+    second: fog_67
+  - first:
+      213: 2851191749592276249
+    second: fog_68
+  - first:
+      213: -2313457867656739056
+    second: fog_69
+  - first:
+      213: -2370422705047408565
+    second: fog_70
+  - first:
+      213: 4387894899855779549
+    second: fog_71
+  - first:
+      213: -5768935220190858335
+    second: fog_72
+  - first:
+      213: 4322165265113627384
+    second: fog_73
+  - first:
+      213: 8514252480791993010
+    second: fog_74
+  - first:
+      213: -3099568256838795649
+    second: fog_75
+  - first:
+      213: 3211929793543343936
+    second: fog_76
+  - first:
+      213: -5602869393372680121
+    second: fog_77
+  - first:
+      213: -7706215254357850604
+    second: fog_78
+  - first:
+      213: 4853310646681661421
+    second: fog_79
+  - first:
+      213: -5295010948431208389
+    second: fog_80
+  - first:
+      213: -3392045955780987929
+    second: fog_81
+  - first:
+      213: -7596570876119846637
+    second: fog_82
+  - first:
+      213: 7928382831743900838
+    second: fog_83
+  - first:
+      213: 8753156717356433850
+    second: fog_84
+  - first:
+      213: 6129782604618856384
+    second: fog_85
+  - first:
+      213: 2025557279354733129
+    second: fog_86
+  - first:
+      213: 4202584302889999607
+    second: fog_87
+  - first:
+      213: -4095065040347116636
+    second: fog_88
+  - first:
+      213: -9078050668941078375
+    second: fog_89
+  - first:
+      213: 7532145619595815895
+    second: fog_90
+  - first:
+      213: 4577978134684242552
+    second: fog_91
+  - first:
+      213: -5541906451955846583
+    second: fog_92
+  - first:
+      213: 1173043730778333058
+    second: fog_93
+  - first:
+      213: 1474226319501384352
+    second: fog_94
+  - first:
+      213: 5106968920403343914
+    second: fog_95
+  - first:
+      213: -8564258509124096785
+    second: fog_96
+  - first:
+      213: -7721203860809954006
+    second: fog_97
+  - first:
+      213: 974695128964227344
+    second: fog_98
+  - first:
+      213: -6538546488751281133
+    second: fog_99
+  - first:
+      213: -3101439223843330058
+    second: fog_100
+  - first:
+      213: -1002631164441932221
+    second: fog_101
+  - first:
+      213: -7035707969236317949
+    second: fog_102
+  - first:
+      213: 7515899832180275613
+    second: fog_103
+  - first:
+      213: 196150871093754323
+    second: fog_104
+  - first:
+      213: 3564552034578886695
+    second: fog_105
+  - first:
+      213: 6958718021499424674
+    second: fog_106
+  - first:
+      213: 3409482889272200735
+    second: fog_107
+  - first:
+      213: -8077442364853083743
+    second: fog_108
+  - first:
+      213: -8428505960437585141
+    second: fog_109
+  - first:
+      213: 8813268927357564848
+    second: fog_110
+  - first:
+      213: 1090775218634272143
+    second: fog_111
+  - first:
+      213: 2919858761447651264
+    second: fog_112
+  - first:
+      213: -8009754913279461302
+    second: fog_113
+  - first:
+      213: -8174647686119452273
+    second: fog_114
+  - first:
+      213: -954159839567560082
+    second: fog_115
+  - first:
+      213: 9069631285817251172
+    second: fog_116
+  - first:
+      213: -8692169642616529708
+    second: fog_117
+  - first:
+      213: 11949399850786557
+    second: fog_118
+  - first:
+      213: -6611710187200444336
+    second: fog_119
+  - first:
+      213: -581291584914730969
+    second: fog_120
+  - first:
+      213: 2839712170966343072
+    second: fog_121
+  - first:
+      213: -731114342289293599
+    second: fog_122
+  - first:
+      213: -1982290011132206946
+    second: fog_123
+  - first:
+      213: -2158926724495074049
+    second: fog_124
+  - first:
+      213: -2404458813896616542
+    second: fog_125
+  - first:
+      213: 1149504914520501024
+    second: fog_126
+  - first:
+      213: 6162405345594717582
+    second: fog_127
+  - first:
+      213: -4018252677172231419
+    second: fog_128
+  - first:
+      213: 618848215889726783
+    second: fog_129
+  - first:
+      213: 2634194835092827531
+    second: fog_130
+  - first:
+      213: 2703063622592987539
+    second: fog_131
+  - first:
+      213: -6369280881329317112
+    second: fog_132
+  - first:
+      213: -3524711233965702582
+    second: fog_133
+  - first:
+      213: 8592010419103137800
+    second: fog_134
+  - first:
+      213: -8206179038449241735
+    second: fog_135
+  - first:
+      213: -451771477260448158
+    second: fog_136
+  - first:
+      213: -3886702498102984996
+    second: fog_137
+  - first:
+      213: 1576278333693523517
+    second: fog_138
+  - first:
+      213: 4139596964370064173
+    second: fog_139
+  - first:
+      213: -5504408983607503301
+    second: fog_140
+  - first:
+      213: -4448783029920330101
+    second: fog_141
+  - first:
+      213: -3453375356280119605
+    second: fog_142
+  - first:
+      213: 5844487914164614554
+    second: fog_143
+  - first:
+      213: -6750545541428640160
+    second: fog_144
+  - first:
+      213: 7021662119367979233
+    second: fog_145
+  - first:
+      213: -3647263945279911742
+    second: fog_146
+  - first:
+      213: -2009479195188546690
+    second: fog_147
+  - first:
+      213: 8104442592303420461
+    second: fog_148
+  - first:
+      213: 5131806412511890899
+    second: fog_149
+  - first:
+      213: -3509253799614814141
+    second: fog_150
+  - first:
+      213: -2714637484923307942
+    second: fog_151
+  - first:
+      213: -5720749972516088464
+    second: fog_152
+  - first:
+      213: -7566126197143479083
+    second: fog_153
+  - first:
+      213: -7364595173798405546
+    second: fog_154
+  - first:
+      213: 882558450102813066
+    second: fog_155
+  - first:
+      213: -8450784005965406209
+    second: fog_156
+  - first:
+      213: -7365905896091827497
+    second: fog_157
+  - first:
+      213: -8251201507600994987
+    second: fog_158
+  - first:
+      213: -3887181932137722236
+    second: fog_159
+  - first:
+      213: -327339827954925601
+    second: fog_160
+  - first:
+      213: 635259215228155226
+    second: fog_161
+  - first:
+      213: 3261700575734195339
+    second: fog_162
+  - first:
+      213: 442911164246183829
+    second: fog_163
+  - first:
+      213: -1633265254033448421
+    second: fog_164
+  - first:
+      213: 4337029868518149728
+    second: fog_165
+  - first:
+      213: 1622852361103416056
+    second: fog_166
+  - first:
+      213: 2834083244867763490
+    second: fog_167
+  - first:
+      213: 4113044073938564166
+    second: fog_168
+  - first:
+      213: -799857462392549051
+    second: fog_169
+  - first:
+      213: 1210373366004508899
+    second: fog_170
+  - first:
+      213: 3272192674501328827
+    second: fog_171
+  - first:
+      213: 4554419783959601314
+    second: fog_172
+  - first:
+      213: 4083543984937414009
+    second: fog_173
+  - first:
+      213: -7984504408212859760
+    second: fog_174
+  - first:
+      213: 95771073949822379
+    second: fog_175
+  - first:
+      213: 9177933272024285408
+    second: fog_176
+  - first:
+      213: -5255386824172676342
+    second: fog_177
+  - first:
+      213: -2722559752277796815
+    second: fog_178
+  - first:
+      213: 2630642584103948799
+    second: fog_179
+  - first:
+      213: 4078455966056269280
+    second: fog_180
+  - first:
+      213: -7837923374622662097
+    second: fog_181
+  - first:
+      213: 2314890261466026187
+    second: fog_182
+  - first:
+      213: 1415226768676358979
+    second: fog_183
+  - first:
+      213: 4736486540674568656
+    second: fog_184
+  - first:
+      213: 5195487482812161077
+    second: fog_185
+  - first:
+      213: -2045732452297557313
+    second: fog_186
+  - first:
+      213: -7030062736849205894
+    second: fog_187
+  - first:
+      213: -4272575098900134007
+    second: fog_188
+  - first:
+      213: 3643773225424603784
+    second: fog_189
+  - first:
+      213: -193287769088283542
+    second: fog_190
+  - first:
+      213: -3887566360218173858
+    second: fog_191
+  - first:
+      213: 5816638006679285992
+    second: fog_192
+  - first:
+      213: 8192250827967351800
+    second: fog_193
+  - first:
+      213: 7001902195896129030
+    second: fog_194
+  - first:
+      213: 8318484314842457598
+    second: fog_195
+  - first:
+      213: 8261401151617893697
+    second: fog_196
+  - first:
+      213: 292383851747022567
+    second: fog_197
+  - first:
+      213: -6814532760169354108
+    second: fog_198
+  - first:
+      213: -2301644751150303254
+    second: fog_199
+  - first:
+      213: 9198695754401634875
+    second: fog_200
+  - first:
+      213: -3363170336934965466
+    second: fog_201
+  - first:
+      213: 2448894918556396458
+    second: fog_202
+  - first:
+      213: 8977880580060738543
+    second: fog_203
+  - first:
+      213: -8239114806168583088
+    second: fog_204
+  - first:
+      213: -2403174444105790572
+    second: fog_205
+  - first:
+      213: 1370959028437131276
+    second: fog_206
+  - first:
+      213: 1916780519219981735
+    second: fog_207
+  - first:
+      213: 638449747607072630
+    second: fog_208
+  - first:
+      213: 3026233376321997600
+    second: fog_209
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fog_0
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1958
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 382cc0a16d2ed77e0800000000000000
+      internalID: -1766006069671443837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_1
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 1952
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5d79ae715d7972a0800000000000000
+      internalID: -6739217578412376739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_2
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 1956
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a109f91e1766dde0800000000000000
+      internalID: -1308745262722121309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_3
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1942
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c6cb4a1d15d34fe0800000000000000
+      internalID: -1205885954233219390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_4
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1949
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 528ecff24cfd9c7c0800000000000000
+      internalID: -4050460356131362779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_5
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 1946
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c34aa9e3a218d20c0800000000000000
+      internalID: -4598877626036476868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_6
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 1938
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c220f17396109770800000000000000
+      internalID: 8615410909687325384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_7
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1928
+        width: 21
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14dd6e8780e395a50800000000000000
+      internalID: 6510302942449818945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_8
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1936
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: effb27d988902cbc0800000000000000
+      internalID: -3764435856166567938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_9
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 1931
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59028043edc597260800000000000000
+      internalID: 7095804797324370069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_10
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 1928
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3361ae98df86a40800000000000000
+      internalID: 5361814125164245945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_11
+      rect:
+        serializedVersion: 2
+        x: 909
+        y: 1939
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcb82fd8d9e0c8c0800000000000000
+      internalID: -3980924952929321735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_12
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1933
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5dcbcc98c9a94ac0800000000000000
+      internalID: -3870375725659075236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_13
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 1931
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82bf445d2a274f470800000000000000
+      internalID: 8427486846405376808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_14
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 1930
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a85cb874facebd610800000000000000
+      internalID: 1647170326297822602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_15
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 1921
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9873c3007c9256e70800000000000000
+      internalID: 9107731756105873289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_16
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 1924
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38695054289aea170800000000000000
+      internalID: 8191671149202347651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_17
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 1928
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cec40e93b98607d0800000000000000
+      internalID: -2952521101151514940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_18
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1925
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313b8eff3d6ca7780800000000000000
+      internalID: -8684410317596740845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_19
+      rect:
+        serializedVersion: 2
+        x: 754
+        y: 1923
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51ac61ce3e189bb0800000000000000
+      internalID: -4929156537275080356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_20
+      rect:
+        serializedVersion: 2
+        x: 785
+        y: 1925
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4175485dda683cd0800000000000000
+      internalID: -2578193287768346292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_21
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 1920
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48903a0c98899a020800000000000000
+      internalID: 2353579997687646596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_22
+      rect:
+        serializedVersion: 2
+        x: 926
+        y: 1909
+        width: 19
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ab76d6462237a70800000000000000
+      internalID: 8823433909676521996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_23
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 1918
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c667fd9afdf6c1c0800000000000000
+      internalID: -4483617126166862141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_24
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 1914
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49f07f5f30ac7d300800000000000000
+      internalID: 276912020466896788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_25
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 1918
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006cc1383a79aded0800000000000000
+      internalID: -2388429923831462400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_26
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 1918
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7629f97d1ce7ff580800000000000000
+      internalID: -8791168576592571801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_27
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 1912
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50a55b6bfec34c0e0800000000000000
+      internalID: -2250606913518216699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_28
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1912
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a427064ef94da270800000000000000
+      internalID: 8263342247740122279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_29
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 1912
+        width: 25
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe904de7bcab24b0800000000000000
+      internalID: -5464083816924537092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_30
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1920
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32ffc0d7067dc54a0800000000000000
+      internalID: -6603166144217153757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_31
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 1916
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d96e494c95e174bb0800000000000000
+      internalID: -4951955894371555683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_32
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 1917
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0bec91872b2468a0800000000000000
+      internalID: -6312873328988329203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_33
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1918
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bf18574a0876d530800000000000000
+      internalID: 3879420114568224696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_34
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1916
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90195a443f2886ab0800000000000000
+      internalID: -5014614203736682231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_35
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 1914
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 467be41798ca55450800000000000000
+      internalID: 6076952978517833572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_36
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1920
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a22711ac7536990800000000000000
+      internalID: -7393969637824517558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_37
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 1912
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42e4b8d5593a34a00800000000000000
+      internalID: 739614625733758500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_38
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 1904
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150c6ebef444e51f0800000000000000
+      internalID: -1054330152707243951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_39
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 1898
+        width: 11
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11c39a13f72a684b0800000000000000
+      internalID: -5438480832825574383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_40
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1908
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0a605b9a463821d0800000000000000
+      internalID: -3375388226652968438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_41
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 1905
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eabd7726c8c249e0800000000000000
+      internalID: -1638526561017808158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_42
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 1906
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbaba97cc32076650800000000000000
+      internalID: 6225947469933099711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_43
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1907
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c100214aa779b8c0800000000000000
+      internalID: -3983020822311730751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_44
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1901
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75e73aedafd64fce0800000000000000
+      internalID: -1372351062196650409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_45
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 1901
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a84462b551e58a10800000000000000
+      internalID: 1911181375070029986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_46
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 1901
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7be0524845e101240800000000000000
+      internalID: 4760338154473721527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_47
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 1898
+        width: 12
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 339a8a7bc8648a930800000000000000
+      internalID: 4154648226439932211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_48
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 1909
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d792595afece23020800000000000000
+      internalID: 2320177272068581757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_49
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 1904
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 739adcc7fa65d4e40800000000000000
+      internalID: 5642261219878218039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_50
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 1912
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c38bcfb4088303be0800000000000000
+      internalID: -1499636552232552388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_51
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1903
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76105c5415534c180800000000000000
+      internalID: -9096086724202397337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_52
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1897
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0ab1aa17f3d0660800000000000000
+      internalID: 7353603523983679720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_53
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1898
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08afa0bb8d634cae0800000000000000
+      internalID: -1530037668920231296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_54
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1898
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47fa906dc80421c40800000000000000
+      internalID: 5481514670093873012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_55
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 1878
+        width: 14
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a457f4f8c8799ed50800000000000000
+      internalID: 6767106545056445770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_56
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 1902
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8a418ab7b0ff2980800000000000000
+      internalID: -8561359694709306741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_57
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1892
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e908343704ddad190800000000000000
+      internalID: -7936788124405628770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_58
+      rect:
+        serializedVersion: 2
+        x: 765
+        y: 1899
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5997ae7eb06e636f0800000000000000
+      internalID: -705123352826971755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_59
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 1899
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197c958b6f0ca6d10800000000000000
+      internalID: 2119718740518619025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_60
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1890
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96f601ddc7f35ff00800000000000000
+      internalID: 1149895085380366185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_61
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1893
+        width: 22
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1167abfa3cbddcc70800000000000000
+      internalID: 8993085664442086929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_62
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 1897
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc8c62fc6d20b16f0800000000000000
+      internalID: -712972994386409268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_63
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 1901
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6bea285ef54a37c0800000000000000
+      internalID: -4090880352809456790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_64
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1899
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 738fd77263b8070d0800000000000000
+      internalID: -3427086251721885641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_65
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1862
+        width: 43
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e78c3dafbdcd700800000000000000
+      internalID: 566569523483279003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_66
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1893
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7378df98431a9a8b0800000000000000
+      internalID: -5140400252641245385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_67
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 1889
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2520a0b62bc79d0b0800000000000000
+      internalID: -5703390347346181550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_68
+      rect:
+        serializedVersion: 2
+        x: 1052
+        y: 1900
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91dd8fc3ac7719720800000000000000
+      internalID: 2851191749592276249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_69
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 1903
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017cc7b9352f4efd0800000000000000
+      internalID: -2313457867656739056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_70
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1888
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b40f02adb119a1fd0800000000000000
+      internalID: -2370422705047408565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_71
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 1889
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd6e6a1d92fe4ec30800000000000000
+      internalID: 4387894899855779549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_72
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1886
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3b84c7bff90ffa0800000000000000
+      internalID: -5768935220190858335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_73
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 1886
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa31a7a86a6bfb30800000000000000
+      internalID: 4322165265113627384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_74
+      rect:
+        serializedVersion: 2
+        x: 636
+        y: 1860
+        width: 29
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ba58955583b82670800000000000000
+      internalID: 8514252480791993010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_75
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 1884
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7efb06b71f1cf4d0800000000000000
+      internalID: -3099568256838795649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_76
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 1864
+        width: 39
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04f05a33121139c20800000000000000
+      internalID: 3211929793543343936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_77
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 1882
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 740fc15d8fb9e32b0800000000000000
+      internalID: -5602869393372680121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_78
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 1892
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 416cd413e060e0590800000000000000
+      internalID: -7706215254357850604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_79
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 1882
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: defe418b15c6a5340800000000000000
+      internalID: 4853310646681661421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_80
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 1865
+        width: 37
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3024f8b8975486b0800000000000000
+      internalID: -5295010948431208389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_81
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 1893
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e3bfdfcc280de0d0800000000000000
+      internalID: -3392045955780987929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_82
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 1892
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3117cc9590f839690800000000000000
+      internalID: -7596570876119846637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_83
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 1884
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ac9669dd26470e60800000000000000
+      internalID: 7928382831743900838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_84
+      rect:
+        serializedVersion: 2
+        x: 917
+        y: 1892
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab1ca5188a5797970800000000000000
+      internalID: 8753156717356433850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_85
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 1889
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7fcaa4dcc511550800000000000000
+      internalID: 6129782604618856384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_86
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1892
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942452c1d993c1c10800000000000000
+      internalID: 2025557279354733129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_87
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 1885
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7fc14604824925a30800000000000000
+      internalID: 4202584302889999607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_88
+      rect:
+        serializedVersion: 2
+        x: 1058
+        y: 1892
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ab4df9da086b27c0800000000000000
+      internalID: -4095065040347116636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_89
+      rect:
+        serializedVersion: 2
+        x: 1094
+        y: 1871
+        width: 13
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99015c0a309440280800000000000000
+      internalID: -9078050668941078375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_90
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 1879
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dbe584b88e878860800000000000000
+      internalID: 7532145619595815895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_91
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 1883
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8721c5bbbde388f30800000000000000
+      internalID: 4577978134684242552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_92
+      rect:
+        serializedVersion: 2
+        x: 664
+        y: 1877
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 942f9b8b1713713b0800000000000000
+      internalID: -5541906451955846583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_93
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 1877
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28f9a0fde0d774010800000000000000
+      internalID: 1173043730778333058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_94
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 1882
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa596cd601857410800000000000000
+      internalID: 1474226319501384352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_95
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 1879
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2af99bdc299fd640800000000000000
+      internalID: 5106968920403343914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_96
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1853
+        width: 54
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fecaa07e244a52980800000000000000
+      internalID: -8564258509124096785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_97
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 1871
+        width: 31
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d4c0e4ff5c8d490800000000000000
+      internalID: -7721203860809954006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_98
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 1861
+        width: 29
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011673e3e00d68d00800000000000000
+      internalID: 974695128964227344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_99
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 1883
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31c2a967c9a6245a0800000000000000
+      internalID: -6538546488751281133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_100
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 1880
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f7ea52457975f4d0800000000000000
+      internalID: -3101439223843330058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_101
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 1880
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34ec3b2a440f512f0800000000000000
+      internalID: -1002631164441932221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_102
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 1876
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 309c846f0e42c5e90800000000000000
+      internalID: -7035707969236317949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_103
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1885
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d99f5809317dd4860800000000000000
+      internalID: 7515899832180275613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_104
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1884
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d93de19d2ed8b200800000000000000
+      internalID: 196150871093754323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_105
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 1871
+        width: 15
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 720787c8035d77130800000000000000
+      internalID: 3564552034578886695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_106
+      rect:
+        serializedVersion: 2
+        x: 1128
+        y: 1872
+        width: 11
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af0593fb25529060800000000000000
+      internalID: 6958718021499424674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_107
+      rect:
+        serializedVersion: 2
+        x: 1180
+        y: 1884
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1e87d2af9ae05f20800000000000000
+      internalID: 3409482889272200735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_108
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 2048
+        height: 1647
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a1ad3d17f827ef80800000000000000
+      internalID: -8077442364853083743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_109
+      rect:
+        serializedVersion: 2
+        x: 603
+        y: 1876
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0bead03c7ee70b80800000000000000
+      internalID: -8428505960437585141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_110
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 1839
+        width: 32
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b7b22d05650f4a70800000000000000
+      internalID: 8813268927357564848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_111
+      rect:
+        serializedVersion: 2
+        x: 948
+        y: 1875
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dae7c3846332f00800000000000000
+      internalID: 1090775218634272143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_112
+      rect:
+        serializedVersion: 2
+        x: 1080
+        y: 1874
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c7366ec21c658820800000000000000
+      internalID: 2919858761447651264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_113
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 1871
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a48b9080852a7d090800000000000000
+      internalID: -8009754913279461302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_114
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 1047
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8191e89d31dd8e80800000000000000
+      internalID: -8174647686119452273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_115
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1003
+        width: 8
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e62c1a76ea422c2f0800000000000000
+      internalID: -954159839567560082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_116
+      rect:
+        serializedVersion: 2
+        x: 2029
+        y: 980
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46518eaf99dcddd70800000000000000
+      internalID: 9069631285817251172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_117
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 970
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dc586c53c53f5780800000000000000
+      internalID: -8692169642616529708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_118
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 951
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe92657ae37a2000800000000000000
+      internalID: 11949399850786557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_119
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 951
+        width: 11
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05806167d9c7e34a0800000000000000
+      internalID: -6611710187200444336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_120
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 932
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 720db322266dee7f0800000000000000
+      internalID: -581291584914730969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_121
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 917
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ad5dce8c2fa86720800000000000000
+      internalID: 2839712170966343072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_122
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 903
+        width: 13
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ee37a9116f8ad5f0800000000000000
+      internalID: -731114342289293599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_123
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 889
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e90e8acccbd7d74e0800000000000000
+      internalID: -1982290011132206946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_124
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 874
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffc9f522593f902e0800000000000000
+      internalID: -2158926724495074049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_125
+      rect:
+        serializedVersion: 2
+        x: 2041
+        y: 860
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a592a8b275a1aed0800000000000000
+      internalID: -2404458813896616542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_126
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 831
+        width: 13
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b6f8121acd3ff00800000000000000
+      internalID: 1149504914520501024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_127
+      rect:
+        serializedVersion: 2
+        x: 2036
+        y: 845
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8534221303458550800000000000000
+      internalID: 6162405345594717582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_128
+      rect:
+        serializedVersion: 2
+        x: 2033
+        y: 802
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 503036fca7c4c38c0800000000000000
+      internalID: -4018252677172231419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_129
+      rect:
+        serializedVersion: 2
+        x: 2032
+        y: 788
+        width: 13
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3dcdfd6c27969800800000000000000
+      internalID: 618848215889726783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_130
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 740
+        width: 17
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8d60e6fe3a8e8420800000000000000
+      internalID: 2634194835092827531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_131
+      rect:
+        serializedVersion: 2
+        x: 2038
+        y: 596
+        width: 10
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3918fe51b06338520800000000000000
+      internalID: 2703063622592987539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_132
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 519
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80bdda9c8c4cb97a0800000000000000
+      internalID: -6369280881329317112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_133
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 227
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4245a3bec5b51fc0800000000000000
+      internalID: -3524711233965702582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_134
+      rect:
+        serializedVersion: 2
+        x: 788
+        y: 227
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 800091924f3fc3770800000000000000
+      internalID: 8592010419103137800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_135
+      rect:
+        serializedVersion: 2
+        x: 813
+        y: 225
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 971f9f984abcd1e80800000000000000
+      internalID: -8206179038449241735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_136
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 226
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26ecc3a2c3cfab9f0800000000000000
+      internalID: -451771477260448158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_137
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 228
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdeb2fcaba8af0ac0800000000000000
+      internalID: -3886702498102984996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_138
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 228
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3672f20bc010e510800000000000000
+      internalID: 1576278333693523517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_139
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 232
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d23209ea18dc27930800000000000000
+      internalID: 4139596964370064173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_140
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 224
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b361b9961396c93b0800000000000000
+      internalID: -5504408983607503301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_141
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 217
+        width: 38
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e00daa76fb242c0800000000000000
+      internalID: -4448783029920330101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_142
+      rect:
+        serializedVersion: 2
+        x: 1258
+        y: 230
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bced5d409652310d0800000000000000
+      internalID: -3453375356280119605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_143
+      rect:
+        serializedVersion: 2
+        x: 1268
+        y: 228
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9578d1eacacb1150800000000000000
+      internalID: 5844487914164614554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_144
+      rect:
+        serializedVersion: 2
+        x: 1297
+        y: 229
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0668c03989e3152a0800000000000000
+      internalID: -6750545541428640160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_145
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 233
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e0beb5ce74f17160800000000000000
+      internalID: 7021662119367979233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_146
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 220
+        width: 16
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c8408b04c0526dc0800000000000000
+      internalID: -3647263945279911742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_147
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 231
+        width: 16
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e73bf339155ec14e0800000000000000
+      internalID: -2009479195188546690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_148
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 201
+        width: 51
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d249ac83993c87070800000000000000
+      internalID: 8104442592303420461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_149
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 213
+        width: 18
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ddc7d12eb6d73740800000000000000
+      internalID: 5131806412511890899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_150
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 232
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 348e4471340ac4fc0800000000000000
+      internalID: -3509253799614814141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_151
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 217
+        width: 28
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a58bf29179ba35ad0800000000000000
+      internalID: -2714637484923307942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_152
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 226
+        width: 14
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0755a57b530db90b0800000000000000
+      internalID: -5720749972516088464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_153
+      rect:
+        serializedVersion: 2
+        x: 1485
+        y: 233
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc5c7d8f48bff690800000000000000
+      internalID: -7566126197143479083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_154
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 228
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65a903f65b3bbc990800000000000000
+      internalID: -7364595173798405546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_155
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 217
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a81c5effb3a7f3c00800000000000000
+      internalID: 882558450102813066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_156
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 218
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff11e288b8c8ba80800000000000000
+      internalID: -8450784005965406209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_157
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 218
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d2cd7e1d9b07c990800000000000000
+      internalID: -7365905896091827497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_158
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 218
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55d664112f7dd7d80800000000000000
+      internalID: -8251201507600994987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_159
+      rect:
+        serializedVersion: 2
+        x: 1186
+        y: 217
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e4d9db0a4fd0ac0800000000000000
+      internalID: -3887181932137722236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_160
+      rect:
+        serializedVersion: 2
+        x: 1271
+        y: 216
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdfb8e9292e057bf0800000000000000
+      internalID: -327339827954925601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_161
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 217
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a55b7f7f3e4e0d800800000000000000
+      internalID: 635259215228155226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_162
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 225
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84e2547463e34d20800000000000000
+      internalID: 3261700575734195339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_163
+      rect:
+        serializedVersion: 2
+        x: 1468
+        y: 222
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59fc2f37b59852600800000000000000
+      internalID: 442911164246183829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_164
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 208
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b122955a7e97559e0800000000000000
+      internalID: -1633265254033448421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_165
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 216
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06e8845dfa9303c30800000000000000
+      internalID: 4337029868518149728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_166
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 213
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fa197acf97858610800000000000000
+      internalID: 1622852361103416056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_167
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 211
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22dba3212bfa45720800000000000000
+      internalID: 2834083244867763490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_168
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 202
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64432ac1bc7741930800000000000000
+      internalID: 4113044073938564166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_169
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 211
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 541952330e556e4f0800000000000000
+      internalID: -799857462392549051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_170
+      rect:
+        serializedVersion: 2
+        x: 1317
+        y: 210
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e8ea4ed92c1cc010800000000000000
+      internalID: 1210373366004508899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_171
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 192
+        width: 18
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbf794096e9296d20800000000000000
+      internalID: 3272192674501328827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_172
+      rect:
+        serializedVersion: 2
+        x: 1407
+        y: 214
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a06ce4c9ac843f30800000000000000
+      internalID: 4554419783959601314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_173
+      rect:
+        serializedVersion: 2
+        x: 1420
+        y: 209
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97da0e66e99aba830800000000000000
+      internalID: 4083543984937414009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_174
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 208
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0949ee06b87513190800000000000000
+      internalID: -7984504408212859760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_175
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 207
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad698ac84f345100800000000000000
+      internalID: 95771073949822379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_176
+      rect:
+        serializedVersion: 2
+        x: 1068
+        y: 201
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e00f332fa19e5f70800000000000000
+      internalID: 9177933272024285408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_177
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 204
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0b5be3178d1117b0800000000000000
+      internalID: -5255386824172676342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_178
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 196
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 138d4bd7456873ad0800000000000000
+      internalID: -2722559752277796815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_179
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 200
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff118841e7be18420800000000000000
+      internalID: 2630642584103948799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_180
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 201
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e54bd0b716999830800000000000000
+      internalID: 4078455966056269280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_181
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 194
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f22a2e6c73a1a3390800000000000000
+      internalID: -7837923374622662097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_182
+      rect:
+        serializedVersion: 2
+        x: 1477
+        y: 200
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc091b09d64202020800000000000000
+      internalID: 2314890261466026187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_183
+      rect:
+        serializedVersion: 2
+        x: 1502
+        y: 203
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b04977f35e3a310800000000000000
+      internalID: 1415226768676358979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_184
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 198
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d1935ce9616bb140800000000000000
+      internalID: 4736486540674568656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_185
+      rect:
+        serializedVersion: 2
+        x: 1185
+        y: 196
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53cd108b6541a1840800000000000000
+      internalID: 5195487482812161077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_186
+      rect:
+        serializedVersion: 2
+        x: 1196
+        y: 196
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbab0536c291c93e0800000000000000
+      internalID: -2045732452297557313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_187
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 193
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a75846d0033307e90800000000000000
+      internalID: -7030062736849205894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_188
+      rect:
+        serializedVersion: 2
+        x: 1225
+        y: 199
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 987c0e9a593c4b4c0800000000000000
+      internalID: -4272575098900134007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_189
+      rect:
+        serializedVersion: 2
+        x: 1229
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88a43876178419230800000000000000
+      internalID: 3643773225424603784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_190
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 199
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ca0105ccd415df0800000000000000
+      internalID: -193287769088283542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_191
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 193
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5eff6a1ef69c0ac0800000000000000
+      internalID: -3887566360218173858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_192
+      rect:
+        serializedVersion: 2
+        x: 1436
+        y: 195
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0b72ff279d8b050800000000000000
+      internalID: 5816638006679285992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_193
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 193
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fbc4ef39b8b0b170800000000000000
+      internalID: 8192250827967351800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_194
+      rect:
+        serializedVersion: 2
+        x: 1247
+        y: 178
+        width: 13
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6069a6213f0cb2160800000000000000
+      internalID: 7001902195896129030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_195
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 189
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef5e7df3961317370800000000000000
+      internalID: 8318484314842457598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_196
+      rect:
+        serializedVersion: 2
+        x: 1306
+        y: 188
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145003d939466a270800000000000000
+      internalID: 8261401151617893697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_197
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 179
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e611756091ce0400800000000000000
+      internalID: 292383851747022567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_198
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 185
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48ce7df3f8aed61a0800000000000000
+      internalID: -6814532760169354108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_199
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 173
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae73b802b4aee00e0800000000000000
+      internalID: -2301644751150303254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_200
+      rect:
+        serializedVersion: 2
+        x: 1405
+        y: 186
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3ad0064d0558af70800000000000000
+      internalID: 9198695754401634875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_201
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 183
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62f4cdbb56e9351d0800000000000000
+      internalID: -3363170336934965466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_202
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 184
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab20d024f83cf120800000000000000
+      internalID: 2448894918556396458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_203
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 178
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe3f56a12d6d79c70800000000000000
+      internalID: 8977880580060738543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_204
+      rect:
+        serializedVersion: 2
+        x: 1462
+        y: 177
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05409aa8cb8c8ad80800000000000000
+      internalID: -8239114806168583088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_205
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 166
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49b07cd539536aed0800000000000000
+      internalID: -2403174444105790572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_206
+      rect:
+        serializedVersion: 2
+        x: 1265
+        y: 159
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c002c9309ff960310800000000000000
+      internalID: 1370959028437131276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_207
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 163
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7adee780ab5c99a10800000000000000
+      internalID: 1916780519219981735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_208
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 163
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67fae0da9aa3cd800800000000000000
+      internalID: 638449747607072630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fog_209
+      rect:
+        serializedVersion: 2
+        x: 1294
+        y: 157
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02b8a1bd8375ff920800000000000000
+      internalID: 3026233376321997600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
