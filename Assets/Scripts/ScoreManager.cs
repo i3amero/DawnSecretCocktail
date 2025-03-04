@@ -62,8 +62,11 @@ public class ScoreManager : MonoBehaviour
             judgmentText.gameObject.SetActive(false);
         }
 
-        UpdateKillCountText("0");
-
+        if(killCountText != null && GameController.Instance.gameMode == GameMode.Tutorial)
+        {
+            UpdateKillCountText("0");
+        }
+    
         // GameController의 점수를 불러와 UI 업데이트 - 0점으로 시작
         if (GameController.Instance != null)
         {
@@ -72,6 +75,11 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Debug.LogError("GameController 인스턴스를 찾을 수 없습니다.");
+        }
+
+        if(bestScoreText != null)
+        {
+            UpdateBestScoreText(bestScore.ToString());
         }
     }
 
@@ -145,7 +153,7 @@ public class ScoreManager : MonoBehaviour
     // 판정에 따른 배율 계산
     private float GetJudgmentMultiplier(float reactionTime)
     {
-        if (reactionTime <= 2f) // PERFECT
+        if (reactionTime <= 0.75f) // PERFECT
         {
             Debug.Log("PERFECT");
             if(GameController.Instance.gameMode == GameMode.Infinite
@@ -155,7 +163,7 @@ public class ScoreManager : MonoBehaviour
             }
             return 2.0f;
         }
-        if (reactionTime <= 5f) // GREAT
+        if (reactionTime <= 1.25f) // GREAT
         {
             Debug.Log("GREAT");
             if (GameController.Instance.gameMode == GameMode.Infinite
@@ -165,7 +173,7 @@ public class ScoreManager : MonoBehaviour
             }
             return 1.5f;
         }
-        if (reactionTime <= 8f) // GOOD
+        if (reactionTime <= 1.75f) // GOOD
         {
             Debug.Log("GOOD");
             if (GameController.Instance.gameMode == GameMode.Infinite

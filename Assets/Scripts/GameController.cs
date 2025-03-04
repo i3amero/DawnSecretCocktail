@@ -27,7 +27,6 @@ public class GameController : MonoBehaviour
 
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
-    [SerializeField] private float spawnInterval; // 몬스터 스폰 주기
     private int selectedMapID; // 선택된 맵 ID
 
     public MapDatabase mapDatabase; // MapDatabase 연결

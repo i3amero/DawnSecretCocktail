@@ -3,6 +3,7 @@ using System.Collections;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.TextCore.Text;
 
 public class MonsterSpawner : MonoBehaviour
 {
@@ -64,6 +65,14 @@ public class MonsterSpawner : MonoBehaviour
             // 이번에 뽑은 몬스터를 'previousMonster'에 저장
             previousMonster = randomMonster;
 
+            float scaleFactor = 0.8f;     // 전체 크기 조절
+            float xscaleFactor = 0.3f;    // 가로 비율
+            float yscaleFactor = 0.3f;   // 세로 비율
+
+            // 원하는 최종 스케일 계산
+            float finalX = xscaleFactor * scaleFactor;
+            float finalY = yscaleFactor * scaleFactor;
+            float finalZ = 1f; // 2D면 1, 3D라면 scaleFactor 등 상황에 맞게
 
             if (randomMonster.prefab != null)
             {
@@ -75,6 +84,8 @@ public class MonsterSpawner : MonoBehaviour
 
                 // spawnPosition에 랜덤으로 선택된 몬스터 prefab을 이용하여 생성, 회전은 기본값(없음)으로 설정
                 currentMonster = Instantiate(randomMonster.prefab, spawnPosition, Quaternion.identity);
+
+                currentMonster.transform.localScale = new Vector3(finalX, finalY, finalZ);
 
                 // 생성된 몬스터에 페이드인 효과 추가
                 MonsterFadeEffect fadeEffect = currentMonster.GetComponent<MonsterFadeEffect>();
@@ -119,6 +130,15 @@ public class MonsterSpawner : MonoBehaviour
                 // 프리팹이 없는 경우 로그로만 처리
                 Debug.LogWarning($"[몬스터 로그] {randomMonster.name} (타입: {randomMonster.type})가 등장했지만 프리팹이 없습니다!");
             }
+        }
+    }
+
+    public void CancelMonsterRemoval()
+    {
+        if (removeMonsterCoroutine != null)
+        {
+            StopCoroutine(removeMonsterCoroutine);
+            removeMonsterCoroutine = null;
         }
     }
 

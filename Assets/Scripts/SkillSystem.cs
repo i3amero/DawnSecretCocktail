@@ -24,6 +24,7 @@ public class SkillSystem : MonoBehaviour
     private GameObject Character2; // 생성된 캐릭터
     public GameObject skillIcon;
     private bool isAnimating = false;
+    private float reactionTime; // 반응 시간
 
     void Start() // 연결을 제대로 했는지 확인
     {
@@ -102,21 +103,73 @@ public class SkillSystem : MonoBehaviour
         {
             if(key == "Q")
             {
+                currentCombination += key;
+                if(currentCombination.Length == 2)
+                {
+                    CheckValidSkillCombination();
+                }
                 StartCoroutine(ShowCharacterPrefab(qPrefab));  // Q 캐릭터 생성
             }
             if (key == "W")
             {
+                currentCombination += key;
+                if (currentCombination.Length == 2)
+                {
+                    CheckValidSkillCombination();
+                }
                 StartCoroutine(ShowCharacterPrefab(wPrefab));  // W 캐릭터 생성
             }
             if (key == "E")
             {
+                currentCombination += key;
+                if (currentCombination.Length == 2)
+                {
+                    CheckValidSkillCombination();
+                }
                 StartCoroutine(ShowCharacterPrefab(ePrefab));  // E 캐릭터 생성
             }
             if (key == "R")
             {
+                currentCombination += key;
+                if (currentCombination.Length == 2)
+                {
+                    CheckValidSkillCombination();
+                }
                 StartCoroutine(ShowCharacterPrefab(rPrefab));  // R 캐릭터 생성
             }
-            currentCombination += key;
+        }
+    }
+
+    private void CheckValidSkillCombination()
+    {
+        foreach (var combo in skillDatabase.skillCombinations)
+        {
+            if (combo.combination1 == currentCombination || combo.combination2 == currentCombination)
+            {
+                IsSkillValid(combo.resultingSkill);
+                return;
+            }
+
+        }
+    }
+
+    private void IsSkillValid(Skill skill)
+    {
+        if (monsterSpawner != null && monsterSpawner.GetCurrentMonster() != null)
+        {
+            monsterSpawner.CancelMonsterRemoval(); // 스킬 키를 두개 입력받으면 자동 몬스터 제거 취소
+
+            var currentMonster = monsterSpawner.GetCurrentMonster();
+            var monsterController = currentMonster.GetComponent<MonsterController>();
+
+            if (monsterController != null && monsterController.MonsterData != null)
+            {
+                if (monsterController.MonsterData.validSkills == skill.name)
+                {
+                    // 성공
+                    reactionTime = Time.time - monsterController.spawnTime; // 반응 시간 계산
+                }
+            }
         }
     }
 
@@ -290,6 +343,8 @@ public class SkillSystem : MonoBehaviour
         }
     }
 
+   
+
     private IEnumerator ExecuteSkillCoroutine(Skill skill)
     {
         Debug.Log($"스킬 발동: {skill.name}");
@@ -319,7 +374,6 @@ public class SkillSystem : MonoBehaviour
             {
                 // 스킬 성공: 몬스터 제거 및 점수 추가
                 Debug.Log($"스킬 성공! {monsterController.MonsterData.name} 제거");
-                float reactionTime = Time.time - monsterController.spawnTime; // 반응 시간 계산
                 Debug.Log($"스킬 적중시간 : {reactionTime}");
 
                 if (scoreManager != null)
@@ -359,12 +413,14 @@ public class SkillSystem : MonoBehaviour
                         tutorialDialogueManager.ShowFullDialogue("잘하셨습니다!",
                                 () => {
                                     monsterSpawner.RemoveCurrentMonster(); // 대화창이 닫히면 다음 현상으로 넘어가기
+                                    currentMonster = null;
                                 });
                     }
                 }
                 else // 무한,일반 모드일 때
                 {
                     monsterSpawner.RemoveCurrentMonster();
+                    currentMonster = null;
                 }
             }
             else
