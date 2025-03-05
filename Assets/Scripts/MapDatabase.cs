@@ -1,5 +1,8 @@
-using UnityEngine;
-
+﻿using UnityEngine;
+/// <summary>
+/// 여기서 퀴즈. MapData가 구조체(struct)는 안되는 이유는?
+/// 이론을 모르면 알 수 없습니다. 검색해보세요~ 이거 면접 필수질문임 ㅎㅎ
+/// </summary>
 [CreateAssetMenu(fileName = "MapDatabase", menuName = "Database/MapDatabase")]
 public class MapDatabase : ScriptableObject
 {

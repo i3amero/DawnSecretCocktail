@@ -14,8 +14,9 @@ public class SlotController : MonoBehaviour
 {
     public GameObject dialogPanel;
     public TextMeshProUGUI dialogText;
-    public float autoHideTime = 3f;
+    public float autoHideTime = 5f;
     string message = "";
+    public Image popupImage;
 
     public Image[] slots;
     [SerializeField]private Sprite defaultSprite;
@@ -45,6 +46,7 @@ public class SlotController : MonoBehaviour
             if (slot.sprite == defaultSprite)
             {
                 slot.sprite = ingredientSprite;
+                popupImage.sprite = ingredientSprite;
 
                 switch (ingredientSprite.name)
                 {
@@ -61,9 +63,9 @@ public class SlotController : MonoBehaviour
                         message = "르노타시아에서 굉장히 인기를 끌고 있는 칵테일용 레몬즙이라네.\n 유치한 이름과는 다르게 전기에 감전된 것만 같은 강렬한 신 맛이 일품이지.";
                         break;
                     case "티어즈 오브 더 씨_0":
-                        message = "바다의 눈물이라는 이름이 잘 어울리는 짙은 남색 빛깔이 도는 논알콜 위스키라네. 씁쓸하지만 그다지 불쾌하지 않은 어른의 맛이 난다고들 하지.";
+                        message = "바다의 눈물이라는 이름이 잘 어울리는 짙은 남색 빛깔이 도는 논알콜 위스키라네.\n 씁쓸하지만 그다지 불쾌하지 않은 어른의 맛이 난다고들 하지.";
                         break;
-                    case "고블린 갱_0":
+                    case "고블린 갱_1":
                         message = "강렬한 이름과 어울리는 강렬한 맛을 가진 보드카라네. \n 분명 논알콜임에도 마치 100도의 불을 목에 넣는 것만 같은 화끈함이 특징이지.";
                         break;
                     case "데스 메디슨_0":
@@ -97,6 +99,10 @@ public class SlotController : MonoBehaviour
     
     public void OnSlotClicked(Image slot)
     {
+        if (dialogPanel.activeSelf)
+        {
+            return;
+        }
         if(slot.sprite != defaultSprite)
         {
             ClearSlot(slot);

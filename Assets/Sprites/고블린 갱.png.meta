@@ -5,6 +5,9 @@ TextureImporter:
   - first:
       213: 3984885315409139742
     second: "\uACE0\uBE14\uB9B0 \uAC31_0"
+  - first:
+      213: 343966849907502054
+    second: "\uACE0\uBE14\uB9B0 \uAC31_1"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,10 +119,10 @@ TextureImporter:
       name: "\uACE0\uBE14\uB9B0 \uAC31_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1024
-        height: 1024
+        x: 77
+        y: 470
+        width: 39
+        height: 30
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -129,6 +132,27 @@ TextureImporter:
       bones: []
       spriteID: e18d1afd4182d4730800000000000000
       internalID: 3984885315409139742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "\uACE0\uBE14\uB9B0 \uAC31_1"
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 19
+        width: 254
+        height: 481
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb2f3f070406c400800000000000000
+      internalID: 343966849907502054
       vertices: []
       indices: 
       edges: []
@@ -145,6 +169,7 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       "\uACE0\uBE14\uB9B0 \uAC31_0": 3984885315409139742
+      "\uACE0\uBE14\uB9B0 \uAC31_1": 343966849907502054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
