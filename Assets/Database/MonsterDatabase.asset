@@ -50,26 +50,26 @@ MonoBehaviour:
     validSkills: "\uB208\uBD80\uC2E0 \uC77C\uACA9"
   - name: "\uD504\uB808\uC784 \uB4DC\uB78D \uD604\uC0C1"
     type: 1
-    prefab: {fileID: 5903899512783244297, guid: 2616a356fc7a6e94cb41e2b98464d342, type: 3}
+    prefab: {fileID: 5903899512783244297, guid: 1089ac52730462b4d9c82682e16cb38a, type: 3}
     spawnDuration: 2
     validSkills: "\uB9AC\uB4DC\uBBF8\uCEEC \uC708\uB4DC\uBC00"
   - name: "\uC2DC\uACF5\uAC04 \uC815\uC9C0 \uD604\uC0C1"
     type: 1
-    prefab: {fileID: 5903899512783244297, guid: 2616a356fc7a6e94cb41e2b98464d342, type: 3}
+    prefab: {fileID: 5903899512783244297, guid: 9b884a4e3b607ba4ebed56ffd5b3c40b, type: 3}
     spawnDuration: 2
     validSkills: "\uAE30\uBE0C \uC5B4 \uB77C\uC774\uBE0C\uB2C8\uC2A4"
   - name: "\uAD49\uC74C \uD604\uC0C1"
     type: 1
-    prefab: {fileID: 5903899512783244297, guid: 2616a356fc7a6e94cb41e2b98464d342, type: 3}
+    prefab: {fileID: 5903899512783244297, guid: 3b49c9b59406a9b45ad85060bce838ed, type: 3}
     spawnDuration: 2
     validSkills: "\uC2DC\uCCAD\uAC01\uC801 \uD30C\uBA78"
   - name: "\uBC30\uC18D \uD604\uC0C1"
     type: 1
-    prefab: {fileID: 5903899512783244297, guid: 2616a356fc7a6e94cb41e2b98464d342, type: 3}
+    prefab: {fileID: 5903899512783244297, guid: 9da0edbb715121041a02384fe5aaab3e, type: 3}
     spawnDuration: 2
     validSkills: "\uD504\uB808\uC784 \uB4DC\uB78D"
   - name: "\uC544\uC218\uB77C\uC7A5 \uD604\uC0C1"
     type: 1
-    prefab: {fileID: 5903899512783244297, guid: 2616a356fc7a6e94cb41e2b98464d342, type: 3}
+    prefab: {fileID: 5903899512783244297, guid: 8150776e434a3104d8696bb9ca3305dd, type: 3}
     spawnDuration: 2
     validSkills: "\uD398\uC774\uB4DC \uC544\uC6C3"

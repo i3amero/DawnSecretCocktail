@@ -66,8 +66,8 @@ public class MonsterSpawner : MonoBehaviour
             previousMonster = randomMonster;
 
             float scaleFactor = 0.8f;     // 전체 크기 조절
-            float xscaleFactor = 0.3f;    // 가로 비율
-            float yscaleFactor = 0.3f;   // 세로 비율
+            float xscaleFactor = 0.5f;    // 가로 비율
+            float yscaleFactor = 0.5f;   // 세로 비율
 
             // 원하는 최종 스케일 계산
             float finalX = xscaleFactor * scaleFactor;
@@ -281,7 +281,9 @@ public class MonsterSpawner : MonoBehaviour
         }
         if (tutorialDialogueManager != null)
         {
-            tutorialDialogueManager.ShowFullDialogue("이정도면 바로 업무에 들어가도 되겠습니다.",
+            tutorialDialogueManager.ShowFullDialogue("이 정도면 훌륭합니다.\n" +
+                            "얼마나 빠르고 정확하게 대응했는 지에 따라 더 높은 점수를 받을 수 있습니다.\n" +
+                            "그럼 낮 시간의 업무가 끝나는 대로, 실전에 돌입하도록 하죠.",
                 () => { // 3마리를 모두 처치 시 축하 대화창을 띄우고,
                 GameController.Instance.ChangeState(GameState.Ended); // 대화창을 클릭하면 게임 종료 상태로 변경
             });

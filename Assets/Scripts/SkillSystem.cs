@@ -394,24 +394,27 @@ public class SkillSystem : MonoBehaviour
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
 
-               
+
                 if (GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount == 3) // 튜토리얼에서 몬스터를 3마리 잡았을 경우
                 {
                     // 현재 화면의 요소들을 제거 
                     if (monsterSpawner != null && tutorialDialogueManager != null)
                     {
                         tutorialDialogueManager.ShowFullDialogue("잘하셨습니다!",
-                                () => {
+                                () =>
+                                {
                                     monsterSpawner.DestroyCurrentMonsterCompletely(); // 대화창이 닫히면 튜토리얼 종료
                                 });
                     }
                 }
-                else if(GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount < 3)
+                else if (GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount < 3)
                 {
                     if (monsterSpawner != null && tutorialDialogueManager != null)
                     {
-                        tutorialDialogueManager.ShowFullDialogue("잘하셨습니다!",
-                                () => {
+                        int remainingCount = 3 - scoreManager.tutorialKillCount;
+                        tutorialDialogueManager.ShowFullDialogue($"잘하셨습니다! 앞으로 {remainingCount}번만 더 대응해 보시죠.",
+                                () =>
+                                {
                                     monsterSpawner.RemoveCurrentMonster(); // 대화창이 닫히면 다음 현상으로 넘어가기
                                     currentMonster = null;
                                 });
@@ -455,7 +458,7 @@ public class SkillSystem : MonoBehaviour
                 {
                     if (tutorialDialogueManager != null)
                     {
-                        tutorialDialogueManager.ShowFullDialogue("다시 해보세요",
+                        tutorialDialogueManager.ShowFullDialogue("흠.. 다시 해보시겠습니까?",
                             () =>
                         {
                             monsterSpawner.RemoveCurrentMonster(); // 대화창이 닫히면 다음 현상으로 넘어가기

@@ -181,7 +181,8 @@ public class GameController : MonoBehaviour
                 {
                     if (tutorialDialogueManager != null)
                     {
-                        tutorialDialogueManager.ShowFullDialogue("튜토리얼 설명용 텍스트", () => {
+                        tutorialDialogueManager.ShowFullDialogue("오셨군요. 그럼 저희 업무가 어떤 식으로 진행되는 지 설명해드리겠습니다.",
+                            () => {
                             // 대화창이 닫히면 게임 상태를 Running으로 변경
                             ChangeState(GameState.Running);
                         });
