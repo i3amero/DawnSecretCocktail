@@ -1,11 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Linq;
 
 [CreateAssetMenu(fileName = "SkillDatabase", menuName = "Database/Skill Database")]
 public class SkillDatabase : ScriptableObject
 {
     public List<Skill> skills; // 스킬 데이터 목록
     public List<SkillCombination> skillCombinations; // 키 조합 목록
+
+    public SkillCombination GetSkillCombinationByResultingSkillName(string skillName)
+    {
+        return skillCombinations.FirstOrDefault(sc =>
+            sc.resultingSkill != null && sc.resultingSkill.name == skillName);
+    }
 }
 
 [System.Serializable]

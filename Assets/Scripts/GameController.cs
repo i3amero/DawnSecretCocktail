@@ -181,7 +181,9 @@ public class GameController : MonoBehaviour
                 {
                     if (tutorialDialogueManager != null)
                     {
-                        tutorialDialogueManager.ShowFullDialogue("오셨군요. 그럼 저희 업무가 어떤 식으로 진행되는 지 설명해드리겠습니다.",
+                        tutorialDialogueManager.ShowFullDialogue(
+                            "오셨군요. 그럼 저희 업무가 어떤 식으로 진행되는 지 설명해드리겠습니다.\n\n\n" +
+        "<color=#FF9999>스페이스바를 누르거나 화면 아무곳을 클릭하면 대화창이 닫히고 진행됩니다.</color>",
                             () => {
                             // 대화창이 닫히면 게임 상태를 Running으로 변경
                             ChangeState(GameState.Running);

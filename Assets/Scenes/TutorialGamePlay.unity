@@ -476,6 +476,7 @@ MonoBehaviour:
   scoreManager: {fileID: 1270715266}
   skillSystem: {fileID: 136135641}
   tutorialDialogueManager: {fileID: 413494840}
+  skillDatabase: {fileID: 11400000, guid: 5dde04a450b5fa349bc9be8b79f9cb7a, type: 2}
   spawnPoint: {fileID: 0}
   clearText: {fileID: 260384709}
   isMonsterReady: 0

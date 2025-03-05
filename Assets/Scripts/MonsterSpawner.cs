@@ -10,6 +10,7 @@ public class MonsterSpawner : MonoBehaviour
     public ScoreManager scoreManager; // scoreManager 참조
     public SkillSystem skillSystem; // skillSystem 참조
     public TutorialDialogueManager tutorialDialogueManager; // TutorialDialogueManager 참조
+    public SkillDatabase skillDatabase; // 스킬 데이터베이스 참조
     private MapDatabase.MapData currentMap; // 현재 맵 데이터
     public Transform spawnPoint;           // 스폰 위치
     public TMP_Text clearText;             // 클리어 텍스트
@@ -110,7 +111,19 @@ public class MonsterSpawner : MonoBehaviour
                     // 튜토리얼은 입력제한 시간 없음 / 대신 대화창 생성
                     else if (GameController.Instance.gameMode == GameMode.Tutorial)
                     {
-                        tutorialDialogueManager.ShowFullDialogue("이녀석은 이렇게 이렇게 하면 돼!");
+                        SkillCombination combo = skillDatabase.GetSkillCombinationByResultingSkillName(randomMonster.validSkills);
+                        if (combo != null && !string.IsNullOrEmpty(combo.combination1) && combo.combination1.Length >= 2)
+                        {
+                            char key1 = combo.combination1[0];
+                            char key2 = combo.combination1[1];
+                            tutorialDialogueManager.ShowFullDialogue(
+                                $"저 쪽에 보이시는 건 {randomMonster.name}입니다. {key1}와 {key2} 버튼을 눌러서 대응해보십시오.");
+                        }
+                        else
+                        {
+                            tutorialDialogueManager.ShowFullDialogue(
+                                $"저 쪽에 보이시는 건 {randomMonster.name}입니다. 대응할 버튼 정보가 없습니다.");
+                        }
                     }
                 }
                 else
