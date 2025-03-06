@@ -1720,7 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0aa8ffb4ae0d42ad489e21b1d204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: a9e129a304a627d4999a40988d7ddc96, type: 3}
+  csvFile: {fileID: 4900000, guid: a214e528f0c52d143a226f930cb53ff7, type: 3}
   dialogueList: []
 --- !u!1 &1054721719
 GameObject:
@@ -1999,7 +1999,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

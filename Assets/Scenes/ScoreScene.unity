@@ -1154,7 +1154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: CocktailScene
+  targetScene: CocktailMain
 --- !u!114 &2128352967
 MonoBehaviour:
   m_ObjectHideFlags: 0

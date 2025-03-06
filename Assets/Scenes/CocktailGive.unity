@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b934e4cb14ed94ea636fafa35b7965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: -289956327280955989, guid: b850c77c3fe2cd94aa84733487182d73, type: 3}
+  characterSprite: {fileID: -289956327280955989, guid: 807aad707d74c804bb8ec430ec8a208d, type: 3}
   popupPanel: {fileID: 824772074}
   popupText: {fileID: 1760922356}
   confirmButton: {fileID: 1708502845}
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 346356318260110323, guid: 24abeb0fffeb4b84490c5e3c3a380da8, type: 3}
+  m_Sprite: {fileID: 3511621295911615649, guid: f50b00e43dc24bb40b476398d757ebd5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.34901962}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b934e4cb14ed94ea636fafa35b7965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 4150957018732374332, guid: 41508843c5e579c4e917db32fe300776, type: 3}
+  characterSprite: {fileID: -6118901376476247441, guid: 61f25bab2cf9467488fca3838848ddfa, type: 3}
   popupPanel: {fileID: 824772074}
   popupText: {fileID: 1760922356}
   confirmButton: {fileID: 1708502845}
@@ -901,7 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b934e4cb14ed94ea636fafa35b7965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 710948414472634084, guid: 2f724395c31867545bdc9549a6251ea3, type: 3}
+  characterSprite: {fileID: 710948414472634084, guid: 6df15d63edf4b3b469951d588cfd972e, type: 3}
   popupPanel: {fileID: 824772074}
   popupText: {fileID: 1760922356}
   confirmButton: {fileID: 1708502845}
@@ -1052,7 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c0b934e4cb14ed94ea636fafa35b7965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprite: {fileID: 7664323890486439518, guid: 5da637145ce3ab34eb140718a08e724c, type: 3}
+  characterSprite: {fileID: 7664323890486439518, guid: c4667b4602a616749a8efb4273935e19, type: 3}
   popupPanel: {fileID: 824772074}
   popupText: {fileID: 1760922356}
   confirmButton: {fileID: 1708502845}
@@ -1607,7 +1607,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

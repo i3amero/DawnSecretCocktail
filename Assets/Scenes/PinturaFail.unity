@@ -791,14 +791,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 813781677}
         m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 1
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: Lobby
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &813781675
@@ -848,10 +848,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 813781671}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb45f8a97a6cd8142864de50237c1089, type: 3}
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: Lobby
 --- !u!1 &888521458
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +863,7 @@ GameObject:
   - component: {fileID: 888521462}
   - component: {fileID: 888521461}
   - component: {fileID: 888521460}
+  - component: {fileID: 888521463}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -959,6 +959,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &888521463
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888521458}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &920263247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1028,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6118901376476247441, guid: 41508843c5e579c4e917db32fe300776, type: 3}
+  m_Sprite: {fileID: -6622706112191020371, guid: 825edf18123ae144da84bcaf8d36d782, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1349,7 +1361,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

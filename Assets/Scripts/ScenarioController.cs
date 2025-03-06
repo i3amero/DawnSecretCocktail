@@ -25,6 +25,7 @@ public class ScenarioController : MonoBehaviour
 
     private void Start()
     {
+        Debug.Log($"ScenarioController.Instance: {ScenarioController.Instance}");
         LoadUnlockedScenarios();
     }
 

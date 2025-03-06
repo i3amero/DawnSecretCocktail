@@ -843,8 +843,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 777269255}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadScene
+        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+        m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -901,10 +901,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 777269250}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb45f8a97a6cd8142864de50237c1089, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ab9759099c15b74fb5c9922a8bfff81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneToLoad: CocktailMain
+  sceneName: CocktailMain
 --- !u!1 &960853801
 GameObject:
   m_ObjectHideFlags: 0

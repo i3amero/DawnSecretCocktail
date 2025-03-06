@@ -116,12 +116,12 @@ TextureImporter:
       name: dlft5_0
       rect:
         serializedVersion: 2
-        x: 336
+        x: 110
         y: 0
-        width: 1187
+        width: 1710
         height: 1959
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e15c16b36e47a5a4c8b61bfbf5c9b20c
     internalID: 0
     vertices: []
     indices: 
