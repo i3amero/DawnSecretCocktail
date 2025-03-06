@@ -485,6 +485,7 @@ GameObject:
   - component: {fileID: 309896583}
   - component: {fileID: 309896582}
   - component: {fileID: 309896581}
+  - component: {fileID: 309896584}
   m_Layer: 5
   m_Name: TheaterButton
   m_TagString: Untagged
@@ -554,7 +555,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 309896582}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 309896584}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ScenarioScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309896582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -593,6 +606,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 309896579}
   m_CullTransparentMesh: 1
+--- !u!114 &309896584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309896579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &314223916
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2350,7 @@ GameObject:
   - component: {fileID: 1698415358}
   - component: {fileID: 1698415357}
   - component: {fileID: 1698415356}
+  - component: {fileID: 1698415359}
   m_Layer: 5
   m_Name: BlackMarketButton
   m_TagString: Untagged
@@ -2394,7 +2420,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1698415357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1698415359}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: ShopScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1698415357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2433,6 +2471,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698415354}
   m_CullTransparentMesh: 1
+--- !u!114 &1698415359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698415354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1962203947
 GameObject:
   m_ObjectHideFlags: 0

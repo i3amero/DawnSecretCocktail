@@ -21,8 +21,13 @@ public class SceneChangeButton : MonoBehaviour
 
     public void ChangeScene()
     {
+        
         if (!string.IsNullOrEmpty(sceneName))
         {
+            PlayerPrefs.SetInt($"Scenario_카타르시스", 0);
+            PlayerPrefs.SetInt($"Scenario_데드리프트", 0);
+            PlayerPrefs.SetInt($"Scenario_핀투라", 0);
+            PlayerPrefs.SetInt($"Scenario_레조나", 0);
             SceneManager.LoadScene(sceneName);
         }
         else
