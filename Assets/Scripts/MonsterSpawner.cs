@@ -228,11 +228,13 @@ public class MonsterSpawner : MonoBehaviour
         }
 
         Destroy(currentMonster);
+
+        /*
         if(skillSystem.skillIcon != null)
         {
             Destroy(skillSystem.skillIcon); // 스킬 아이콘 제거
         }
-        
+        */
         currentMonster = null;
 
         // 다음 몬스터 생성
@@ -280,11 +282,13 @@ public class MonsterSpawner : MonoBehaviour
         }
 
         Destroy(currentMonster);
+
+        /*
         if (skillSystem.skillIcon != null)
         {
             Destroy(skillSystem.skillIcon); // 스킬 아이콘 제거
         }
-
+        */
         currentMonster = null;
 
         // 클리어 텍스트 표시

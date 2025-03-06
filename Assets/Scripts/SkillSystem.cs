@@ -386,6 +386,7 @@ public class SkillSystem : MonoBehaviour
                     }
                 }
 
+                /*
                 // 스킬 효과 프리팹(스킬 아이콘)이 있다면, 코루틴을 통해 생성 후 대기
                 if (skill.effectPrefab != null)
                 {
@@ -393,7 +394,7 @@ public class SkillSystem : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
-
+                */
 
                 if (GameController.Instance.gameMode == GameMode.Tutorial && scoreManager.tutorialKillCount == 3) // 튜토리얼에서 몬스터를 3마리 잡았을 경우
                 {
@@ -437,6 +438,7 @@ public class SkillSystem : MonoBehaviour
                     scoreManager.OnSkillSuccess(0, false); // 스킬 실패, ScoreManager에서 콤보 초기화
                 }
 
+                /*
                 // 스킬 효과 프리팹(스킬 아이콘)이 있다면, 코루틴을 통해 생성 후 대기
                 if (skill.effectPrefab != null)
                 {
@@ -444,6 +446,7 @@ public class SkillSystem : MonoBehaviour
                 }
 
                 yield return new WaitForSeconds(0.5f); // 스킬이 발동 된 후 잠시 대기
+                */
 
                 if (GameController.Instance.gameMode == GameMode.Infinite) // 무한 모드일 때
                 {

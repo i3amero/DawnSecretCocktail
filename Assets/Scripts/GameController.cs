@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     public int Score { get; private set; } = 0; // 점수 관리(다른 Scene에서 접근 가능)
     public TMP_Text countdownText; // 카운트다운 표시 텍스트
     public TMP_Text timeText;// 남은 시간 표시 텍스트
+    public GameObject QWERPanel; // 인스펙터에서 패널 오브젝트 할당
 
     [SerializeField] private float gameDuration; // 게임 실행 시간
     [SerializeField] private float startDelay;    // 게임 준비 시간
@@ -86,8 +87,17 @@ public class GameController : MonoBehaviour
                 Debug.LogWarning("[GameController] tutorialDialogueManager를 찾지 못했습니다.");
             }
         }
-        
-        // 4. 카운트다운 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
+
+        // 4. QWER 패널 찾기
+        GameObject foundQwerPanelObj = FindQWERPanel();
+        if (foundQwerPanelObj != null)
+        {
+            // QWERPanel을 찾았으므로, 원하는 방식으로 사용합니다.
+            // 예를 들어, 클래스 내에 GameObject 변수 qwerPanel이 있다면:
+            QWERPanel = foundQwerPanelObj;
+        }
+
+        // 5. 카운트다운 텍스트 찾기 (오브젝트 이름으로 찾는 예시)
         GameObject countdownObj = GameObject.Find("CountdownText");
         if (countdownObj != null)
         {
@@ -98,7 +108,7 @@ public class GameController : MonoBehaviour
             Debug.LogWarning("[GameController] CountdownText 오브젝트를 찾지 못했습니다.");
         }
 
-        // 5. 노말 게임에서 남은 시간 텍스트 찾기 
+        // 6. 노말 게임에서 남은 시간 텍스트 찾기 
         if (gameMode == GameMode.Normal)
         {
             GameObject timeObj = GameObject.Find("TimeText");
@@ -111,7 +121,25 @@ public class GameController : MonoBehaviour
                 Debug.LogWarning("[GameController] TimeText 오브젝트를 찾지 못했습니다.");
             }
         }
-        
+    }
+
+    private GameObject FindQWERPanel()
+    {
+        GameObject foundQwerPanel = null;
+        GameObject[] allObjects = Resources.FindObjectsOfTypeAll<GameObject>();
+        foreach (GameObject obj in allObjects)
+        {
+            if (obj.name == "QWERPanel")
+            {
+                foundQwerPanel = obj;
+                break;
+            }
+        }
+        if (foundQwerPanel == null)
+        {
+            Debug.LogWarning("QWERPanel 오브젝트를 찾지 못했습니다.");
+        }
+        return foundQwerPanel;
     }
 
     public void InitializeGame() // 게임을 다시 시작 하기 위한 함수
@@ -177,7 +205,7 @@ public class GameController : MonoBehaviour
         {
             case GameState.Preparation:
                 Log("게임 준비 상태");
-                if(gameMode == GameMode.Tutorial)
+                if (gameMode == GameMode.Tutorial)
                 {
                     if (tutorialDialogueManager != null)
                     {
@@ -215,6 +243,10 @@ public class GameController : MonoBehaviour
                         scoreManager.ShowUI(scoreManager.comboText);
                         scoreManager.ShowUI(scoreManager.bestScoreText);
                     }
+                    if (QWERPanel != null)
+                    {
+                        QWERPanel.SetActive(true);
+                    }
                     StartCoroutine(monsterSpawner.SpawnMonster()); // 무한 모드는 타이머가 없음(스킬 입력 실패 시 종료)
                 }
                 else if (gameMode == GameMode.Tutorial)
@@ -222,6 +254,10 @@ public class GameController : MonoBehaviour
                     if (scoreManager != null)
                     {
                         scoreManager.ShowUI(scoreManager.killCountText);
+                    }
+                    if (QWERPanel != null)
+                    {
+                        QWERPanel.SetActive(true);
                     }
                     StartCoroutine(monsterSpawner.SpawnMonster()); // 튜토리얼은 타이머가 없음(몬스터 3마리 처치 시 종료)
                 }
@@ -272,6 +308,15 @@ public class GameController : MonoBehaviour
         else
         {
             Log("TimeText를 찾지 못했습니다.");
+        }
+
+        if(QWERPanel != null)
+        {
+            QWERPanel.SetActive(true);
+        }
+        else
+        {
+            Log("QWERPanel을 찾지 못했습니다.");
         }
 
         UpdateTimeText(lastDisplayedTime);

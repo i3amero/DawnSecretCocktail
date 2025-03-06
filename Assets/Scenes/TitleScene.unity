@@ -863,6 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countdownText: {fileID: 0}
   timeText: {fileID: 0}
+  QWERPanel: {fileID: 0}
   gameDuration: 60
   startDelay: 3
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
