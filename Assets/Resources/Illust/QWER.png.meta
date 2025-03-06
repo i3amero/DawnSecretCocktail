@@ -202,7 +202,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      QWER_0: 8522988662366885179
+      QWER_1: 4729496132963204813
+      QWER_2: -2999313629312666475
+      QWER_3: 988044303500928199
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
