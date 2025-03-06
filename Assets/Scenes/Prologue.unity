@@ -1854,7 +1854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0aa8ffb4ae0d42ad489e21b1d204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: f45cc2ff855806d4bbb573485f09aa1e, type: 3}
+  csvFile: {fileID: 4900000, guid: 10b64a24cf583e74b819c243c3d4a971, type: 3}
   dialogueList: []
 --- !u!1 &1054721719
 GameObject:

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 397ce0c6299e8354aa8faa3cf302701e
+guid: 1c9ee394fcd935242a9a8d067524afaa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8877747277436514998
-    second: Deadlift_0
+      213: 2464254118545834884
+    second: rsn1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Deadlift_0
+      name: rsn1_0
       rect:
         serializedVersion: 2
-        x: 85
+        x: 132
         y: 0
-        width: 1710
-        height: 1980
+        width: 1771
+        height: 1888
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a4d84b233e7ebc480800000000000000
-      internalID: -8877747277436514998
+      spriteID: 483c73c801ac23220800000000000000
+      internalID: 2464254118545834884
       vertices: []
       indices: 
       edges: []
@@ -136,15 +136,14 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 43ed7e942f1070e45907e29d5765183b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Deadlift_0: -8877747277436514998
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

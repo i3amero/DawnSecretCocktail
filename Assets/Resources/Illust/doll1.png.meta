@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ca2057ed74be0c84fa7d6550752f2109
+guid: 2f88232c7ff6b7b49a96b45aaec5feb3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8180422212020808094
-    second: Resona_0
+      213: -125517653246184083
+    second: doll1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,22 +113,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Resona_0
+      name: doll1_0
       rect:
         serializedVersion: 2
-        x: 132
+        x: 346
         y: 0
-        width: 1771
-        height: 1888
+        width: 1566
+        height: 1269
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 266d8c3075d497e80800000000000000
-      internalID: -8180422212020808094
+      spriteID: d6578310c52124ef0800000000000000
+      internalID: -125517653246184083
       vertices: []
       indices: 
       edges: []
@@ -136,7 +136,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0cd3b74c61cd1da44ab6ca5e9b20d10a
     internalID: 0
     vertices: []
     indices: 
@@ -144,7 +144,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Resona_0: -8180422212020808094
+      doll1_0: -125517653246184083
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
