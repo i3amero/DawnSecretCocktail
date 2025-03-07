@@ -191,5 +191,12 @@ public class CocktailControllerer : MonoBehaviour
         {
             SceneManager.LoadScene("CocktailGive");
         }
+        // AudioManager가 존재하면 제거
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            Destroy(audioManager.gameObject);
+        }
     }
+
 }

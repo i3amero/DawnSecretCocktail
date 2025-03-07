@@ -176,7 +176,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -581291584914730969, guid: a4a5db907c122c14493280e5e6e2630b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -936,7 +936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - characterName: "\uB370\uB4DC\uB9AC\uD504\uD2B8"
-    characterSprite: {fileID: 7664323890486439518, guid: 5da637145ce3ab34eb140718a08e724c, type: 3}
+    characterSprite: {fileID: 2044307052715121095, guid: a314c372352669e4b8a1957374dd084f, type: 3}
     dialogLines:
     - "\uC559? \uC654\uB0D0?"
     - "\uAC70\uCD94\uC7A5\uC2A4\uB7EC\uC6B8 \uC904 \uC54C\uC558\uB294\uB370 \uC81C\uBC95\uC774\uC57C~"
@@ -949,7 +949,7 @@ MonoBehaviour:
     - "\uC778\uAC04\uBBF8 \uC788\uC5B4\uC11C \uC88B\uB124\uC694."
     - "\uB3CC\uB9AC\uB294\uAC70\uB0D0?"
   - characterName: "\uCE74\uD0C0\uB974\uC2DC\uC2A4"
-    characterSprite: {fileID: -289956327280955989, guid: b850c77c3fe2cd94aa84733487182d73, type: 3}
+    characterSprite: {fileID: 8304303491111640785, guid: 9d758bcb590a9114097d219160a3576a, type: 3}
     dialogLines:
     - "\uC544, \uC624\uC168\uAD70\uC694."
     - "\uC624\uB298\uC740 \uCC38 \uAE34 \uBC24\uC774\uC5C8\uC2B5\uB2C8\uB2E4."
@@ -961,7 +961,7 @@ MonoBehaviour:
     - "\uB124."
     - "\uC194\uC9C1\uD574\uC11C \uC88B\uB124\uC694. \uB124."
   - characterName: "\uB808\uC870\uB098"
-    characterSprite: {fileID: 710948414472634084, guid: 2f724395c31867545bdc9549a6251ea3, type: 3}
+    characterSprite: {fileID: 922007905857688210, guid: cd070af1f2970a942881a23080845176, type: 3}
     dialogLines:
     - "\uC5B4\uB77C. \uC5B4\uB514 \uAC14\uB2E4\uAC00 \uC774\uC81C \uC628\uAC70\uC57C?"
     - "\uC544\uAE4C\uB294... \uBB50, \uBD10\uC904\uB9CC\uD55C \uC11C\uD3EC\uD2B8\uC600\uC5B4."
@@ -973,7 +973,7 @@ MonoBehaviour:
     - "\uADF8\uB7FC \uC77C\uB2E8 \uC81C\uC77C \uC13C\uAC70\uBD80\uD130.."
     - "\uC7A5\uB09C\uD574?!?!"
   - characterName: "\uD540\uD22C\uB77C"
-    characterSprite: {fileID: -6118901376476247441, guid: 41508843c5e579c4e917db32fe300776, type: 3}
+    characterSprite: {fileID: -6397204630934907729, guid: 76a04c11b1d773d4ca6c5654071fc461, type: 3}
     dialogLines:
     - "\uC5B4\uBA38, \uC624\uC168\uC5B4\uC694?"
     - "\uC544\uAE4C\uB294 \uB3C4\uC640\uC8FC\uC2E0 \uB355\uBD84\uC5D0 \uD55C\uACB0
@@ -1403,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 3511621295911615649, guid: f50b00e43dc24bb40b476398d757ebd5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

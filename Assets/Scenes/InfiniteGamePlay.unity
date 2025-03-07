@@ -1498,6 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1865453657}
+  energyText: {fileID: 0}
   bestScoreText: {fileID: 1206928734}
   comboText: {fileID: 729014267}
   judgmentText: {fileID: 1124885256}
@@ -1576,8 +1577,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 1325338443587312307, guid: f378aaf9ea481034294fa04eb1b85236, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

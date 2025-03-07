@@ -6,6 +6,7 @@ public class MapSelector : MonoBehaviour
     public MapDatabase mapDatabase; // MapDatabase 연결
     public int mapID; // 버튼에 연결된 Map ID 
 
+
     public void OnMapSelected()
     {
         string targetScene = "GamePlay"; // 넘어갈 씬 이름
@@ -40,6 +41,12 @@ public class MapSelector : MonoBehaviour
         else
         {
             Debug.LogError("SceneController Instance is null. Check if SceneController exists in the scene.");
+        }
+
+        AudioManager audioManager = FindObjectOfType<AudioManager>();
+        if (audioManager != null)
+        {
+            Destroy(audioManager.gameObject);
         }
     }
 }
