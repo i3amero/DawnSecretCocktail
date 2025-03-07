@@ -50,11 +50,11 @@ public class GiveCharacter : MonoBehaviour
             return;
         }
         currentCocktailName = GetCurrentCocktailName();
-        string episodeName = ScenarioController.Instance.GetScenarioName(displayCharacterName);
+        string episodeName = ScenarioController.Instance.GetCocktailScenarioName(displayCharacterName);
 
         popupText.text = $"{displayCharacterName}에게 {currentCocktailName}을(를) 주시겠습니까?";
         popupPanel.SetActive(true);
-
+        
         confirmButton.gameObject.SetActive(true);
         cancelButton.gameObject.SetActive(true);
 
@@ -73,22 +73,34 @@ public class GiveCharacter : MonoBehaviour
 
         if (ScenarioController.Instance.CheckMatch(characterSpriteName, currentCocktailName))
         {
-            string episodeName = ScenarioController.Instance.GetScenarioName(displayCharacterName);
+            string episodeName = ScenarioController.Instance.GetCocktailScenarioName(displayCharacterName);
 
-            ScenarioController.Instance.UnlockScenario(characterSpriteName);
+            ScenarioController.Instance.UnlockCocktailScenario(characterSpriteName);
 
             switch (characterSpriteName)
             {
                 case "카타르시스_0":
+                    PlayerPrefs.SetInt($"CocktailScenario_{characterSpriteName}", 1);
+                    PlayerPrefs.Save();
+                    GameManager.Instance.remainingDays -= 1;
                     SceneManager.LoadScene("KatarsisSuccess");
                     return;
                 case "데드리프트_0":
+                    PlayerPrefs.SetInt($"CocktailScenario_{characterSpriteName}", 1);
+                    PlayerPrefs.Save();
+                    GameManager.Instance.remainingDays -= 1;
                     SceneManager.LoadScene("DeadliftSuccess");
                     return;
                 case "핀투라_0":
+                    PlayerPrefs.SetInt($"CocktailScenario_{characterSpriteName}", 1);
+                    PlayerPrefs.Save();
+                    GameManager.Instance.remainingDays -= 1;
                     SceneManager.LoadScene("PinturaSuccess");
                     return;
                 case "레조나_0":
+                    PlayerPrefs.SetInt($"CocktailScenario_{characterSpriteName}", 1);
+                    PlayerPrefs.Save();
+                    GameManager.Instance.remainingDays -= 1;
                     SceneManager.LoadScene("LezonaSuccess");
                     return;
             }

@@ -24,10 +24,14 @@ public class SceneChangeButton : MonoBehaviour
         
         if (!string.IsNullOrEmpty(sceneName))
         {
-            PlayerPrefs.SetInt($"Scenario_카타르시스", 0);
-            PlayerPrefs.SetInt($"Scenario_데드리프트", 0);
-            PlayerPrefs.SetInt($"Scenario_핀투라", 0);
-            PlayerPrefs.SetInt($"Scenario_레조나", 0);
+            PlayerPrefs.SetInt($"NightScenario_카타르시스", 0);
+            PlayerPrefs.SetInt($"CocktailScenario_카타르시스", 0);
+            PlayerPrefs.SetInt($"NightScenario_데드리프트", 0);
+            PlayerPrefs.SetInt($"CocktailScenario_데드리프트", 0);
+            PlayerPrefs.SetInt($"NightScenario_핀투라", 0);
+            PlayerPrefs.SetInt($"CocktailScenario_핀투라", 0);
+            PlayerPrefs.SetInt($"NightScenario_레조나", 0);
+            PlayerPrefs.SetInt($"CocktailScenario_레조나", 0);
             SceneManager.LoadScene(sceneName);
         }
         else

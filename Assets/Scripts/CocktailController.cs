@@ -185,6 +185,7 @@ public class CocktailControllerer : MonoBehaviour
         }
         if(cocktailImage.sprite == 조합실패)
         {
+            GameManager.Instance.remainingDays -= 1;
             SceneManager.LoadScene("Lobby");
         }
         else

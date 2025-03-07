@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class ShopButton : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class ShopButton : MonoBehaviour
     public Image[] characterImages;
     public TMP_Text[] characterMessages;
     public Button[] optionButtons;
+    public TMP_Text Leftenergy;  //보유 재화 가져올 변수입니다.
 
     private string selectedCharacter = "";
     private int selectedIndex = -1;
@@ -28,7 +30,13 @@ public class ShopButton : MonoBehaviour
 
     private void Start()
     {
+        int energy = GameManager.Instance.unidentifiedEnergy;
+        Leftenergy.text=($"에너지: {energy}"); //에너지 텍스트필드에 출력되는 메세지 입니다.
         LoadScenarioStates();
+        for (int i = 0; i < optionButtons.Length; i++)
+        {
+            Debug.Log($"Button {i}: interactable = {optionButtons[i].interactable}");
+        }
     }
 
     private void LoadScenarioStates()
@@ -37,8 +45,7 @@ public class ShopButton : MonoBehaviour
         {
             string characterName = characterImages[i].gameObject.name;
             characterName = characterName.Split('_')[0];
-            Debug.Log(characterName);
-            bool isUnlocked = PlayerPrefs.GetInt("Scenario_" + characterName, 0) == 1;
+            bool isUnlocked = PlayerPrefs.GetInt($"NightScenario_{characterName}", 0) == 1;
 
             if (isUnlocked)
             {
@@ -49,6 +56,7 @@ public class ShopButton : MonoBehaviour
             }
             else
             {
+                Debug.Log("해제안됨");
                 if (characterScenarios.ContainsKey(characterName))
                 {
                     characterMessages[i].text = characterScenarios[characterName];
@@ -66,30 +74,30 @@ public class ShopButton : MonoBehaviour
 
     public void OnScenarioButtonClicked(int index)
     {
+        string characterName = characterImages[index].gameObject.name;
+        characterName = characterName.Split('_')[0];
+        bool isUnlocked = PlayerPrefs.GetInt($"NightScenario_{characterName}", 0) == 1;
+        if (purchasePanel.activeSelf)
+        {
+            return;
+        }
+
+
         selectedIndex = index;
         selectedCharacter = characterMessages[index].gameObject.name;
-        bool isUnlocked = PlayerPrefs.GetInt("Scenario_" + selectedCharacter, 0) == 1;
-        if(purchasePanel.activeSelf)
-        {
-            return;
-        }
-
-        if (isUnlocked)
-        {
-            return;
-        }
-
+        purchasePanel.SetActive(true);
         purchaseMessage.text = "이 에피소드를 구매하시겠습니까?";
         yesButton.onClick.RemoveAllListeners();
         yesButton.onClick.AddListener(PurchaseScenario);
-        purchasePanel.SetActive(true);
     }
 
     public void PurchaseScenario()
     {
         if (selectedCharacter != "" && selectedIndex != -1)
         {
-            PlayerPrefs.SetInt("Scenario_" + selectedCharacter, 1);
+            string characterName = characterImages[selectedIndex].gameObject.name;
+            characterName = characterName.Split('_')[0];
+            PlayerPrefs.SetInt($"NightScenario_{characterName}", 1);
             PlayerPrefs.Save();
 
             characterImages[selectedIndex].color = Color.black;
