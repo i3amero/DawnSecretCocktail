@@ -2427,6 +2427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146cad093c30abe429f6843f17a2058f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: EndingCredit
   nameText: {fileID: 893331858}
   dialogueText: {fileID: 662188542}
   csvReader: {fileID: 0}

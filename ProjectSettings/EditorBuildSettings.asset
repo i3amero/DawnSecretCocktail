@@ -60,7 +60,7 @@ EditorBuildSettings:
     path: Assets/Scenes/DeadliftSuccess.unity
     guid: e94091d34f946a34499fd3d87b07fe5c
   - enabled: 1
-    path: Assets/Scenes/DealiftNightScene.unity
+    path: Assets/Scenes/DeadliftNightScene.unity
     guid: f0a02b4898fe1004eb45283b1f86c1fe
   - enabled: 1
     path: Assets/Scenes/EndingCredit.unity

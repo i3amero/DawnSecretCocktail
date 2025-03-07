@@ -1587,6 +1587,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 146cad093c30abe429f6843f17a2058f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: ScenarioScene
   nameText: {fileID: 616460381}
   dialogueText: {fileID: 791251172}
   csvReader: {fileID: 0}
@@ -1604,7 +1605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40e0aa8ffb4ae0d42ad489e21b1d204f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  csvFile: {fileID: 4900000, guid: 006a14c53849b5440841f2ed7b9c482e, type: 3}
+  csvFile: {fileID: 4900000, guid: a931bbd9cf2ce174390d13b66ebb5365, type: 3}
   dialogueList: []
 --- !u!1 &1054721719
 GameObject:

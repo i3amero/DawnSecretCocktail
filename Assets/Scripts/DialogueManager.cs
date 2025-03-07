@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class DialogueManager : MonoBehaviour
 {
+    public string nextSceneName;
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public CSVReader csvReader;
@@ -87,7 +88,6 @@ public class DialogueManager : MonoBehaviour
 
     void LoadNextScene()
     {
-        string nextSceneName = "EndingCredit";
         SceneManager.LoadScene(nextSceneName);
     }
 }
