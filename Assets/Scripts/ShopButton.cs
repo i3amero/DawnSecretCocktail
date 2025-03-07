@@ -9,6 +9,7 @@ using System;
 public class ShopButton : MonoBehaviour
 {
     public GameObject purchasePanel;
+    public GameObject failPanel;
     public TMP_Text purchaseMessage;
     public Button yesButton;
     public Button noButton;
@@ -39,12 +40,6 @@ public class ShopButton : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        int energy = GameManager.Instance.unidentifiedEnergy;
-        Leftenergy.text = ($"에너지: {energy}"); //에너지 텍스트필드에 출력되는 메세지 입니다.
-    }
-
     private void LoadScenarioStates()
     {
         for (int i = 0; i < characterImages.Length; i++)
@@ -65,7 +60,7 @@ public class ShopButton : MonoBehaviour
                 Debug.Log("해제안됨");
                 if (characterScenarios.ContainsKey(characterName))
                 {
-                    characterMessages[i].text = characterScenarios[characterName];
+                    characterMessages[i].text = ($"<5000 에너지 필요> \n{characterScenarios[characterName]}");
                 }
                 else
                 {
@@ -99,24 +94,38 @@ public class ShopButton : MonoBehaviour
 
     public void PurchaseScenario()
     {
+        int energy = GameManager.Instance.unidentifiedEnergy;
         if (selectedCharacter != "" && selectedIndex != -1)
         {
-            string characterName = characterImages[selectedIndex].gameObject.name;
-            characterName = characterName.Split('_')[0];
-            PlayerPrefs.SetInt($"NightScenario_{characterName}", 1);
-            PlayerPrefs.Save();
+            if (energy >= 5000)
+            {
+                GameManager.Instance.unidentifiedEnergy -= 5000;
+                string characterName = characterImages[selectedIndex].gameObject.name;
+                characterName = characterName.Split('_')[0];
+                PlayerPrefs.SetInt($"NightScenario_{characterName}", 1);
+                PlayerPrefs.Save();
 
-            characterImages[selectedIndex].color = Color.black;
-            characterMessages[selectedIndex].text = "구매 완료";
-            characterMessages[selectedIndex].color = Color.red;
-            optionButtons[selectedIndex].interactable = false; 
-            purchasePanel.SetActive(false);
-            GameManager.Instance.unidentifiedEnergy -= 5000;
+                characterImages[selectedIndex].color = Color.black;
+                characterMessages[selectedIndex].text = "구매 완료";
+                characterMessages[selectedIndex].color = Color.red;
+                optionButtons[selectedIndex].interactable = false;
+                purchasePanel.SetActive(false);
+            }
+            else
+            {
+                purchasePanel.SetActive(false);
+                failPanel.SetActive(true);
+            }
+            
         }
     }
 
-    public void HideDialog()
+    public void HidePurchaseDialog()
     {
         purchasePanel.SetActive(false);
     }
+    public void HideFailDialog()
+    {
+        failPanel.SetActive(false);
+    }    
 }
