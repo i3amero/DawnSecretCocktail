@@ -87,7 +87,7 @@ public class DialogueManager : MonoBehaviour
 
     void LoadNextScene()
     {
-        string nextSceneName = "Lobby";
+        string nextSceneName = "EndingCredit";
         SceneManager.LoadScene(nextSceneName);
     }
 }
