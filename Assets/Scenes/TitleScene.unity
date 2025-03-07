@@ -1018,8 +1018,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1241269189}
-        m_TargetAssemblyTypeName: SceneChangeButton, Assembly-CSharp
+      - m_Target: {fileID: 1241269191}
+        m_TargetAssemblyTypeName: NewStartClick, Assembly-CSharp
         m_MethodName: ExitGame
         m_Mode: 1
         m_Arguments:
@@ -1489,8 +1489,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1241269187}
   - component: {fileID: 1241269188}
-  - component: {fileID: 1241269189}
   - component: {fileID: 1241269190}
+  - component: {fileID: 1241269191}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -1610,19 +1610,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1241269189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1241269186}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ab9759099c15b74fb5c9922a8bfff81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Prologue
 --- !u!82 &1241269190
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1720,6 +1707,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1241269191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241269186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50a969ddb7387a40ab82b299bf365a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Prologue
 --- !u!1 &1358767332
 GameObject:
   m_ObjectHideFlags: 0
@@ -2503,8 +2503,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1241269189}
-        m_TargetAssemblyTypeName: ButtonController, Assembly-CSharp
+      - m_Target: {fileID: 1241269191}
+        m_TargetAssemblyTypeName: NewStartClick, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
         m_Arguments:
