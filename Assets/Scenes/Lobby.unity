@@ -533,6 +533,7 @@ GameObject:
   - component: {fileID: 309896581}
   - component: {fileID: 309896584}
   - component: {fileID: 309896585}
+  - component: {fileID: 309896586}
   m_Layer: 5
   m_Name: TheaterButton
   m_TagString: Untagged
@@ -603,10 +604,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309896584}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 309896586}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -710,6 +711,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &309896586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309896579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: ScenarioScene
 --- !u!1 &314085341
 GameObject:
   m_ObjectHideFlags: 0
@@ -3502,6 +3516,7 @@ GameObject:
   - component: {fileID: 1698415356}
   - component: {fileID: 1698415359}
   - component: {fileID: 1698415360}
+  - component: {fileID: 1698415361}
   m_Layer: 5
   m_Name: BlackMarketButton
   m_TagString: Untagged
@@ -3572,10 +3587,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1698415359}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 1698415361}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3679,6 +3694,19 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1698415361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1698415354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: ShopScene
 --- !u!1 &1901734667
 GameObject:
   m_ObjectHideFlags: 0
