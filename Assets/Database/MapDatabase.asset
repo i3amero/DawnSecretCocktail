@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb421498307dfae44b5bd7aed9ae07da, type: 3}
+  m_Name: MapDatabase
+  m_EditorClassIdentifier: 
+  maps:
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 \uC0C1\uC5C5\uC9C0\uAD6C"
+    scoreMultiplier: 1
+    thumbnail: {fileID: 0}
+    mapPrefab: {fileID: 0}
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 01000000
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 1\uBC88\uAC00"
+    scoreMultiplier: 1
+    thumbnail: {fileID: 0}
+    mapPrefab: {fileID: 0}
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 00000000
+  - mapName: "\uB974\uB178\uD0C0\uC2DC\uC544 \uB4B7\uACE8\uBAA9(Hard Mode)"
+    scoreMultiplier: 1.5
+    thumbnail: {fileID: 0}
+    mapPrefab: {fileID: 0}
+    monsterDatabase: {fileID: 11400000, guid: ee2193afe2afa274d81609661d23b76c, type: 2}
+    allowedMonsterTypes: 0000000001000000
