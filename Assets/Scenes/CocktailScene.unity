@@ -495,6 +495,7 @@ GameObject:
   - component: {fileID: 84546322}
   - component: {fileID: 84546321}
   - component: {fileID: 84546324}
+  - component: {fileID: 84546325}
   m_Layer: 5
   m_Name: Close
   m_TagString: Untagged
@@ -566,8 +567,20 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 84546325}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Lobby
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 345333018}
-        m_TargetAssemblyTypeName: CocktailManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: CocktailControllerer, Assembly-CSharp
         m_MethodName: ClosePopup
         m_Mode: 1
         m_Arguments:
@@ -631,6 +644,18 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
+--- !u!114 &84546325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84546319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &169235549
 GameObject:
   m_ObjectHideFlags: 0
@@ -3499,6 +3524,7 @@ GameObject:
   - component: {fileID: 1243646113}
   - component: {fileID: 1243646112}
   - component: {fileID: 1243646111}
+  - component: {fileID: 1243646115}
   m_Layer: 5
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -3591,6 +3617,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &1243646115
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1243646110}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1250529427
 GameObject:
   m_ObjectHideFlags: 0
@@ -3817,6 +3855,7 @@ GameObject:
   - component: {fileID: 1309199003}
   - component: {fileID: 1309199002}
   - component: {fileID: 1309199006}
+  - component: {fileID: 1309199007}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3935,6 +3974,18 @@ MonoBehaviour:
   MuseumExplain: {fileID: 0}
   TheaterExplain: {fileID: 0}
   MarketExplain: {fileID: 0}
+--- !u!225 &1309199007
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1309199001}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1459539120
 GameObject:
   m_ObjectHideFlags: 0

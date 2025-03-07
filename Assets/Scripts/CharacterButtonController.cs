@@ -25,8 +25,6 @@ public class CharacterButtonController : MonoBehaviour
         PlayerPrefs.SetInt("SelectedCharacter", characterIndex);
         PlayerPrefs.SetInt("CharacterDisabled_" + characterIndex, 1);
         PlayerPrefs.Save();
-
-        SceneManager.LoadScene("TalkScene"); 
     }
     public void ResetCharacterButtons()
     {

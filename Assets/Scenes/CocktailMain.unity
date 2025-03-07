@@ -272,6 +272,7 @@ GameObject:
   - component: {fileID: 96402426}
   - component: {fileID: 96402427}
   - component: {fileID: 96402428}
+  - component: {fileID: 96402429}
   m_Layer: 5
   m_Name: "\uCE74\uD0C0\uB974\uC2DC\uC2A4"
   m_TagString: Untagged
@@ -392,6 +393,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 96402429}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TalkScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!210 &96402427
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -449,6 +462,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &96402429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96402422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164988227
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,6 +487,8 @@ GameObject:
   - component: {fileID: 164988230}
   - component: {fileID: 164988229}
   - component: {fileID: 164988232}
+  - component: {fileID: 164988233}
+  - component: {fileID: 164988234}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -545,6 +572,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 164988233}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: CoctailScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &164988230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +637,31 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 3, y: 3}
   m_UseGraphicAlpha: 1
+--- !u!114 &164988233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164988227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &164988234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164988227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: CocktailGive
 --- !u!1 &165731948
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +943,7 @@ GameObject:
   - component: {fileID: 232644053}
   - component: {fileID: 232644054}
   - component: {fileID: 232644055}
+  - component: {fileID: 232644056}
   m_Layer: 5
   m_Name: "\uD540\uD22C\uB77C"
   m_TagString: Untagged
@@ -999,6 +1064,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 232644056}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TalkScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!210 &232644054
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1056,6 +1133,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &232644056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232644049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &410927106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1283,7 @@ GameObject:
   - component: {fileID: 463604187}
   - component: {fileID: 463604188}
   - component: {fileID: 463604189}
+  - component: {fileID: 463604190}
   m_Layer: 5
   m_Name: "\uB808\uC870\uB098"
   m_TagString: Untagged
@@ -1314,6 +1404,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 463604190}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TalkScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!210 &463604188
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1371,6 +1473,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &463604190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463604183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &518077338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1499,7 @@ GameObject:
   - component: {fileID: 518077342}
   - component: {fileID: 518077343}
   - component: {fileID: 518077344}
+  - component: {fileID: 518077345}
   m_Layer: 5
   m_Name: "\uB370\uB4DC\uB9AC\uD504\uD2B8"
   m_TagString: Untagged
@@ -1505,6 +1620,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 518077345}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadSceneWithBGMStop
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: TalkScene
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!210 &518077343
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1562,6 +1689,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &518077345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518077338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &694613458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1696,6 +1835,7 @@ GameObject:
   - component: {fileID: 736302340}
   - component: {fileID: 736302339}
   - component: {fileID: 736302338}
+  - component: {fileID: 736302342}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1786,6 +1926,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!225 &736302342
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736302337}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &887697385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2858,7 +3010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -246.2, y: 94.09}
+  m_AnchoredPosition: {x: -246.20001, y: 94.09}
   m_SizeDelta: {x: -302.46606, y: -195.82056}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1674681763
@@ -3534,5 +3686,5 @@ SceneRoots:
   - {fileID: 1781272740}
   - {fileID: 432970288}
   - {fileID: 736302341}
-  - {fileID: 1843821520}
   - {fileID: 954524943}
+  - {fileID: 1843821520}

@@ -11,6 +11,10 @@ public class SceneLoader : MonoBehaviour
         {
             Destroy(audioManager.gameObject);
         }
+        if(GameManager.Instance.remainingDays==0)
+        {
+            SceneController.Instance.LoadSceneWithFadeOut("GameOver");
+        }
 
         // 씬 전환
         if (SceneController.Instance != null)

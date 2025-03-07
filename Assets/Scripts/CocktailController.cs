@@ -186,11 +186,13 @@ public class CocktailControllerer : MonoBehaviour
         if(cocktailImage.sprite == 조합실패)
         {
             GameManager.Instance.remainingDays -= 1;
-            SceneManager.LoadScene("Lobby");
+            Canvas.ForceUpdateCanvases();
+            SceneController.Instance.LoadSceneWithFadeOut("Lobby");
         }
         else
         {
-            SceneManager.LoadScene("CocktailGive");
+            Canvas.ForceUpdateCanvases();
+            SceneController.Instance.LoadSceneWithFadeOut("CocktailGive");
         }
         // AudioManager가 존재하면 제거
         AudioManager audioManager = FindObjectOfType<AudioManager>();

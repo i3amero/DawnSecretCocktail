@@ -14,8 +14,6 @@ public class CocktailPopup : MonoBehaviour
     void Start()
     {
         popupPanel.SetActive(false);
-
-        confirmButton.onClick.AddListener(OnConfirm);
         cancelButton.onClick.AddListener(OnCancel);
     }
 
@@ -25,10 +23,6 @@ public class CocktailPopup : MonoBehaviour
         popupPanel.transform.SetAsLastSibling();
     }
 
-    private void OnConfirm()
-    {
-        SceneManager.LoadScene(nextSceneName);
-    }
 
     private void OnCancel()
     {
