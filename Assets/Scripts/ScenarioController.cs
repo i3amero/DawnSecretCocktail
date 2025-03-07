@@ -26,7 +26,8 @@ public class ScenarioController : MonoBehaviour
     private void Start()
     {
         Debug.Log($"ScenarioController.Instance: {ScenarioController.Instance}");
-        LoadUnlockedScenarios();
+        LoadUnlockedNightScenarios();
+        LoadUnlockedCocktailScenarios();
     }
 
     public bool CheckMatch(string characterSpriteName, string cocktailName)
@@ -35,23 +36,29 @@ public class ScenarioController : MonoBehaviour
         return (GetAllowedCocktails(cleanCharacterName) & GetCocktailByName(cocktailName)) != 0;
     }
 
-    public void UnlockScenario(string characterSpriteName)
+    public void UnlockCocktailScenario(string characterSpriteName)
     {
         string cleanCharacterName = GetCleanCharacterName(characterSpriteName);
-        string episodeName = GetScenarioName(cleanCharacterName);
 
-        PlayerPrefs.SetInt($"Scenario_{cleanCharacterName}", 1);
+        PlayerPrefs.SetInt($"CocktailScenario_{cleanCharacterName}", 1);
         PlayerPrefs.Save();
     }
 
-    public bool IsScenarioUnlocked(string characterSpriteName)
+    public bool IsCocktailScenarioUnlocked(string characterSpriteName)
     {
         string cleanCharacterName = GetCleanCharacterName(characterSpriteName);
 
-        return PlayerPrefs.GetInt($"Scenario_{cleanCharacterName}", 0) == 1;
+        return PlayerPrefs.GetInt($"CocktailScenario_{cleanCharacterName}", 0) == 1;
     }
 
-    public string GetScenarioName(string characterName)
+    public bool IsNightScenarioUnlocked(string characterSpriteName)
+    {
+        string cleanCharacterName = GetCleanCharacterName(characterSpriteName);
+
+        return PlayerPrefs.GetInt($"NightScenario_{cleanCharacterName}", 0) == 1;
+    }
+
+    public string GetCocktailScenarioName(string characterName)
     {
         switch (characterName)
         {
@@ -59,25 +66,53 @@ public class ScenarioController : MonoBehaviour
             case "데드리프트": return "방황하는 머리 잘린 괴수";
             case "핀투라": return "칠흑보다 어두운 검은 안개";
             case "카타르시스": return "영원히 끝나지 않는 커튼";
-            case "베네딕트": return "괴이";
+            default: return "기본 에피소드";
+        }
+    }
+    public string GetNightScenarioName(string characterName)
+    {
+        switch (characterName)
+        {
+            case "레조나": return "레조나 칵테일";
+            case "데드리프트": return "데드리프트 칵테일";
+            case "핀투라": return "핀투라 칵테일";
+            case "카타르시스": return "카타르시스 칵테일";
             default: return "기본 에피소드";
         }
     }
 
-    private void LoadUnlockedScenarios()
+    private void LoadUnlockedNightScenarios()
     {
-        string[] allCharacters = { "레조나", "데드리프트", "핀투라", "카타르시스", "베네딕트" };
+        string[] allCharacters = { "레조나", "데드리프트", "핀투라", "카타르시스" };
 
         foreach (string character in allCharacters)
         {
-            if (IsScenarioUnlocked(character))
+            if (IsNightScenarioUnlocked(character))
             {
-                string characterscenario = GetScenarioName(character);
-                Debug.Log($"{character}의 시나리오 {characterscenario}가 해제됨!");
+                string characterscenario = GetNightScenarioName(character);
+                Debug.Log($"{character}의 밤놀이 시나리오가 해제됨!");
             }
             else
             {
-                Debug.Log($"{character}의 시나리오는 잠겨 있음.");
+                Debug.Log($"{character}의 밤놀이 시나리오는 잠겨 있음.");
+            }
+        }
+    }
+
+    private void LoadUnlockedCocktailScenarios()
+    {
+        string[] allCharacters = { "레조나", "데드리프트", "핀투라", "카타르시스" };
+
+        foreach (string character in allCharacters)
+        {
+            if (IsCocktailScenarioUnlocked(character))
+            {
+                string characterscenario = GetCocktailScenarioName(character);
+                Debug.Log($"{character}의 칵테일시나리오가 해제됨!");
+            }
+            else
+            {
+                Debug.Log($"{character}의 칵테일 시나리오는 잠겨 있음.");
             }
         }
     }
@@ -90,7 +125,6 @@ public class ScenarioController : MonoBehaviour
             case "데드리프트": return 2;
             case "핀투라": return 4;
             case "카타르시스": return 8;
-            case "베네딕트": return 16;
             default: return 0;
         }
     }

@@ -41,15 +41,15 @@ public class ScenarioButtonManager : MonoBehaviour
             scene2 = data[3];
 
             
-            bool isUnlocked = PlayerPrefs.GetInt($"Scenario_{characterName}", 0) == 1;
-
+            bool isUnlocked = PlayerPrefs.GetInt($"NightScenario_{characterName}", 0) == 1;
+            bool isUnlocked2 = PlayerPrefs.GetInt($"CocktailScenario_{characterName}", 0) == 1;
            
             optionButton1.interactable = isUnlocked;
-            optionButton2.interactable = isUnlocked;
+            optionButton2.interactable = isUnlocked2;
 
             
             optionButton1.image.color = isUnlocked ? Color.white : new Color(1, 1, 1, 0.5f);
-            optionButton2.image.color = isUnlocked ? Color.white : new Color(1, 1, 1, 0.5f);
+            optionButton2.image.color = isUnlocked2 ? Color.white : new Color(1, 1, 1, 0.5f);
 
             panel.SetActive(true); 
         }
