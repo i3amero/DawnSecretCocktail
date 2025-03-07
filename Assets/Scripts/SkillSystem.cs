@@ -71,18 +71,34 @@ public class SkillSystem : MonoBehaviour
             // Q, W, E, R 키 입력 시 조합에 추가
             if (Input.GetKeyDown(KeyCode.Q))
             {
+                if(SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySelectSound(); // Q 키 입력 시 선택 사운드 재생
+                }
                 AddKeyToCombination("Q");               
             }
             if (Input.GetKeyDown(KeyCode.W))
             {
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySelectSound(); // W 키 입력 시 선택 사운드 재생
+                }
                 AddKeyToCombination("W");
             }
             if (Input.GetKeyDown(KeyCode.E))
             {
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySelectSound(); // E 키 입력 시 선택 사운드 재생
+                }
                 AddKeyToCombination("E");
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
+                if (SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySelectSound(); // R 키 입력 시 선택 사운드 재생
+                }
                 AddKeyToCombination("R");
             }
         }
@@ -376,6 +392,11 @@ public class SkillSystem : MonoBehaviour
                 Debug.Log($"스킬 성공! {monsterController.MonsterData.name} 제거");
                 Debug.Log($"스킬 적중시간 : {reactionTime}");
 
+                if(SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlaySuccessSound(); // 성공 사운드 재생
+                }
+
                 if (scoreManager != null)
                 {
                     scoreManager.OnSkillSuccess(reactionTime, true); // 스킬 성공, reactionTime에 따라 ScoreManager에서 점수 추가
@@ -431,6 +452,11 @@ public class SkillSystem : MonoBehaviour
             {
                 // 스킬 실패: 콤보 초기화
                 Debug.LogWarning($"스킬 실패! {monsterController.MonsterData.name}에 유효한 스킬은 {monsterController.MonsterData.validSkills}입니다.");
+
+                if(SoundManager.Instance != null)
+                {
+                    SoundManager.Instance.PlayFailSound(); // 실패 사운드 재생
+                }
 
                 var scoreManager = Object.FindFirstObjectByType<ScoreManager>();
                 if (scoreManager != null)
