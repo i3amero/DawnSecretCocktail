@@ -200,14 +200,7 @@ public class CocktailControllerer : MonoBehaviour
         }
         else
         {
-            Canvas.ForceUpdateCanvases();
-            SceneController.Instance.LoadSceneWithFadeOut("CocktailGive");
-        }
-        // AudioManager가 존재하면 제거
-        AudioManager audioManager = FindObjectOfType<AudioManager>();
-        if (audioManager != null)
-        {
-            Destroy(audioManager.gameObject);
+            SceneManager.LoadScene("CocktailGive");
         }
     }
 

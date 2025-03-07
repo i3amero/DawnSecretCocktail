@@ -165,7 +165,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remainingDays: 15
   purchasedMasterSkills: 
-  unidentifiedEnergy: 0
+  unidentifiedEnergy: 100000
   purchasedCharacterSkills: 
 --- !u!1 &134882428
 GameObject:

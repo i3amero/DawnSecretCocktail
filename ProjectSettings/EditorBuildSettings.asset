@@ -116,5 +116,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/CocktailGive.unity
     guid: 440dc9f778f174247ac40ec9d824ece3
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: a6c0b844e13221c4ba780988e7892f64
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 96b4fdd19402542428865b3a786eae1f
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

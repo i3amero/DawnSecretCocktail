@@ -15,6 +15,7 @@ public class ScenarioController : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(this.gameObject); // 씬 변경 시에도 유지
         }
         else
         {
@@ -22,6 +23,7 @@ public class ScenarioController : MonoBehaviour
             return;
         }
     }
+
 
     private void Start()
     {

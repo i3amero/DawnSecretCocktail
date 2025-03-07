@@ -39,6 +39,12 @@ public class ShopButton : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        int energy = GameManager.Instance.unidentifiedEnergy;
+        Leftenergy.text = ($"에너지: {energy}"); //에너지 텍스트필드에 출력되는 메세지 입니다.
+    }
+
     private void LoadScenarioStates()
     {
         for (int i = 0; i < characterImages.Length; i++)
@@ -105,6 +111,7 @@ public class ShopButton : MonoBehaviour
             characterMessages[selectedIndex].color = Color.red;
             optionButtons[selectedIndex].interactable = false; 
             purchasePanel.SetActive(false);
+            GameManager.Instance.unidentifiedEnergy -= 5000;
         }
     }
 

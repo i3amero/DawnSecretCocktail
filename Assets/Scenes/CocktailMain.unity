@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 96402427}
   - component: {fileID: 96402428}
   - component: {fileID: 96402429}
+  - component: {fileID: 96402430}
   m_Layer: 5
   m_Name: "\uCE74\uD0C0\uB974\uC2DC\uC2A4"
   m_TagString: Untagged
@@ -393,16 +394,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 96402429}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 96402430}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: TalkScene
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!210 &96402427
@@ -474,6 +475,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &96402430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96402422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: TalkScene
 --- !u!1 &164988227
 GameObject:
   m_ObjectHideFlags: 0
@@ -572,16 +586,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 164988233}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 164988234}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: CoctailScene
+          m_StringArgument: CocktailScene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &164988230
@@ -661,7 +675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetScene: CocktailGive
+  targetScene: CocktailScene
 --- !u!1 &165731948
 GameObject:
   m_ObjectHideFlags: 0
@@ -944,6 +958,7 @@ GameObject:
   - component: {fileID: 232644054}
   - component: {fileID: 232644055}
   - component: {fileID: 232644056}
+  - component: {fileID: 232644057}
   m_Layer: 5
   m_Name: "\uD540\uD22C\uB77C"
   m_TagString: Untagged
@@ -1064,10 +1079,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 232644056}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 232644057}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1145,6 +1160,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &232644057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232644049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: TalkScene
 --- !u!1 &410927106
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1312,7 @@ GameObject:
   - component: {fileID: 463604188}
   - component: {fileID: 463604189}
   - component: {fileID: 463604190}
+  - component: {fileID: 463604191}
   m_Layer: 5
   m_Name: "\uB808\uC870\uB098"
   m_TagString: Untagged
@@ -1404,10 +1433,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 463604190}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 463604191}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1485,6 +1514,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &463604191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463604183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: TalkScene
 --- !u!1 &518077338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1500,6 +1542,7 @@ GameObject:
   - component: {fileID: 518077343}
   - component: {fileID: 518077344}
   - component: {fileID: 518077345}
+  - component: {fileID: 518077346}
   m_Layer: 5
   m_Name: "\uB370\uB4DC\uB9AC\uD504\uD2B8"
   m_TagString: Untagged
@@ -1620,10 +1663,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 518077345}
-        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
-        m_MethodName: LoadSceneWithBGMStop
-        m_Mode: 5
+      - m_Target: {fileID: 518077346}
+        m_TargetAssemblyTypeName: CloseButtonHandler, Assembly-CSharp
+        m_MethodName: OnCloseButtonClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1701,6 +1744,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1c113c588581c74f86be8cd273a2cc1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &518077346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518077338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc15a737917683044ae49eaae78a8067, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetScene: TalkScene
 --- !u!1 &694613458
 GameObject:
   m_ObjectHideFlags: 0
