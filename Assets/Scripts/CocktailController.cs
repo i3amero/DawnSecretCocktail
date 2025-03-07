@@ -186,8 +186,17 @@ public class CocktailControllerer : MonoBehaviour
         if(cocktailImage.sprite == 조합실패)
         {
             GameManager.Instance.remainingDays -= 1;
-            Canvas.ForceUpdateCanvases();
-            SceneController.Instance.LoadSceneWithFadeOut("Lobby");
+            if(GameManager.Instance.remainingDays == 0)
+            {
+                Canvas.ForceUpdateCanvases();
+                SceneController.Instance.LoadSceneWithFadeOut("GameOver");
+            }
+            else
+            {
+                Canvas.ForceUpdateCanvases();
+                SceneController.Instance.LoadSceneWithFadeOut("Lobby");
+            }
+            
         }
         else
         {
