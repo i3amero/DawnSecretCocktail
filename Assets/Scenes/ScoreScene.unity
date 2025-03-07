@@ -412,7 +412,7 @@ GameObject:
   - component: {fileID: 612692313}
   - component: {fileID: 612692312}
   m_Layer: 5
-  m_Name: Text (TMP) (1)
+  m_Name: EnergyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,6 +566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2056623661}
+  energyText: {fileID: 612692312}
   bestScoreText: {fileID: 0}
   comboText: {fileID: 0}
   judgmentText: {fileID: 0}
@@ -883,7 +884,7 @@ GameObject:
   - component: {fileID: 2056623662}
   - component: {fileID: 2056623661}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

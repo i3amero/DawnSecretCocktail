@@ -5,6 +5,7 @@ using System.Collections;
 public class ScoreManager : MonoBehaviour
 {
     public TMP_Text scoreText;
+    public TMP_Text energyText;
     public TMP_Text bestScoreText;
     public TMP_Text comboText;
     public TMP_Text judgmentText;
@@ -71,6 +72,10 @@ public class ScoreManager : MonoBehaviour
         if (GameController.Instance != null)
         {
             UpdateScoreText(GameController.Instance.Score);
+            if(GameController.Instance.gameMode == GameMode.Normal && energyText != null)
+            {
+                UpdateEnergyText(GameController.Instance.Score);
+            }
         }
         else
         {
@@ -343,6 +348,14 @@ public class ScoreManager : MonoBehaviour
         if (bestScoreText != null)
         {
             bestScoreText.text = "BEST: " + bestScore;
+        }
+    }
+
+    public void UpdateEnergyText(int energy)
+    {
+        if (energyText != null)
+        {
+            energyText.text = "획득 기운: " + energy;
         }
     }
 }
