@@ -119,6 +119,54 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &124863142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124863144}
+  - component: {fileID: 124863145}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124863144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124863142}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 537.2129, y: -163.8531, z: -8.002237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &124863145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124863142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ae03e34241b8d84cb7479fafe1c2225, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  remainingDays: 15
+  purchasedMasterSkills: 
+  unidentifiedEnergy: 0
+  purchasedCharacterSkills: 
 --- !u!1 &134882428
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +912,7 @@ MonoBehaviour:
   countdownText: {fileID: 0}
   timeText: {fileID: 0}
   QWERPanel: {fileID: 0}
-  gameDuration: 1
+  gameDuration: 60
   startDelay: 3
   mapDatabase: {fileID: 11400000, guid: 1e09618312cd05443902f946e9f95e1a, type: 2}
   monsterSpawner: {fileID: 0}
@@ -2694,3 +2742,4 @@ SceneRoots:
   - {fileID: 1578882371}
   - {fileID: 1978098337}
   - {fileID: 541403598}
+  - {fileID: 124863144}

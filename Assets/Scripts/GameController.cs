@@ -265,6 +265,14 @@ public class GameController : MonoBehaviour
             case GameState.Ended:
                 monsterSpawner.RemoveCurrentMonster(); // 게임 종료 시 현재 몬스터 제거
                 Log("게임 종료 상태");
+                if(GameManager.Instance != null && gameMode == GameMode.Normal) // GameManager가 존재하고, 본게임이라면
+                {
+                    GameManager.Instance.unidentifiedEnergy += Score; // 게임 종료 시 획득한 점수를 보유 재화로 추가
+                }
+                else
+                {
+                    Debug.LogWarning("GameManager를 찾지 못했습니다.");
+                }
                 GoToScoreScreen(sceneName); // 게임 종료 시 점수 계산 화면으로 이동
                 break;
         }
