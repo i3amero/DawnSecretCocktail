@@ -23,6 +23,7 @@ public class NewStartClick : MonoBehaviour
 
         if (!string.IsNullOrEmpty(sceneName))
         {
+            //이부분, 이렇게 관리할거라면 PlayerPrefs관리 스크립트를 별도로 만드는게 나을 듯 합니다.(물론 이번엔 힘들었겠지만)
             PlayerPrefs.SetInt($"NightScenario_카타르시스", 0);
             PlayerPrefs.SetInt($"CocktailScenario_카타르시스", 0);
             PlayerPrefs.SetInt($"NightScenario_데드리프트", 0);

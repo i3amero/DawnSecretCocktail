@@ -49,7 +49,13 @@ public class GameController : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
-
+    /// <summary>
+    /// 바빴으니 신경 못쓴건 이해하지만, 그래도 첨언을 하자면
+    /// 찾기의 요소들이 하나라도 없으면 FindNewSceneUI()는 return인가요? 그러면
+    /// if~else방식보단, else조건식을 앞으로 빼는게 좋아요. 뭔말인지는 밑에 따로 코딩해놨습니다.
+    /// 물론 저 방식은 겉보기엔 결과는 같아도 자세한 로직은 엄연히 다르므로, 주의해야합니다.
+    /// 깨알같은 상사에게 이쁨받는 코딩방식입니다 :)
+    /// </summary>
     public void FindNewSceneUI() // 게임이 재시작 될 때 UI 찾기
     {
         // 1. 몬스터 스포너 찾기
@@ -122,7 +128,39 @@ public class GameController : MonoBehaviour
             }
         }
     }
+    /*
+     * 리팩토링 로직
+     *public void FindNewSceneUI() // 게임이 재시작 될 때 UI 찾기
+    {
+        // 1. 찾기들을 전부 앞으로 빼서
+        MonsterSpawner foundSpawner = Object.FindFirstObjectByType<MonsterSpawner>();
+        ScoreManager foundScoreManager = Object.FindFirstObjectByType<ScoreManager>();
+        TutorialDialogueManager foundTutorialDialogueManager = Object.FindFirstObjectByType<TutorialDialogueManager>();
+        GameObject foundQwerPanelObj = FindQWERPanel();
+        GameObject countdownObj = GameObject.Find("CountdownText");
+        GameObject timeObj = GameObject.Find("TimeText");
 
+        2.조건식을 전부 통합한 다음에 하나라도 없을 시 return하면
+
+        if(foundSpawner == null || foundScoreManager == null || foundTutorialDialogueManager == null || foundQwerPanelObj == null || countdownObj == null
+           || timeObj == null)
+                return;
+        
+        3.if~else반복이 줄어서 뒤에가 훨씬 짧아지고 보기가 편해집니다(가시성이 오르니 주석까지 줄일 수 있어서 최대 70줄->30줄이 되죠? ㅎㅎ)
+        monsterSpawner = foundSpawner;
+        scoreManager = foundScoreManager;
+        if (gameMode == GameMode.Tutorial)
+        {
+            tutorialDialogueManager = foundTutorialDialogueManager;
+        }
+        QWERPanel = foundQwerPanelObj;
+        countdownText = countdownObj.GetComponent<TMP_Text>();
+        if (gameMode == GameMode.Normal)
+        {
+            timeText = timeObj.GetComponent<TMP_Text>();
+        }
+    }
+    */
     private GameObject FindQWERPanel()
     {
         GameObject foundQwerPanel = null;
@@ -196,7 +234,9 @@ public class GameController : MonoBehaviour
 
 
     }
-
+    /// <summary>
+    /// 알고쓰셨다고 생각은 하지만, FSM입니다 이 방식이. 이 이하로는 잘하신 것 같아요. FSM이 최적이라고 생각하는게 적용도 하셨고.
+    /// </summary>
     public void ChangeState(GameState newState) // 게임 상태를 변경하고 그에 맞는 로직 실행
     {
         CurrentState = newState;
@@ -212,10 +252,11 @@ public class GameController : MonoBehaviour
                         tutorialDialogueManager.ShowFullDialogue(
                             "오셨군요. 그럼 저희 업무가 어떤 식으로 진행되는 지 설명해드리겠습니다.\n\n\n" +
         "<color=#FF9999>스페이스바를 누르거나 화면 아무곳을 클릭하면 대화창이 닫히고 진행됩니다.</color>",
-                            () => {
-                            // 대화창이 닫히면 게임 상태를 Running으로 변경
-                            ChangeState(GameState.Running);
-                        });
+                            () =>
+                            {
+                                // 대화창이 닫히면 게임 상태를 Running으로 변경
+                                ChangeState(GameState.Running);
+                            });
                     }
                     else
                     {
@@ -234,7 +275,7 @@ public class GameController : MonoBehaviour
                     StartCoroutine(GameTimer()); // 게임 실행 중에는 지정된 시간 만큼 타이머 시작, 타이머가 끝나면 게임 종료
                     StartCoroutine(monsterSpawner.SpawnMonster()); // 타이머가 도는 동안 몬스터 스폰 코루틴 시작
                 }
-                else if(gameMode == GameMode.Infinite)// 무한 모드일 때
+                else if (gameMode == GameMode.Infinite)// 무한 모드일 때
                 {
                     // 점수, 콤보 UI 표시
                     if (scoreManager != null)
@@ -265,7 +306,7 @@ public class GameController : MonoBehaviour
             case GameState.Ended:
                 monsterSpawner.RemoveCurrentMonster(); // 게임 종료 시 현재 몬스터 제거
                 Log("게임 종료 상태");
-                if(GameManager.Instance != null && gameMode == GameMode.Normal) // GameManager가 존재하고, 본게임이라면
+                if (GameManager.Instance != null && gameMode == GameMode.Normal) // GameManager가 존재하고, 본게임이라면
                 {
                     GameManager.Instance.unidentifiedEnergy += Score; // 게임 종료 시 획득한 점수를 보유 재화로 추가
                 }
@@ -318,7 +359,7 @@ public class GameController : MonoBehaviour
             Log("TimeText를 찾지 못했습니다.");
         }
 
-        if(QWERPanel != null)
+        if (QWERPanel != null)
         {
             QWERPanel.SetActive(true);
         }
@@ -348,7 +389,10 @@ public class GameController : MonoBehaviour
 
         ChangeState(GameState.Ended); // 지정된 시간이 다 지나면 게임 종료 상태로 변경
     }
-
+    /// <summary>
+    /// 굳이... SceneController.Instance.LoadScene(sceneName)를 그냥 가져다 쓰면 되는거 아닌갑쇼
+    /// </summary>
+    /// <param name="sceneName"></param>
     private void GoToScoreScreen(string sceneName)
     {
         Log("점수 계산 화면으로 이동");
